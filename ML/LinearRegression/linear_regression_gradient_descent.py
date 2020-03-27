@@ -1,12 +1,13 @@
 import numpy as np
 
+# Let m = #training examples, n = #number of features
+# Sizes differ a little bit from blog notation. It takes as input
+# the following: y is R^(1 x m), X is R^(n x m), w is R^(n x 1)
 class LinearRegression(object):
-    # Sizes differ a little bit from blog notation, here 
-    # y is R^(1 x m), X is R^(n x m), w is R^(n x 1)
-    
-    def __init__(self):
+    def __init__(self, print_cost=False):
         self.learning_rate = 0.01
-        self.total_iterations = 10000
+        self.total_iterations = 1000
+        self.print_cost = print_cost
     
     def y_hat(self, X, w):
         return np.dot(w.T, X)
@@ -36,7 +37,7 @@ class LinearRegression(object):
             yhat = self.y_hat(X, w)
             cost = self.cost(yhat, y)
             
-            if it % 2000 == 0:
+            if it % 2000 == 0 and self.print_cost:
                 print(f'Cost at iteration {it} is {cost}')
             
             w = self.gradient_descent(w, X, y, yhat)
