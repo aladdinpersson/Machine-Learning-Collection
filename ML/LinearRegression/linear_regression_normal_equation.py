@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 # Let m = #training examples, n = #number of features
 # It takes as input the following: y is R^(m x 1), X is R^(m x n), w is R^(n x 1)
