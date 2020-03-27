@@ -5,7 +5,7 @@ import numpy as np
 
 # For importing from different folders
 # OBS: This is supposed to be done with automated testing, hence relative to folder we want to import from
-sys.path.append('/ML/LinearRegression/')
+sys.path.append('/ML/LinearRegression/linear_regression_normal_equation')
 
 # If run from local:
 #sys.path.append('../../ML/LinearRegression/')
