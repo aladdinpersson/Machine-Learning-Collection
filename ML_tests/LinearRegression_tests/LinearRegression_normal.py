@@ -2,7 +2,6 @@
 import sys
 import unittest
 import numpy as np
-from sklearn.linear_model import LinearRegression
 
 # For importing from different folders
 # OBS: This is supposed to be done with automated testing, hence relative to folder we want to import from
