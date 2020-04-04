@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 # Let m = #training examples, n = #number of features
 # Sizes differ a little bit from blog notation. It takes as input
 # the following: y is R^(1 x m), X is R^(n x m), w is R^(n x 1)
-class LinearRegression(object):
+
+class LinearRegression():
     def __init__(self, print_cost=False):
         self.learning_rate = 0.01
         self.total_iterations = 1000
@@ -47,12 +48,12 @@ class LinearRegression(object):
     
     
 # For visual confirmation, not necessary.
-def plot_fit(W, X, y):
+# def plot_fit(W, X, y):
     # random_points = np.linspace(0, 1, 200)[:,np.newaxis]
     # x1 = np.ones((random_points.shape[0], 1))
     # random_points2 = np.append(random_points, x1, axis=1)
     
-    plt.scatter(X, y)
+    # plt.scatter(X, y)
     # y_hat = np.dot(random_points2, W)
     # print(y_hat.shape)
 
@@ -68,13 +69,7 @@ def plot_fit(W, X, y):
     # plt.show()
 
 if __name__ == '__main__':
-    X = np.random.rand(1, 8) * 5
-    X = np.array([[1,2,3,4,5,6,7,8]])
-    y = 0.7*X + np.random.randn(1, 8)
-    print(X)
-    print(y)
+    X = np.random.rand(1, 500)
+    y = 3 * X + 5 + np.random.randn(1, 500) * 0.1
     regression = LinearRegression()
     w = regression.main(X, y)
-    plot_fit(w, X, y)
-    print(w)
-    
