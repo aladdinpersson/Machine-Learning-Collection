@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 # Let m = #training examples, n = #number of features
 # Sizes differ a little bit from blog notation. It takes as input
