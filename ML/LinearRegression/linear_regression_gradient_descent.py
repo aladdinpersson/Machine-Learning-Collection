@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Let m = #training examples, n = #number of features
 # Sizes differ a little bit from blog notation. It takes as input
@@ -44,9 +45,36 @@ class LinearRegression(object):
         
         return w
     
+    
+# For visual confirmation, not necessary.
+def plot_fit(W, X, y):
+    # random_points = np.linspace(0, 1, 200)[:,np.newaxis]
+    # x1 = np.ones((random_points.shape[0], 1))
+    # random_points2 = np.append(random_points, x1, axis=1)
+    
+    plt.scatter(X, y)
+    # y_hat = np.dot(random_points2, W)
+    # print(y_hat.shape)
+
+    # fig = plt.figure(figsize=(8,6))
+    # plt.title("Training set in blue, our hypothesis on the test set in orange")
+    # print(X.shape)
+    # print(y.shape)
+    # plt.scatter(X[:,0], y)
+
+    # plt.scatter(random_points, y_hat)
+    # plt.xlabel("First feature")
+    # plt.ylabel("Second feature")
+    # plt.show()
 
 if __name__ == '__main__':
-    X = np.random.rand(1, 500)
-    y = 3 * X + 5 + np.random.randn(1, 500) * 0.1
+    X = np.random.rand(1, 8) * 5
+    X = np.array([[1,2,3,4,5,6,7,8]])
+    y = 0.7*X + np.random.randn(1, 8)
+    print(X)
+    print(y)
     regression = LinearRegression()
     w = regression.main(X, y)
+    plot_fit(w, X, y)
+    print(w)
+    
