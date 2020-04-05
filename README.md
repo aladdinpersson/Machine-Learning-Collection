@@ -19,5 +19,5 @@ In this repository I will be uploading machine learning algorithms implemented i
 * :small_red_triangle: [:tv:](https://youtu.be/Jy4wM2X21u0) [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
 * :small_red_triangle: [:tv:](https://youtu.be/wnK3uWv_WkU) [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_CNN.py)
 
-### Computer Vision
-### Natural Language Processing
+### CNN architectures
+* :small_red_triangle: [:tv:](www.google.com) [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/lenet5_pytorch.py)
