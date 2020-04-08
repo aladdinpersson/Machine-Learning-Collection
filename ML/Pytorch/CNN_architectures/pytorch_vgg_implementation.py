@@ -11,13 +11,7 @@ Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 
 # Imports
 import torch
-import torchvision
 import torch.nn as nn # All neural network modules, nn.Linear, nn.Conv2d, BatchNorm, Loss functions
-import torch.optim as optim # For all Optimization algorithms, SGD, Adam, etc.
-import torch.nn.functional as F # All functions that don't have any parameters
-from torch.utils.data import DataLoader # Gives easier dataset managment and creates mini batches
-import torchvision.datasets as datasets # Has standard datasets we can import in a nice way
-import torchvision.transforms as transforms # Transformations we can perform on our dataset
 
 VGG_types = {
     'VGG11': [64, 'M', 128, 'M', 256, 256, 'M', 512, 512, 'M', 512, 512, 'M'],
@@ -70,5 +64,6 @@ class VGG_net(nn.Module):
 if __name__ == '__main__':
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     model = VGG_net(in_channels=3,num_classes=1000).to(device)
-    x = torch.randn(1, 3, 224, 224).to(device)
+    # N = 3 (Mini batch size)
+    x = torch.randn(3, 3, 224, 224).to(device)
     print(model(x).shape)

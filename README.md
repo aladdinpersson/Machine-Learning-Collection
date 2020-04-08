@@ -16,8 +16,12 @@ In this repository I will be uploading machine learning algorithms implemented i
 # Deep Learning
 
 ### Pytorch Basics
-* :small_red_triangle: [:tv:](https://youtu.be/Jy4wM2X21u0) [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
-* :small_red_triangle: [:tv:](https://youtu.be/wnK3uWv_WkU) [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_CNN.py)
+* [:tv:](https://youtu.be/Jy4wM2X21u0) [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
+* [:tv:](https://youtu.be/wnK3uWv_WkU) [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_CNN.py)
+* [:tv:](https://youtu.be/g6kQl_EFn84) [Load and saving model](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_loadsave.py)
+* [:tv:](https://youtu.be/U4bHxEhMGNk) [Transfer Learning and finetuning](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_pretrain_finetune.py)
 
 ### CNN architectures
-* :small_red_triangle: [:tv:](www.google.com) [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/lenet5_pytorch.py)
+* [:tv:](https://youtu.be/fcOW-Zyb5Bo) [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/lenet5_pytorch.py)
+* [:tv:](https://youtu.be/ACmuBbuXn20) [VGG](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_vgg_implementation.py)
+* [:tv:](https://youtu.be/uQc4Fs7yx5I) [InceptionNet/GoogLeNet](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_inceptionet.py)

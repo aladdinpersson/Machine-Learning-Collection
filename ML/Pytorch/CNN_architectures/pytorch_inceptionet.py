@@ -12,11 +12,6 @@ Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 # Imports
 import torch
 import torch.nn as nn # All neural network modules, nn.Linear, nn.Conv2d, BatchNorm, Loss functions
-import torch.optim as optim # For all Optimization algorithms, SGD, Adam, etc.
-import torch.nn.functional as F # All functions that don't have any parameters
-from torch.utils.data import DataLoader # Gives easier dataset managment and creates mini batches
-import torchvision.datasets as datasets # Has standard datasets we can import in a nice way
-import torchvision.transforms as transforms # Transformations we can perform on our dataset
 
 class GoogLeNet(nn.Module):
     def __init__(self, aux_logits=True, num_classes=1000):
@@ -152,6 +147,7 @@ class conv_block(nn.Module):
         return self.relu(self.batchnorm(self.conv(x)))
 
 if __name__ == '__main__':
+    # N = 3 (Mini batch size)
     x = torch.randn(3, 3, 224, 224)
     model = GoogLeNet(aux_logits=True, num_classes=1000)
     print(model(x)[2].shape)
