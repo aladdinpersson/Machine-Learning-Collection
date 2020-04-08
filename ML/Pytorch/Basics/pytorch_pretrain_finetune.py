@@ -1,10 +1,9 @@
 '''
-Working code of a simple CNN network training on MNIST dataset.
-The code is intended to show how to create a CNN network as well
-as how to initialize loss, optimizer, etc. in a simple way to get
-training to work with function that checks accuracy as well.
+Shows a small example of how to load a pretrain model (VGG16) from PyTorch,
+and modifies this to train on the CIFAR10 dataset. The same method generalizes
+well to other datasets, but the modifications to the network may need to be changed.
 
-Video explanation: https://youtu.be/wnK3uWv_WkU
+Video explanation: https://youtu.be/U4bHxEhMGNk
 Got any questions leave a comment on youtube :)
 
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
@@ -14,6 +13,7 @@ Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 
 # Imports
 import torch
+import torchvision
 import torch.nn as nn # All neural network modules, nn.Linear, nn.Conv2d, BatchNorm, Loss functions
 import torch.optim as optim # For all Optimization algorithms, SGD, Adam, etc.
 import torch.nn.functional as F # All functions that don't have any parameters
@@ -21,43 +21,43 @@ from torch.utils.data import DataLoader # Gives easier dataset managment and cre
 import torchvision.datasets as datasets # Has standard datasets we can import in a nice way
 import torchvision.transforms as transforms # Transformations we can perform on our dataset
 
-# Simple CNN
-class CNN(nn.Module):
-    def __init__(self, in_channels = 1, num_classes = 10):
-        super(CNN, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=1, out_channels=8, kernel_size=(3,3), stride=(1,1), padding=(1,1))
-        self.pool = nn.MaxPool2d(kernel_size=(2,2), stride = (2,2))
-        self.conv2 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=(3,3), stride=(1,1), padding=(1,1))
-        self.fc1 = nn.Linear(16*7*7, num_classes)
-    
-    def forward(self, x):
-        x = F.relu(self.conv1(x))
-        x = self.pool(x)
-        x = F.relu(self.conv2(x))
-        x = self.pool(x)
-        x = x.reshape(x.shape[0], -1)
-        x = self.fc1(x)
-        
-        return x
-
 # Set device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Hyperparameters
-in_channel = 1
 num_classes = 10 
-learning_rate = 0.001
-batch_size = 64
+learning_rate = 1e-3
+batch_size = 1024
 num_epochs = 5
 
-# Load Data
-train_dataset = datasets.MNIST(root='dataset/', train=True, transform=transforms.ToTensor(), download=True)
-train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
-test_dataset = datasets.MNIST(root='dataset/', train=False, transform=transforms.ToTensor(), download=True)
-test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=True)
+# Simple Identity class that let's input pass without changes
+class Identity(nn.Module):
+    def __init__(self):
+        super(Identity, self).__init__()
+        
+    def forward(self, x):
+        return x
+    
+# Load pretrain model & modify it
+model = torchvision.models.vgg16(pretrained=True)
 
-# Initialize network
-model = CNN().to(device)
+# If you want to do finetuning then set requires_grad = False
+# Remove these two lines if you want to train entire model,
+# and only want to load the pretrain weights.
+for param in model.parameters():
+    param.requires_grad = False
+    
+model.avgpool = Identity()
+model.classifier = nn.Sequential(nn.Linear(512, 100),
+                                 nn.ReLU(),
+                                 nn.Linear(100, num_classes))
+model.to(device)
+
+
+# Load Data
+train_dataset = datasets.CIFAR10(root='dataset/', train=True, 
+                                 transform=transforms.ToTensor(), download=True)
+train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
 # Loss and optimizer
 criterion = nn.CrossEntropyLoss() 
@@ -65,6 +65,8 @@ optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 # Train Network
 for epoch in range(num_epochs):
+    losses = []
+    
     for batch_idx, (data, targets) in enumerate(train_loader):
         # Get data to cuda if possible
         data = data.to(device=device)
@@ -74,12 +76,16 @@ for epoch in range(num_epochs):
         scores = model(data)
         loss = criterion(scores, targets)
         
+        losses.append(loss.item())
         # backward
         optimizer.zero_grad()
         loss.backward()
         
         # gradient descent or adam step
         optimizer.step()
+        
+    
+    print(f'Cost at epoch {epoch} is {sum(losses)/len(losses):.5f}')
 
 # Check accuracy on training & test to see how good our model
 
@@ -108,4 +114,3 @@ def check_accuracy(loader, model):
     model.train()
 
 check_accuracy(train_loader, model)
-check_accuracy(test_loader, model)

@@ -1,5 +1,20 @@
+'''
+Working code of a simple Fully Connected (FC) network training on MNIST dataset.
+The code is intended to show how to create a FC network as well
+as how to initialize loss, optimizer, etc. in a simple way to get
+training to work with function that checks accuracy as well.
+
+Video explanation: https://youtu.be/Jy4wM2X21u0
+Got any questions leave a comment on youtube :)
+
+Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
+*    2020-04-08 Initial coding
+
+'''
+
 # Imports
 import torch
+import torchvision
 import torch.nn as nn # All neural network modules, nn.Linear, nn.Conv2d, BatchNorm, Loss functions
 import torch.optim as optim # For all Optimization algorithms, SGD, Adam, etc.
 import torch.nn.functional as F # All functions that don't have any parameters
@@ -92,10 +107,3 @@ def check_accuracy(loader, model):
 
 check_accuracy(train_loader, model)
 check_accuracy(test_loader, model)
-    
-    
-        
-        
-        
-        
-        
