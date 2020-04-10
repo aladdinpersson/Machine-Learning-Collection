@@ -1,3 +1,14 @@
+'''
+Example code of how to initialize weights for a simple CNN network.
+
+Video explanation: https://youtu.be/xWQ-p_o0Uik
+Got any questions leave a comment on youtube :)
+
+Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
+*    2020-04-10 Initial coding
+
+'''
+
 # Imports
 import torch.nn as nn # All neural network modules, nn.Linear, nn.Conv2d, BatchNorm, Loss functions
 import torch.nn.functional as F # All functions that don't have any parameters

@@ -5,7 +5,7 @@ dataset with a learning rate scheduler. In this case ReduceLROnPlateau
 scheduler is used, but can easily be changed to any of the other schedulers
 available.
 
-Video explanation: 
+Video explanation: https://youtu.be/P31hB37g4Ak
 Got any questions leave a comment on youtube :)
 
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>

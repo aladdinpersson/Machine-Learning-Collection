@@ -2,7 +2,7 @@
 Shows a small example of how to use transformations (perhaps unecessarily many)
 on CIFAR10 dataset and training on a small CNN toy network.
 
-Video explanation: https://youtu.be/U4bHxEhMGNk
+Video explanation: https://youtu.be/Zvd276j9sZ8
 Got any questions leave a comment I'm pretty good at responding on youtube
 
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
