@@ -1,15 +1,12 @@
 '''
-Example code of a simple CNN network training on MNIST dataset.
-The code is intended to show how to create a CNN network as well
-as how to initialize loss, optimizer, etc. in a simple way to get
-training to work with function that checks accuracy as well.
+Shows a small example of how to use transformations (perhaps unecessarily many)
+on CIFAR10 dataset and training on a small CNN toy network.
 
-Video explanation: https://youtu.be/wnK3uWv_WkU
-Got any questions leave a comment on youtube :)
+Video explanation: https://youtu.be/U4bHxEhMGNk
+Got any questions leave a comment I'm pretty good at responding on youtube
 
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
-*    2020-04-08 Initial coding
-
+*    2020-04-09 Initial coding
 '''
 
 # Imports
@@ -23,12 +20,12 @@ import torchvision.transforms as transforms # Transformations we can perform on 
 
 # Simple CNN
 class CNN(nn.Module):
-    def __init__(self, in_channels = 1, num_classes = 10):
+    def __init__(self, in_channels, num_classes):
         super(CNN, self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=1, out_channels=8, kernel_size=(3,3), stride=(1,1), padding=(1,1))
+        self.conv1 = nn.Conv2d(in_channels=in_channels, out_channels=8, kernel_size=(3,3), stride=(1,1), padding=(1,1))
         self.pool = nn.MaxPool2d(kernel_size=(2,2), stride = (2,2))
         self.conv2 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=(3,3), stride=(1,1), padding=(1,1))
-        self.fc1 = nn.Linear(16*7*7, num_classes)
+        self.fc1 = nn.Linear(16*8*8, num_classes)
     
     def forward(self, x):
         x = F.relu(self.conv1(x))
@@ -39,25 +36,40 @@ class CNN(nn.Module):
         x = self.fc1(x)
         
         return x
-
+    
 # Set device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Hyperparameters
-in_channel = 1
-num_classes = 10 
-learning_rate = 0.001
+learning_rate = 1e-4
 batch_size = 64
 num_epochs = 5
 
-# Load Data
-train_dataset = datasets.MNIST(root='dataset/', train=True, transform=transforms.ToTensor(), download=True)
-train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
-test_dataset = datasets.MNIST(root='dataset/', train=False, transform=transforms.ToTensor(), download=True)
-test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=True)
+    
+# Load pretrain model & modify it
+model = CNN(in_channels=3, num_classes=10)
+model.classifier = nn.Sequential(nn.Linear(512, 100),
+                                 nn.ReLU(),
+                                 nn.Linear(100, 10))
+model.to(device)
 
-# Initialize network
-model = CNN().to(device)
+# Load Data
+my_transforms = transforms.Compose([ #Compose makes it possible to have many transforms
+    transforms.Resize((36,36)), # Resizes (32,32) to (36,36)
+    transforms.RandomCrop((32,32)), # Takes a random (32,32) crop
+    transforms.ColorJitter(brightness=0.5), # Change brightness of image
+    transforms.RandomRotation(degrees=45), # Perhaps a random rotation from -45 to 45 degrees
+    transforms.RandomHorizontalFlip(p=0.5), # Flips the image horizontally with probability 0.5
+    transforms.RandomVerticalFlip(p=0.05), # Flips image vertically with probability 0.05
+    transforms.RandomGrayscale(p=0.2), # Converts to grayscale with probability 0.2
+    transforms.ToTensor(), # Finally converts PIL image to tensor so we can train w. pytorch
+    transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]) # Note: these values aren't optimal
+    ])
+
+
+train_dataset = datasets.CIFAR10(root='dataset/', train=True, 
+                                 transform=my_transforms, download=True)
+train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
 # Loss and optimizer
 criterion = nn.CrossEntropyLoss() 
@@ -65,26 +77,27 @@ optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 # Train Network
 for epoch in range(num_epochs):
+    losses = []
+    
     for batch_idx, (data, targets) in enumerate(train_loader):
         # Get data to cuda if possible
         data = data.to(device=device)
         targets = targets.to(device=device)
-        print(targets.shape)
-        print(targets)
-        print(data.shape)
-        import sys
-        sys.exit()
         
         # forward
         scores = model(data)
         loss = criterion(scores, targets)
         
+        losses.append(loss.item())
         # backward
         optimizer.zero_grad()
         loss.backward()
         
         # gradient descent or adam step
         optimizer.step()
+        
+    
+    print(f'Cost at epoch {epoch} is {sum(losses)/len(losses):.5f}')
 
 # Check accuracy on training & test to see how good our model
 
@@ -113,4 +126,3 @@ def check_accuracy(loader, model):
     model.train()
 
 check_accuracy(train_loader, model)
-check_accuracy(test_loader, model)
