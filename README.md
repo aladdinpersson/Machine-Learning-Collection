@@ -29,3 +29,6 @@ In this repository I will be uploading machine learning algorithms implemented i
 * [:tv:](https://youtu.be/ACmuBbuXn20) [VGG](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_vgg_implementation.py)
 * [:tv:](https://youtu.be/uQc4Fs7yx5I) [Inception v1](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_inceptionet.py)
 * [:tv:](https://youtu.be/DkNIBBBvcPs) [ResNet](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_resnet.py)
+
+### Pytorch Projects
+* [Exploring MNIST](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Projects/Exploring_MNIST) **- Needs updating**
