@@ -23,6 +23,7 @@ In this repository I will be uploading machine learning algorithms implemented i
 * [:tv:](https://youtu.be/Zvd276j9sZ8) [Transforms & Data Augmentation](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_transforms.py) **- Example transforms on CIFAR10**
 * [:tv:](https://youtu.be/P31hB37g4Ak) [Learning Rate Scheduler](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_lr_ratescheduler.py) 
 * [:tv:](https://youtu.be/xWQ-p_o0Uik) [Initialization of weights](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_init_weights.py)
+* [:tv:](https://youtu.be/RLqsxWaQdHE) [TensorBoard Example](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorboard_.py)
 
 ### PyTorch CNN architectures
 * [:tv:](https://youtu.be/fcOW-Zyb5Bo) [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/lenet5_pytorch.py)
