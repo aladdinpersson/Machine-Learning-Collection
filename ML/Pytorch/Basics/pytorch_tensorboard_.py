@@ -70,7 +70,12 @@ for batch_size in batch_sizes:
         train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
         optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=0.0)
         writer = SummaryWriter(f'runs/MNIST/MiniBatchSize {batch_size} LR {learning_rate}')
-        
+
+        # Visualize model in TensorBoard
+        images, _ = next(iter(train_loader))
+        writer.add_graph(model, images.to(device))
+        writer.close()
+
         for epoch in range(num_epochs):
             losses = []
             accuracies = []
