@@ -22,7 +22,7 @@ In this repository I will be uploading machine learning algorithms implemented i
 <p align="center"><img width="40%" src="ML/others/logo/pytorch_logo_2018.svg" /></p>
 
 
-#### 1. Basics
+### 1. Basics
 * [:tv:](https://youtu.be/Jy4wM2X21u0) [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
 * [:tv:](https://youtu.be/wnK3uWv_WkU) [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_CNN.py)
 * [:tv:](https://youtu.be/g6kQl_EFn84) [Load and saving model](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_loadsave.py) **- Bare minimum save & load, adapt code to your network**
@@ -31,18 +31,18 @@ In this repository I will be uploading machine learning algorithms implemented i
 * [:tv:](https://youtu.be/P31hB37g4Ak) [Learning Rate Scheduler](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_lr_ratescheduler.py) 
 * [:tv:](https://youtu.be/xWQ-p_o0Uik) [Initialization of weights](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_init_weights.py)
 
-#### 2. More Advanced
+### 2. More Advanced
 * [:tv:](https://youtu.be/xWQ-p_o0Uik) [Generative Adversarial Networks](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_init_weights.py)
 
-#### 3. Architectures
+### 3. Architectures
 * [:tv:](https://youtu.be/fcOW-Zyb5Bo) [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/lenet5_pytorch.py)
 * [:tv:](https://youtu.be/ACmuBbuXn20) [VGG](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_vgg_implementation.py)
 * [:tv:](https://youtu.be/uQc4Fs7yx5I) [Inception v1](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_inceptionet.py)
 * [:tv:](https://youtu.be/DkNIBBBvcPs) [ResNet](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_resnet.py)
 
 
-#### 4. Utilities
+### 4. Utilities
 * [:tv:](https://youtu.be/RLqsxWaQdHE) [TensorBoard Example](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorboard_.py)
 
-#### 5. Project Examples
+### 5. Project Examples
 * [Exploring MNIST](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Projects/Exploring_MNIST) **- Needs updating**
