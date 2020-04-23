@@ -2,7 +2,7 @@
 
 
 # Machine Learning Collection
-In this repository I will be uploading everything machine learning related. I try to make the code as clear as possible, and the goal is be to used as a lookup to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for a few I've done the derivations on my blog. If you got any questions add an issue or would like to add an algorithm do a PR, this repository is contribution friendly :smiley:
+In this repository I will be uploading everything machine learning related. I try to make the code as clear as possible, and the goal is be to used as a lookup to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for a few I've done the derivations on my blog. If you got any questions add an issue or would like to add an algorithm do a PR! This repository is contribution friendly :smiley:
 
 :white_check_mark:: Algorithm is tested  \
 :small_red_triangle:: Algorithm is not tested \
@@ -22,17 +22,16 @@ Everything for now is implemented using the PyTorch-framework.
 ### 1. Basics
 [logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo.png
 
-* [![Youtube Link][logo]](https://youtu.be/Jy4wM2X21u0) &nbsp; [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
-
-* [![Youtube Link][logo]](https://youtu.be/wnK3uWv_WkU) &nbsp; [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_CNN.py)
-* [![Youtube Link][logo]](https://youtu.be/g6kQl_EFn84) &nbsp; [Load and saving model](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_loadsave.py)
-* [![Youtube Link][logo]](https://youtu.be/qaDe0qQZ5AQ) &nbsp; [Transfer Learning and finetuning](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_pretrain_finetune.py)
-* [![Youtube Link][logo]](https://youtu.be/Zvd276j9sZ8) &nbsp; [Transforms & Data Augmentation](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_transforms.py)
-* [![Youtube Link][logo]](https://youtu.be/P31hB37g4Ak) &nbsp; [Learning Rate Scheduler](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_lr_ratescheduler.py) 
-* [![Youtube Link][logo]](https://youtu.be/xWQ-p_o0Uik) &nbsp; [Initialization of weights](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_init_weights.py)
+* [![Youtube Link][logo]](https://youtu.be/Jy4wM2X21u0) &nbsp; [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_simple_fullynet.py#L26-L35)
+* [![Youtube Link][logo]](https://youtu.be/wnK3uWv_WkU) &nbsp; [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_simple_CNN.py#L25-L41)
+* [![Youtube Link][logo]](https://youtu.be/g6kQl_EFn84) &nbsp; [Loading and saving model](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_loadsave.py#L26-L34)
+* [![Youtube Link][logo]](https://youtu.be/qaDe0qQZ5AQ) &nbsp; [Transfer Learning and finetuning](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_pretrain_finetune.py#L33-L54)
+* [![Youtube Link][logo]](https://youtu.be/Zvd276j9sZ8) &nbsp; [Transforms & Data Augmentation](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_transforms.py#L56-L72)
+* [![Youtube Link][logo]](https://youtu.be/P31hB37g4Ak) &nbsp; [Learning Rate Scheduler](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_lr_ratescheduler.py#L45-L78) 
+* [![Youtube Link][logo]](https://youtu.be/xWQ-p_o0Uik) &nbsp; [Initialization of weights](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_init_weights.py#L35-L49)
 
 ### 2. More Advanced
-* [![Youtube Link][logo]](https://youtu.be/xWQ-p_o0Uik) &nbsp; [Generative Adversarial Networks](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_init_weights.py)
+* [![Youtube Link][logo]](https://youtu.be/xWQ-p_o0Uik) &nbsp; [Generative Adversarial Networks](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Pytorch/more_advanced/GANs)
 
 ### 3. Architectures
 * [![Youtube Link][logo]](https://youtu.be/fcOW-Zyb5Bo) &nbsp; [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/lenet5_pytorch.py) **- CNN architecture**
