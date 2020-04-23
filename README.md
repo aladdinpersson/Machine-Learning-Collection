@@ -15,7 +15,7 @@ In this repository I will be uploading everything machine learning related. I tr
 * :small_red_triangle: [Naive Bayes](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/naivebayes/naivebayes.py) **- Gaussian Naive Bayes**
 
 <a href="https://youtu.be/7-97jlHAKqk" target="_blank"><img src="https://img.youtube.com/vi/7-97jlHAKqk/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="IMAGE ALT TEXT HERE" width="32" height="32" border="10" /></a>
 
 ## Deeplearning Contents
 Everything for now is implemented using the PyTorch-framework.
