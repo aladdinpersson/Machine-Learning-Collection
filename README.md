@@ -35,11 +35,11 @@ Everything for now is implemented using the PyTorch-framework.
 * [:tv:](https://youtu.be/xWQ-p_o0Uik) [Generative Adversarial Networks](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_init_weights.py)
 
 ### 3. Architectures
-* [:tv:](https://youtu.be/fcOW-Zyb5Bo) [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/lenet5_pytorch.py)
-* [:tv:](https://youtu.be/ACmuBbuXn20) [VGG](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_vgg_implementation.py)
-* [:tv:](https://youtu.be/uQc4Fs7yx5I) [Inception v1](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_inceptionet.py)
-* [:tv:](https://youtu.be/DkNIBBBvcPs) [ResNet](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_resnet.py)
-
+* [:tv:](https://youtu.be/fcOW-Zyb5Bo) [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/lenet5_pytorch.py) **- CNN architecture**
+* [:tv:](https://youtu.be/ACmuBbuXn20) [VGG](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_vgg_implementation.py) **- CNN architecture**
+* [:tv:](https://youtu.be/uQc4Fs7yx5I) [Inception v1](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_inceptionet.py) **- CNN architecture**
+* [:tv:](https://youtu.be/DkNIBBBvcPs) [ResNet](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_resnet.py) **- CNN architecture**
+ 
 
 ### 4. Utilities
 * [:tv:](https://youtu.be/RLqsxWaQdHE) [TensorBoard Example](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorboard_.py)
