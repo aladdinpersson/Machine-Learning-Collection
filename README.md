@@ -12,8 +12,11 @@ In this repository I will be uploading machine learning algorithms implemented i
 # Machine Learning
 * :white_check_mark: [:scroll:](https://aladdinperzon.github.io/2020/03/25/Linear-Regression/) [:tv:](https://youtu.be/pCCUnoes1Po) [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/LinearRegression/linear_regression_gradient_descent.py) **- With Gradient Descent**
 * :white_check_mark: [:scroll:](https://aladdinperzon.github.io/2020/03/25/Linear-Regression/) [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/LinearRegression/linear_regression_normal_equation.py) **- With Normal Equation**
+* :small_red_triangle: [Naive Bayes](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/naivebayes/naivebayes.py) **- Gaussian Naive Bayes**
 
 # Deep Learning
+
+<p align="center"><img width="40%" src="ML/others/logo/pytorch_logo_2018.svg" /></p>
 
 ### Pytorch Basics
 * [:tv:](https://youtu.be/Jy4wM2X21u0) [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
@@ -22,8 +25,8 @@ In this repository I will be uploading machine learning algorithms implemented i
 * [:tv:](https://youtu.be/qaDe0qQZ5AQ) [Transfer Learning and finetuning](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_pretrain_finetune.py)
 * [:tv:](https://youtu.be/Zvd276j9sZ8) [Transforms & Data Augmentation](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_transforms.py) **- Example transforms on CIFAR10**
 * [:tv:](https://youtu.be/P31hB37g4Ak) [Learning Rate Scheduler](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_lr_ratescheduler.py) 
-* [:tv:](https://youtu.be/xWQ-p_o0Uik) [Initialization of weights](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_init_weights.py)
 * [:tv:](https://youtu.be/RLqsxWaQdHE) [TensorBoard Example](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorboard_.py)
+* [:tv:](https://youtu.be/xWQ-p_o0Uik) [Initialization of weights](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_init_weights.py)
 
 ### PyTorch CNN architectures
 * [:tv:](https://youtu.be/fcOW-Zyb5Bo) [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/lenet5_pytorch.py)
