@@ -19,7 +19,7 @@ Everything for now is implemented using the PyTorch-framework.
 
 
 <a src="ML/others/logo/youtube_logo.png
-" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+" target="_blank"><img src="www.youtube.com" 
 alt="IMAGE ALT TEXT HERE" width="32" height="32" border="0" /></a>
 
 
