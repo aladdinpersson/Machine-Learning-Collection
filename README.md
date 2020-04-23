@@ -22,14 +22,13 @@ Everything for now is implemented using the PyTorch-framework.
 ### 1. Basics
 * [Text here here here][logo]
 
-
-
 * [:tv:](https://youtu.be/wnK3uWv_WkU) [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_CNN.py)
 * [:tv:](https://youtu.be/g6kQl_EFn84) [Load and saving model](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_loadsave.py)
 * [:tv:](https://youtu.be/qaDe0qQZ5AQ) [Transfer Learning and finetuning](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_pretrain_finetune.py)
 * [:tv:](https://youtu.be/Zvd276j9sZ8) [Transforms & Data Augmentation](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_transforms.py)
 * [:tv:](https://youtu.be/P31hB37g4Ak) [Learning Rate Scheduler](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_lr_ratescheduler.py) 
 * [:tv:](https://youtu.be/xWQ-p_o0Uik) [Initialization of weights](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_init_weights.py)
+[logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo.png
 
 ### 2. More Advanced
 * [:tv:](https://youtu.be/xWQ-p_o0Uik) [Generative Adversarial Networks](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_init_weights.py)
@@ -46,4 +45,3 @@ Everything for now is implemented using the PyTorch-framework.
 ### 5. Project Examples
 * [Exploring MNIST](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Projects/Exploring_MNIST) **- Needs updating**
 
-[logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo.png
