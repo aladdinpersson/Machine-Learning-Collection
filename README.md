@@ -11,7 +11,7 @@ In this repository I will be uploading everything machine learning related. I tr
 ## Machine Learning Contents
 * [![Youtube Link][logo]](https://youtu.be/pCCUnoes1Po) [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/LinearRegression/linear_regression_gradient_descent.py) **- With Gradient Descent** :white_check_mark: [:scroll:](https://aladdinperzon.github.io/2020/03/25/Linear-Regression/) 
 * [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/LinearRegression/linear_regression_normal_equation.py) **- With Normal Equation** :white_check_mark:
-* [Naive Bayes](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/naivebayes/naivebayes.py) **- Gaussian Naive Bayes** :small_red_triangle: :you: :youtube:
+* [Naive Bayes](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/naivebayes/naivebayes.py) **- Gaussian Naive Bayes** :small_red_triangle: :Youtube:
 
 ## Deeplearning Pytorch Contents
 Everything for now is implemented using the PyTorch-framework.
