@@ -18,7 +18,7 @@ In this repository I will be uploading everything machine learning related. I tr
 Everything for now is implemented using the PyTorch-framework.
 
 
-<a href="www.youtube.com" target="_blank"><img src="ML/others/logo/youtube_logo.png" alt="IMAGE ALT TEXT HERE" width="64" height="64" border="0" /></a>
+<a href="https://youtu.be/7-97jlHAKqk" target="_blank"><img src="ML/others/logo/youtube_logo.png" alt="IMAGE ALT TEXT HERE" width="64" height="64" border="0" /></a>
 
 
 ### 1. Basics
