@@ -9,7 +9,7 @@ In this repository I will be uploading machine learning algorithms implemented i
 :scroll:: Link to Blogpost  \
 :tv:: Link to Video
 
-# Machine Learning
+# Traditional Machine Learning
 * :white_check_mark: [:scroll:](https://aladdinperzon.github.io/2020/03/25/Linear-Regression/) [:tv:](https://youtu.be/pCCUnoes1Po) [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/LinearRegression/linear_regression_gradient_descent.py) **- With Gradient Descent**
 * :white_check_mark: [:scroll:](https://aladdinperzon.github.io/2020/03/25/Linear-Regression/) [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/LinearRegression/linear_regression_normal_equation.py) **- With Normal Equation**
 * :small_red_triangle: [Naive Bayes](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/naivebayes/naivebayes.py) **- Gaussian Naive Bayes**
@@ -17,7 +17,7 @@ In this repository I will be uploading machine learning algorithms implemented i
 
 
 # Deeplearning Contents
-
+Everything for now is implemented using the PyTorch-framework.
 
 <p align="center"><img width="40%" src="ML/others/logo/pytorch_logo_2018.svg" /></p>
 
