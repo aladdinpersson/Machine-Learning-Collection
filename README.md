@@ -2,7 +2,7 @@
 
 
 # Machine Learning Collection
-In this repository I will be uploading everything machine learning related. I try to make the code as clear as possible, and the goal is be to used as a lookup to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for a few I've done the derivations on my blog.
+In this repository I will be uploading everything machine learning related. I try to make the code as clear as possible, and the goal is be to used as a lookup to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for a few I've done the derivations on my blog. If you got any questions add an issue or would like to add an algorithm do a PR, this repository is contribution friendly :smiley:
 
 :white_check_mark:: Algorithm is tested  \
 :small_red_triangle:: Algorithm is not tested \
