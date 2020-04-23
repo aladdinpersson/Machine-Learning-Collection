@@ -20,6 +20,8 @@ Everything for now is implemented using the PyTorch-framework.
 
 
 ### 1. Basics
+* ![ytube](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/youtube_logo.png)
+
 * <a href="https://youtu.be/Jy4wM2X21u0" target="_blank"><img src="ML/others/logo/youtube_logo.png" width="32" height="32" border="100" /></a> [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
 * [:tv:](https://youtu.be/wnK3uWv_WkU) [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_CNN.py)
 * [:tv:](https://youtu.be/g6kQl_EFn84) [Load and saving model](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_loadsave.py)
