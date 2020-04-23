@@ -20,7 +20,7 @@ Everything for now is implemented using the PyTorch-framework.
 
 
 ### 1. Basics
-[logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo1.png
+[logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo.png
 
 [![Youtube Link][logo]](https://youtu.be/Jy4wM2X21u0) [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
 
