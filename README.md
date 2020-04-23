@@ -4,21 +4,24 @@
 # Machine Learning Collection
 In this repository I will be uploading everything machine learning related. I try to make the code as clear as possible, and the goal is be to used as a lookup to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for a few I've done the derivations on my blog.
 
-:white_check_mark:: Algorithm has tested  \
-:small_red_triangle:: Algorithm has no tests \
+:white_check_mark:: Algorithm is tested  \
+:small_red_triangle:: Algorithm is not tested \
 :scroll:: Link to Blogpost  \
 :tv:: Link to Video
 
-## Traditional Machine Learning
+## Machine Learning Contents
 * :white_check_mark: [:scroll:](https://aladdinperzon.github.io/2020/03/25/Linear-Regression/) [:tv:](https://youtu.be/pCCUnoes1Po) [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/LinearRegression/linear_regression_gradient_descent.py) **- With Gradient Descent**
 * :white_check_mark: [:scroll:](https://aladdinperzon.github.io/2020/03/25/Linear-Regression/) [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/LinearRegression/linear_regression_normal_equation.py) **- With Normal Equation**
 * :small_red_triangle: [Naive Bayes](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/naivebayes/naivebayes.py) **- Gaussian Naive Bayes**
 
-[:yt:]
-
-
-## Deeplearning Contents
+## Deeplearning Pytorch Contents
 Everything for now is implemented using the PyTorch-framework.
+
+
+<a src="ML/others/logo/youtube_logo.png
+" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="32" height="32" border="0" /></a>
+
 
 ### 1. Basics
 * [:tv:](https://youtu.be/Jy4wM2X21u0) [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
@@ -38,7 +41,6 @@ Everything for now is implemented using the PyTorch-framework.
 * [:tv:](https://youtu.be/uQc4Fs7yx5I) [Inception v1](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_inceptionet.py) **- CNN architecture**
 * [:tv:](https://youtu.be/DkNIBBBvcPs) [ResNet](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_resnet.py) **- CNN architecture**
  
-
 ### 4. Utilities
 * [:tv:](https://youtu.be/RLqsxWaQdHE) [TensorBoard Example](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorboard_.py)
 
