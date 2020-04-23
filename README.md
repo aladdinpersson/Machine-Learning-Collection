@@ -16,7 +16,7 @@ In this repository I will be uploading everything machine learning related. I tr
 ## Deeplearning Pytorch Contents
 Everything for now is implemented using the PyTorch-framework.
 
-* <img src="https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo1.png" width="27" height="32" />
+* <img src="https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo1.png" width="28" height="16" />
 
 
 ### 1. Basics
