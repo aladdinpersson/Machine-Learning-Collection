@@ -2,7 +2,7 @@
 
 
 # Machine Learning Collection
-In this repository I will be uploading machine learning algorithms implemented in Python. I try to make the code as clear as possible, for some I have done video explanations on youtube and derivations on my blog.
+In this repository I will be uploading everything machine learning related. I try to make the code as clear as possible, and the goal is be to used as a lookup to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for some theory I've done the derivations on my blog.
 
 :white_check_mark:: If the algorithm is tested  \
 :small_red_triangle:: If the algorithm is untested  \
