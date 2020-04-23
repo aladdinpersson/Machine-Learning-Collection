@@ -20,6 +20,7 @@ Everything for now is implemented using the PyTorch-framework.
 
 
 ### 1. Basics
+<img class="emojidex-emoji" src="https://cdn.emojidex.com/emoji/px32/YouTube.png" emoji-code="YouTube" alt="YouTube" />
 * [YouTube](https://cdn.emojidex.com/emoji/px32/YouTube.png "YouTube")
 * [![Youtube Link][logo]](https://youtu.be/Jy4wM2X21u0) &nbsp; [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_simple_fullynet.py#L26-L35)
 * [![Youtube Link][logo]](https://youtu.be/wnK3uWv_WkU) &nbsp; [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_simple_CNN.py#L25-L41)
