@@ -22,9 +22,9 @@ Everything for now is implemented using the PyTorch-framework.
 ### 1. Basics
 * [:tv:](https://youtu.be/Jy4wM2X21u0) [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
 * [:tv:](https://youtu.be/wnK3uWv_WkU) [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_CNN.py)
-* [:tv:](https://youtu.be/g6kQl_EFn84) [Load and saving model](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_loadsave.py) **- Bare minimum save & load, adapt code to your network**
+* [:tv:](https://youtu.be/g6kQl_EFn84) [Load and saving model](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_loadsave.py)
 * [:tv:](https://youtu.be/qaDe0qQZ5AQ) [Transfer Learning and finetuning](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_pretrain_finetune.py)
-* [:tv:](https://youtu.be/Zvd276j9sZ8) [Transforms & Data Augmentation](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_transforms.py) **- Example transforms on CIFAR10**
+* [:tv:](https://youtu.be/Zvd276j9sZ8) [Transforms & Data Augmentation](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_transforms.py)
 * [:tv:](https://youtu.be/P31hB37g4Ak) [Learning Rate Scheduler](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_lr_ratescheduler.py) 
 * [:tv:](https://youtu.be/xWQ-p_o0Uik) [Initialization of weights](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_init_weights.py)
 
