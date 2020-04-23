@@ -7,8 +7,6 @@ In this repository I will be uploading everything machine learning related. I tr
 
 :white_check_mark:: Algorithm is tested  \
 :small_red_triangle:: Algorithm is not tested \
-:scroll:: Link to Blogpost  \
-![logo]: Link to Video
 
 ## Machine Learning Contents
 * :white_check_mark: [:scroll:](https://aladdinperzon.github.io/2020/03/25/Linear-Regression/) [:tv:](https://youtu.be/pCCUnoes1Po) [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/LinearRegression/linear_regression_gradient_descent.py) **- With Gradient Descent**
