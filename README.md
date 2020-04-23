@@ -16,7 +16,7 @@ In this repository I will be uploading everything machine learning related. I tr
 ## Deeplearning Pytorch Contents
 Everything for now is implemented using the PyTorch-framework.
 
-* <img align="left" valign="middle" width="28" height="16" src="https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo1.png">
+* <img align="left" valign="bottom" width="28" height="16" src="https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo1.png">
 
 ### 1. Basics
 * <img class="emojidex-emoji" img_align="lef" src="https://cdn.emojidex.com/emoji/px32/YouTube.png" emoji-code="YouTube" alt="YouTube" />
