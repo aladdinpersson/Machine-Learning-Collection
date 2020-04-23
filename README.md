@@ -14,9 +14,6 @@ In this repository I will be uploading everything machine learning related. I tr
 * :white_check_mark: [:scroll:](https://aladdinperzon.github.io/2020/03/25/Linear-Regression/) [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/LinearRegression/linear_regression_normal_equation.py) **- With Normal Equation**
 * :small_red_triangle: [Naive Bayes](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/naivebayes/naivebayes.py) **- Gaussian Naive Bayes**
 
-<a href="https://youtu.be/7-97jlHAKqk" target="_blank"><img src="https://img.youtube.com/vi/7-97jlHAKqk/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="32" height="32" border="10" /></a>
-
 [:yt:]
 
 
