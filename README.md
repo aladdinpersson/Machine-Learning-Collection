@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/AladdinPerzon/Machine-Learning-Collection.svg?branch=master)](https://travis-ci.com/AladdinPerzon/Machine-Learning-Collection) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo.png
+[logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo1.png
 
 # Machine Learning Collection
 In this repository I will be uploading everything machine learning related. I try to make the code as clear as possible, and the goal is be to used as a lookup to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for a few I've done the derivations on my blog. If you got any questions add an issue or would like to add an algorithm do a PR! This repository is contribution friendly :smiley:
