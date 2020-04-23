@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/AladdinPerzon/Machine-Learning-Collection.svg?branch=master)](https://travis-ci.com/AladdinPerzon/Machine-Learning-Collection) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+[logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo.png
 
 # Machine Learning Collection
 In this repository I will be uploading everything machine learning related. I try to make the code as clear as possible, and the goal is be to used as a lookup to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for a few I've done the derivations on my blog. If you got any questions add an issue or would like to add an algorithm do a PR! This repository is contribution friendly :smiley:
@@ -7,7 +8,7 @@ In this repository I will be uploading everything machine learning related. I tr
 :white_check_mark:: Algorithm is tested  \
 :small_red_triangle:: Algorithm is not tested \
 :scroll:: Link to Blogpost  \
-:tv:: Link to Video
+![logo]: Link to Video
 
 ## Machine Learning Contents
 * :white_check_mark: [:scroll:](https://aladdinperzon.github.io/2020/03/25/Linear-Regression/) [:tv:](https://youtu.be/pCCUnoes1Po) [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/LinearRegression/linear_regression_gradient_descent.py) **- With Gradient Descent**
@@ -20,8 +21,6 @@ Everything for now is implemented using the PyTorch-framework.
 
 
 ### 1. Basics
-[logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo.png
-
 * [![Youtube Link][logo]](https://youtu.be/Jy4wM2X21u0) &nbsp; [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_simple_fullynet.py#L26-L35)
 * [![Youtube Link][logo]](https://youtu.be/wnK3uWv_WkU) &nbsp; [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_simple_CNN.py#L25-L41)
 * [![Youtube Link][logo]](https://youtu.be/g6kQl_EFn84) &nbsp; [Loading and saving model](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_loadsave.py#L26-L34)
