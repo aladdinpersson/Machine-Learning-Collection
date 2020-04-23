@@ -31,13 +31,13 @@ Everything for now is implemented using the PyTorch-framework.
 * [![Youtube Link][logo]](https://youtu.be/xWQ-p_o0Uik) &nbsp; [Generative Adversarial Networks](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Pytorch/more_advanced/GANs)
 
 ### 3. Architectures
-* [![Youtube Link][logo]](https://youtu.be/fcOW-Zyb5Bo) &nbsp; [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/lenet5_pytorch.py) **- CNN architecture**
-* [![Youtube Link][logo]](https://youtu.be/ACmuBbuXn20) &nbsp; [VGG](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_vgg_implementation.py) **- CNN architecture**
+* [![Youtube Link][logo]](https://youtu.be/fcOW-Zyb5Bo) &nbsp; [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/79f2e1928906f3cccbae6c024f3f79fd05262cd1/ML/Pytorch/CNN_architectures/lenet5_pytorch.py#L15-L35) **- CNN architecture**
+* [![Youtube Link][logo]](https://youtu.be/ACmuBbuXn20) &nbsp; [VGG](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/79f2e1928906f3cccbae6c024f3f79fd05262cd1/ML/Pytorch/CNN_architectures/pytorch_vgg_implementation.py#L16-L62) **- CNN architecture**
 * [![Youtube Link][logo]](https://youtu.be/uQc4Fs7yx5I) &nbsp; [Inception v1](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_inceptionet.py) **- CNN architecture**
 * [![Youtube Link][logo]](https://youtu.be/DkNIBBBvcPs) &nbsp; [ResNet](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_resnet.py) **- CNN architecture**
  
 ### 4. Utilities
-* [![Youtube Link][logo]](https://youtu.be/RLqsxWaQdHE) &nbsp; [TensorBoard Example](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorboard_.py)
+* [![Youtube Link][logo]](https://youtu.be/RLqsxWaQdHE) &nbsp; [TensorBoard Example](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/79f2e1928906f3cccbae6c024f3f79fd05262cd1/ML/Pytorch/Basics/pytorch_tensorboard_.py#L72-L120)
 
 ### 5. Project Examples
 * [Exploring MNIST](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Projects/Exploring_MNIST) **- Needs updating**
