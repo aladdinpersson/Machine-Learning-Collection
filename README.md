@@ -16,7 +16,7 @@ In this repository I will be uploading machine learning algorithms implemented i
 
 
 
-## Deeplearning Contents
+# Deeplearning Contents
 
 
 <p align="center"><img width="40%" src="ML/others/logo/pytorch_logo_2018.svg" /></p>
