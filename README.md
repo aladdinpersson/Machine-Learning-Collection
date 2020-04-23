@@ -16,11 +16,9 @@ In this repository I will be uploading everything machine learning related. I tr
 ## Deeplearning Pytorch Contents
 Everything for now is implemented using the PyTorch-framework.
 
-* <img align="left" valign="top" width="28" height="16" src="https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo1.png">
+* [<img align="left" valign="top" width="28" height="16" src="https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo1.png">](hej)
 
 ### 1. Basics
-* <img class="emojidex-emoji" img_align="lef" src="https://cdn.emojidex.com/emoji/px32/YouTube.png" emoji-code="YouTube" alt="YouTube" />
-
 * ![Some Title](https://cdn.emojidex.com/emoji/px32/YouTube.png){:style="float: right;margin-right: 7px;margin-top: 7px;"}
 * [![Youtube Link][logo]](https://youtu.be/Jy4wM2X21u0) &nbsp; [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_simple_fullynet.py#L26-L35)
 * [![Youtube Link][logo]](https://youtu.be/wnK3uWv_WkU) &nbsp; [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_simple_CNN.py#L25-L41)
