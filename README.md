@@ -19,9 +19,6 @@ In this repository I will be uploading machine learning algorithms implemented i
 # Deeplearning Contents
 Everything for now is implemented using the PyTorch-framework.
 
-<p align="center"><img width="40%" src="ML/others/logo/pytorch_logo_2018.svg" /></p>
-
-
 ### 1. Basics
 * [:tv:](https://youtu.be/Jy4wM2X21u0) [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
 * [:tv:](https://youtu.be/wnK3uWv_WkU) [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_CNN.py)
