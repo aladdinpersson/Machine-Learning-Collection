@@ -25,7 +25,7 @@ Everything for now is implemented using the PyTorch-framework.
 * [![Youtube Link][logo]](https://youtu.be/xWQ-p_o0Uik) &nbsp; [Initialization of weights](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_init_weights.py#L35-L49)
 
 ### 2. More Advanced
-* [![Youtube Link][logo]](https://youtu.be/xWQ-p_o0Uik) &nbsp; [Generative Adversarial Networks](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Pytorch/more_advanced/GANs)
+* [![Youtube Link][logo]](https://youtu.be/5RYETbFFQ7s) &nbsp; [Generative Adversarial Networks](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Pytorch/more_advanced/GANs)
 
 ### 3. Architectures
 * [![Youtube Link][logo]](https://youtu.be/fcOW-Zyb5Bo) &nbsp; [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/79f2e1928906f3cccbae6c024f3f79fd05262cd1/ML/Pytorch/CNN_architectures/lenet5_pytorch.py#L15-L35) **- CNN architecture**
