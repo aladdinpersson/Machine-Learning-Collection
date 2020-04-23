@@ -2,10 +2,10 @@
 
 
 # Machine Learning Collection
-In this repository I will be uploading everything machine learning related. I try to make the code as clear as possible, and the goal is be to used as a lookup to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for some theory I've done the derivations on my blog.
+In this repository I will be uploading everything machine learning related. I try to make the code as clear as possible, and the goal is be to used as a lookup to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for a few I've done the derivations on my blog.
 
-:white_check_mark:: If the algorithm is tested  \
-:small_red_triangle:: If the algorithm is untested  \
+:white_check_mark:: Algorithm has tested  \
+:small_red_triangle:: Algorithm has no tests \
 :scroll:: Link to Blogpost  \
 :tv:: Link to Video
 
@@ -14,7 +14,7 @@ In this repository I will be uploading everything machine learning related. I tr
 * :white_check_mark: [:scroll:](https://aladdinperzon.github.io/2020/03/25/Linear-Regression/) [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/LinearRegression/linear_regression_normal_equation.py) **- With Normal Equation**
 * :small_red_triangle: [Naive Bayes](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/naivebayes/naivebayes.py) **- Gaussian Naive Bayes**
 
-
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/7-97jlHAKqk/0.jpg)](https://youtu.be/7-97jlHAKqk)
 
 ## Deeplearning Contents
 Everything for now is implemented using the PyTorch-framework.
