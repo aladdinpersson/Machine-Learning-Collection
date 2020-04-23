@@ -21,7 +21,7 @@ Everything for now is implemented using the PyTorch-framework.
 
 
 ### 1. Basics
-* <a href="https://youtu.be/Jy4wM2X21u0" target="_blank"><img src="ML/others/logo/youtube_logo.png" alt="IMAGE ALT TEXT HERE" width="64" height="64" border="0" /></a> [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
+* <a href="https://youtu.be/Jy4wM2X21u0" target="_blank"><img src="ML/others/logo/youtube_logo.png" width="64" height="64" border="0" /></a> [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_fullynet.py)
 * [:tv:](https://youtu.be/wnK3uWv_WkU) [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_simple_CNN.py)
 * [:tv:](https://youtu.be/g6kQl_EFn84) [Load and saving model](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_loadsave.py)
 * [:tv:](https://youtu.be/qaDe0qQZ5AQ) [Transfer Learning and finetuning](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_pretrain_finetune.py)
