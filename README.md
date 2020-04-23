@@ -17,7 +17,7 @@ In this repository I will be uploading everything machine learning related. I tr
 <a href="https://youtu.be/7-97jlHAKqk" target="_blank"><img src="https://img.youtube.com/vi/7-97jlHAKqk/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="32" height="32" border="10" /></a>
 
-:yt:
+[:yt:]
 
 
 ## Deeplearning Contents
