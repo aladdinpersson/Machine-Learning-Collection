@@ -1,8 +1,16 @@
-import numpy as np
+'''
+Implementation of Linear Regression using Gradient Descent.
 
-# Let m = #training examples, n = #number of features
-# Sizes differ a little bit from blog notation. It takes as input
-# the following: y is R^(1 x m), X is R^(n x m), w is R^(n x 1)
+Let m = #training examples, n = #number of features Sizes differ 
+a little bit from blog notation. It takes as input the following: 
+y is R^(1 x m), X is R^(n x m), w is R^(n x 1)
+
+Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
+*    2020-04-03 Initial coding
+*    2020-04-25 Updated comments, and small changes in code
+'''
+
+import numpy as np
 
 class LinearRegression():
     def __init__(self, print_cost=False):
@@ -26,7 +34,7 @@ class LinearRegression():
     
     def main(self, X, y):
         # Add x1 = 1
-        ones = np.ones((1,X.shape[1]))
+        ones = np.ones((1, X.shape[1]))
         X = np.append(ones, X, axis=0)
         
         self.m = X.shape[1]
@@ -44,28 +52,6 @@ class LinearRegression():
             w = self.gradient_descent(w, X, y, yhat)
         
         return w
-    
-    
-# For visual confirmation, not necessary.
-# def plot_fit(W, X, y):
-    # random_points = np.linspace(0, 1, 200)[:,np.newaxis]
-    # x1 = np.ones((random_points.shape[0], 1))
-    # random_points2 = np.append(random_points, x1, axis=1)
-    
-    # plt.scatter(X, y)
-    # y_hat = np.dot(random_points2, W)
-    # print(y_hat.shape)
-
-    # fig = plt.figure(figsize=(8,6))
-    # plt.title("Training set in blue, our hypothesis on the test set in orange")
-    # print(X.shape)
-    # print(y.shape)
-    # plt.scatter(X[:,0], y)
-
-    # plt.scatter(random_points, y_hat)
-    # plt.xlabel("First feature")
-    # plt.ylabel("Second feature")
-    # plt.show()
 
 if __name__ == '__main__':
     X = np.random.rand(1, 500)

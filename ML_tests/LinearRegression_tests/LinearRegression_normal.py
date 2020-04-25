@@ -5,37 +5,39 @@ import numpy as np
 
 # For importing from different folders
 # OBS: This is supposed to be done with automated testing, hence relative to folder we want to import from
-#sys.path.append('ML/algorithms/linearregression')
+sys.path.append('ML/algorithms/linearregression')
 
 # If run from local:
-sys.path.append('../../ML/algorithms/linearregression')
+#sys.path.append('../../ML/algorithms/linearregression/')
 from linear_regression_normal_equation import linear_regression_normal_equation
 
 class TestLinearRegression_NormalEq(unittest.TestCase):
     def setUp(self):
-        # test cases we wish to run
+        # test cases we want to run
         self.X1 = np.array([[0,1,2]]).T
-        self.y1 = np.array([[1,2,3]]).T
-        self.W1_correct = np.array([[1, 1]]).T
+        self.y1 = np.array([1,2,3])
+        self.W1_correct = np.array([[1, 1]])
         
         self.X2 = np.array([[0,1]]).T
-        self.y2 = np.array([[1,0]]).T
-        self.W2_correct = np.array([[1,-1]]).T
+        self.y2 = np.array([1,0])
+        self.W2_correct = np.array([[1,-1]])
 
         self.X3 = np.array([[1,2,3],[1,2,4]]).T
-        self.y3 = np.array([[5,10,18]]).T
-        self.W3_correct = np.array([[0,2,3]]).T
+        self.y3 = np.array([5,10,18])
+        self.W3_correct = np.array([[0,2,3]])
 
         self.X4 = np.array([[0,0]]).T
-        self.y4 = np.array([[0,0]]).T
-        self.W4_correct = np.array([[0,0]]).T
+        self.y4 = np.array([0,0])
+        self.W4_correct = np.array([[0,0]])
 
         self.X5 = np.array([[0, 1, 2, 3, 4, 5]]).T
-        self.y5 = np.array([[0, 0.99, 2.01, 2.99, 4.01, 4.99]]).T
-        self.W5_correct = np.array([ [0, 1] ]).T
+        self.y5 = np.array([0, 0.99, 2.01, 2.99, 4.01, 4.99])
+        self.W5_correct = np.array([ [0, 1] ])
         
     def test_perfectpositiveslope(self):
         W = linear_regression_normal_equation(self.X1, self.y1)
+        print(W.shape)
+        print(self.W1_correct.shape)
         boolean_array = np.isclose(W, self.W1_correct)
         self.assertTrue(boolean_array.all())
     

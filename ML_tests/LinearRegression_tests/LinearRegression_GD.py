@@ -13,7 +13,7 @@ from linear_regression_gradient_descent import LinearRegression
 
 class TestLinearRegression_GradientDescent(unittest.TestCase):
     def setUp(self):
-        # test cases we wish to run
+        # test cases we want to run
 
         self.linearReg = LinearRegression()
         self.X1 = np.array([[0,1,2]])
