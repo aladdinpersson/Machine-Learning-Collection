@@ -5,10 +5,10 @@ import numpy as np
 
 # For importing from different folders
 # OBS: This is supposed to be done with automated testing, hence relative to folder we want to import from
-sys.path.append('ML/algorithms/linearregression')
+#sys.path.append('ML/algorithms/linearregression')
 
 # If run from local:
-#sys.path.append('../../ML/LinearRegression/')
+sys.path.append('../../ML/algorithms/linearregression')
 from linear_regression_normal_equation import linear_regression_normal_equation
 
 class TestLinearRegression_NormalEq(unittest.TestCase):
@@ -20,11 +20,11 @@ class TestLinearRegression_NormalEq(unittest.TestCase):
         
         self.X2 = np.array([[0,1]]).T
         self.y2 = np.array([[1,0]]).T
-        self.W2_correct = np.array([[-1,1]]).T
+        self.W2_correct = np.array([[1,-1]]).T
 
         self.X3 = np.array([[1,2,3],[1,2,4]]).T
         self.y3 = np.array([[5,10,18]]).T
-        self.W3_correct = np.array([[2,3,0]]).T
+        self.W3_correct = np.array([[0,2,3]]).T
 
         self.X4 = np.array([[0,0]]).T
         self.y4 = np.array([[0,0]]).T
@@ -32,7 +32,7 @@ class TestLinearRegression_NormalEq(unittest.TestCase):
 
         self.X5 = np.array([[0, 1, 2, 3, 4, 5]]).T
         self.y5 = np.array([[0, 0.99, 2.01, 2.99, 4.01, 4.99]]).T
-        self.W5_correct = np.array([ [1, 0] ]).T
+        self.W5_correct = np.array([ [0, 1] ]).T
         
     def test_perfectpositiveslope(self):
         W = linear_regression_normal_equation(self.X1, self.y1)
@@ -46,6 +46,8 @@ class TestLinearRegression_NormalEq(unittest.TestCase):
 
     def test_multipledimension(self):
         W = linear_regression_normal_equation(self.X3, self.y3)
+        print(W)
+        print(self.W3_correct)
         boolean_array = np.isclose(W, self.W3_correct)
         self.assertTrue(boolean_array.all())
 

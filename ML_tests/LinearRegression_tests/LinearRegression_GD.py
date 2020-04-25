@@ -8,7 +8,7 @@ import numpy as np
 sys.path.append('ML/algorithms/linearregression')
 
 # If run from local:
-#sys.path.append('../../ML/LinearRegression/')
+#sys.path.append('../../ML/algorithms/linearregression')
 from linear_regression_gradient_descent import LinearRegression
 
 class TestLinearRegression_GradientDescent(unittest.TestCase):
@@ -22,11 +22,11 @@ class TestLinearRegression_GradientDescent(unittest.TestCase):
         
         self.X2 = np.array([[0,1]])
         self.y2 = np.array([[1,0]])
-        self.W2_correct = np.array([[-1,1]]).T
+        self.W2_correct = np.array([[1,-1]]).T
 
         self.X3 = np.array([[1,2,3],[1,2,4]])
         self.y3 = np.array([[5,10,18]])
-        self.W3_correct = np.array([[2,3,0]]).T
+        self.W3_correct = np.array([[0,2,3]]).T
 
         self.X4 = np.array([[0,0]])
         self.y4 = np.array([[0,0]])
@@ -34,7 +34,7 @@ class TestLinearRegression_GradientDescent(unittest.TestCase):
 
         self.X5 = np.array([[0, 1, 2, 3, 4, 5]])
         self.y5 = np.array([[0, 0.99, 2.01, 2.99, 4.01, 4.99]])
-        self.W5_correct = np.array([ [1, 0] ]).T
+        self.W5_correct = np.array([ [0, 1] ]).T
         
     def test_perfectpositiveslope(self):
         W = self.linearReg.main(self.X1, self.y1)

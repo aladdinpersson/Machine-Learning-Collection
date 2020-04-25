@@ -26,8 +26,8 @@ class LinearRegression():
     
     def main(self, X, y):
         # Add x1 = 1
-        x1 = np.ones((1,X.shape[1]))
-        X = np.append(X, x1, axis = 0)
+        ones = np.ones((1,X.shape[1]))
+        X = np.append(ones, X, axis=0)
         
         self.m = X.shape[1]
         self.n = X.shape[0]
