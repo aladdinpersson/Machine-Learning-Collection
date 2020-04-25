@@ -3,11 +3,9 @@ import numpy as np
 # Let m = #training examples, n = #number of features
 # It takes as input the following: y is R^(m x 1), X is R^(m x n), w is R^(n x 1)
 def linear_regression_normal_equation(X, y):
-    x1 = np.ones((X.shape[0], 1))
-    X = np.append(X, x1, axis=1)
-    
+    ones = np.ones((X.shape[0], 1))
+    X = np.append(ones, X, axis=1)
     W = np.dot(np.linalg.pinv(np.dot(X.T, X)), np.dot(X.T, y))
-
     return W
 
 # For visual confirmation, not necessary.
