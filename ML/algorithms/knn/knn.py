@@ -26,7 +26,7 @@ class KNearestNeighbor():
             distances = self.compute_distance_one_loop(X_test)
             
         else:
-            distances = self.compute_distance_vectorized(X_test)
+            distances = self.compute_distance_two_loops(X_test)
 
         return self.predict_labels(distances)
     
