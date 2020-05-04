@@ -1,3 +1,14 @@
+'''
+Example of how to create custom dataset in Pytorch. In this case
+we have images of cats and dogs in a separate folder and a csv
+file containing the name to the jpg file as well as the target
+label (0 for cat, 1 for dog).
+
+Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
+*    2020-04-03 Initial coding
+
+'''
+
 # Imports
 import torch
 import torch.nn as nn # All neural network modules, nn.Linear, nn.Conv2d, BatchNorm, Loss functions
