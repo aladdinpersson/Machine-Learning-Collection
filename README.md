@@ -45,6 +45,6 @@ Everything for now is implemented using the PyTorch-framework.
 
 ### 5. Smaller Projects
 * [Exploring MNIST](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Projects/Exploring_MNIST) **- Needs updating**
-* [![Youtube Link][logo]](https://youtu.be/WujVlF_6h5A) [Text Generating LSTM](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Projects/text_generation_babynames/generating_names.py)
+* [![Youtube Link][logo]](https://youtu.be/WujVlF_6h5A) &nbsp; [Text Generating LSTM](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Projects/text_generation_babynames/generating_names.py)
 
 
