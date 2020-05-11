@@ -69,11 +69,6 @@ for epoch in range(num_epochs):
         # Get data to cuda if possible
         data = data.to(device=device)
         targets = targets.to(device=device)
-        print(targets.shape)
-        print(targets)
-        print(data.shape)
-        import sys
-        sys.exit()
         
         # forward
         scores = model(data)
