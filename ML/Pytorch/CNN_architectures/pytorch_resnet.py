@@ -32,7 +32,7 @@ class block(nn.Module):
         self.stride = stride
         
     def forward(self, x):
-        identity = x
+        identity = x.clone()
 
         x = self.conv1(x)
         x = self.bn1(x)
@@ -109,20 +109,17 @@ class ResNet(nn.Module):
             
         return nn.Sequential(*layers)
     
-def ResNet50(img_channel):
-    num_classes = 1000
+def ResNet50(img_channel=3, num_classes=1000):
     return ResNet(block, [3, 4, 6, 3], img_channel, num_classes)
 
-def ResNet101(img_channel):
-    num_classes = 1000
+def ResNet101(img_channel=3, num_classes=1000):
     return ResNet(block, [3, 4, 23, 3], img_channel, num_classes)
 
-def ResNet152(img_channel):
-    num_classes = 1000
+def ResNet152(img_channel=3, num_classes=1000):
     return ResNet(block, [3, 8, 36, 3], img_channel, num_classes)
       
 def test():
-    net = ResNet101(img_channel = 3)
+    net = ResNet101(img_channel = 3, num_classes=1000)
     y = net(torch.randn(4, 3, 224, 224)).to('cuda')
     print(y.size())
 
