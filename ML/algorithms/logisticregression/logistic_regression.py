@@ -1,3 +1,11 @@
+'''
+From scratch implementation of Logistic Regression
+
+Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
+*    2020-05-24 Initial coding
+
+'''
+
 import numpy as np
 from sklearn.datasets import make_blobs
 
