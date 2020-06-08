@@ -33,7 +33,7 @@ english.build_vocab(train_data, max_size=10000, min_freq=2)
 class Encoder(nn.Module):
     def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
         super(Encoder, self).__init__()
-        self.dropout = nn.Dropout(dropout)
+        self.dropout = nn.Dropout(p)
         self.hidden_size = hidden_size
         self.num_layers = num_layers
         

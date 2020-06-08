@@ -92,9 +92,11 @@ class KNearestNeighbor():
 if __name__ == '__main__':
     X = np.loadtxt('example_data/data.txt', delimiter=',')
     y = np.loadtxt('example_data/targets.txt')
-
-    KNN = KNearestNeighbor(k=3)
+    
+    X = np.array([[1,1], [3, 1], [1, 4], [2, 4], [3, 3], [5, 1]])
+    y = np.array([0, 0, 0, 1, 1, 1])
+    
+    KNN = KNearestNeighbor(k=1)
     KNN.train(X, y)
     y_pred = KNN.predict(X, num_loops=0)
-
     print(f'Accuracy: {sum(y_pred == y) / y.shape[0]}')
