@@ -73,7 +73,7 @@ class Encoder(nn.Module):
 
 class Decoder(nn.Module):
     def __init__(
-        self, input_size, embedding_size, hidden_size, output_size, num_layers, p
+            self, input_size, embedding_size, hidden_size, output_size, num_layers, p
     ):
         super(Decoder, self).__init__()
         self.hidden_size = hidden_size
@@ -104,14 +104,11 @@ class Decoder(nn.Module):
 
         attention = self.softmax(energy)
         # attention: (seq_length, N, 1)
-        attention = attention.permute(1, 2, 0)
-        # attention: (N, 1, seq_length)
-        encoder_states = encoder_states.permute(1, 0, 2)
-        # encoder_states: (N, seq_length, hidden_size*2)
 
-        # If we multiply these using torch.bmm we get (N, 1, hidden_size*2)
-        # we want (1, N, hidden_size*2)
-        context_vector = torch.bmm(attention, encoder_states).permute(1, 0, 2)
+        # attention: (seq_length, N, 1), snk
+        # encoder_states: (seq_length, N, hidden_size*2), snl
+        # we want context_vector: (1, N, hidden_size*2), i.e knl
+        context_vector = torch.einsum('snk,snl->knl', attention, encoder_states)
 
         rnn_input = torch.cat((context_vector, embedding), dim=2)
         # rnn_input: (1, N, hidden_size*2 + embedding_size)
@@ -239,6 +236,7 @@ for epoch in range(num_epochs):
     model.train()
 
     for batch_idx, batch in enumerate(train_iterator):
+        start = time.time()
         # Get input and targets and get to cuda
         inp_data = batch.src.to(device)
         target = batch.trg.to(device)
@@ -272,5 +270,6 @@ for epoch in range(num_epochs):
         writer.add_scalar("Training loss", loss, global_step=step)
         step += 1
 
+# running on entire test data takes a while
 score = bleu(test_data[1:100], model, german, english, device)
-print(f"Bleu score {score*100:.2f}")
+print(f"Bleu score {score * 100:.2f}")
