@@ -217,11 +217,6 @@ criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
 if load_model:
     load_checkpoint(torch.load("my_checkpoint.pth.tar"), model, optimizer)
 
-score = bleu(test_data[1:100], model, german, english, device)
-print(f"Bleu score {score*100:.2f}")
-import sys
-
-sys.exit()
 sentence = (
     "ein boot mit mehreren männern darauf wird von einem großen"
     "pferdegespann ans ufer gezogen."
@@ -276,3 +271,6 @@ for epoch in range(num_epochs):
         # Plot to tensorboard
         writer.add_scalar("Training loss", loss, global_step=step)
         step += 1
+
+score = bleu(test_data[1:100], model, german, english, device)
+print(f"Bleu score {score*100:.2f}")
