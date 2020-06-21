@@ -162,7 +162,8 @@ class Seq2Seq(nn.Module):
 
 ### We're ready to define everything we need for training our Seq2Seq model ###
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-load_model = True
+load_model = False
+save_model = True
 
 # Training hyperparameters
 num_epochs = 100
@@ -222,8 +223,9 @@ sentence = (
 for epoch in range(num_epochs):
     print(f"[Epoch {epoch} / {num_epochs}]")
 
-    checkpoint = {"state_dict": model.state_dict(), "optimizer": optimizer.state_dict()}
-    save_checkpoint(checkpoint)
+    if save_model:
+        checkpoint = {"state_dict": model.state_dict(), "optimizer": optimizer.state_dict()}
+        save_checkpoint(checkpoint)
 
     model.eval()
 
@@ -236,7 +238,6 @@ for epoch in range(num_epochs):
     model.train()
 
     for batch_idx, batch in enumerate(train_iterator):
-        start = time.time()
         # Get input and targets and get to cuda
         inp_data = batch.src.to(device)
         target = batch.trg.to(device)
