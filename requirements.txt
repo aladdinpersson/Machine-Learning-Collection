@@ -9,8 +9,6 @@ cffi==1.14.0
 chardet==3.0.4
 cryptography==2.9.2
 cymem==2.0.3
-de-core-news-sm==2.3.0
-en-core-web-sm==2.3.0
 flake8==3.8.3
 google-auth==1.18.0
 google-auth-oauthlib==0.4.1
