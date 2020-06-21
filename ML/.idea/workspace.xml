@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a312c92-c6a9-433d-b765-3038b2013145" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Projects/DeepSort/sort_w_attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/DeepSort/sort_w_attention.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pytorch/more_advanced/Seq2Seq_attention/seq2seq_attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pytorch/more_advanced/Seq2Seq_attention/seq2seq_attention.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ML_tests/LinearRegression_tests/LinearRegression_GD.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML_tests/LinearRegression_tests/LinearRegression_GD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ML_tests/LinearRegression_tests/LinearRegression_normal.py" beforeDir="false" afterPath="$PROJECT_DIR$/../ML_tests/LinearRegression_tests/LinearRegression_normal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

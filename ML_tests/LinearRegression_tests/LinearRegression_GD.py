@@ -3,14 +3,13 @@ import sys
 import unittest
 import numpy as np
 
-# If run from local:
-# sys.path.append('../../ML/algorithms/linearregression')
-from linear_regression_gradient_descent import LinearRegression
-
 # For importing from different folders
 # OBS: This is supposed to be done with automated testing,
 # hence relative to folder we want to import from
 sys.path.append("ML/algorithms/linearregression")
+# If run from local:
+# sys.path.append('../../ML/algorithms/linearregression')
+from linear_regression_gradient_descent import LinearRegression
 
 
 class TestLinearRegression_GradientDescent(unittest.TestCase):
