@@ -141,7 +141,7 @@ class Seq2Seq(nn.Module):
 
 ### We're ready to define everything we need for training our Seq2Seq model ###
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-load_model = True
+load_model = False
 save_model = True
 
 # Training hyperparameters
@@ -172,7 +172,7 @@ if load_model:
 
 # following is for testing the network, uncomment this if you want
 # to try out a few arrays interactively
-sort_array(encoder_net, decoder_net, device)
+#sort_array(encoder_net, decoder_net, device)
 
 dataset = SortArray(batch_size, min_int, max_int, min_size, max_size)
 train_loader = DataLoader(dataset, batch_size=1, shuffle=False)

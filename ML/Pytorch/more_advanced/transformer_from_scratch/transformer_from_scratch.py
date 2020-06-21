@@ -1,7 +1,5 @@
 import torch
 import torch.nn as nn
-import torch.optim as optim
-import numpy as np
 
 
 class SelfAttention(nn.Module):
@@ -29,7 +27,7 @@ class SelfAttention(nn.Module):
         query = query.reshape(N, -1, self.heads, self.head_dim)
         values = values.reshape(N, -1, self.heads, self.head_dim)
 
-        query_len, key_len, value_len = query.shape[1], keys.shape[1], values.shape[1]
+        query_len, key_len = query.shape[1], keys.shape[1]
 
         queries = self.queries(query)  # (N, query_len, heads, heads_dim)
         keys = self.keys(keys)  # (N, key_len, heads, head_dim)
@@ -78,8 +76,7 @@ class TransformerBlock(nn.Module):
         # Add skip connection, run through normalization and finally dropout
         x = self.dropout(self.norm1(attention + query))
         forward = self.feed_forward(x)
-        out = self.dropout(self.norm2(attention + query))
-
+        out = self.dropout(self.norm2(forward + x))
         return out
 
 

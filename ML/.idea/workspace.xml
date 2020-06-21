@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4a312c92-c6a9-433d-b765-3038b2013145" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Projects/DeepSort/sort_w_attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projects/DeepSort/sort_w_attention.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pytorch/more_advanced/seq2seq_transformer/seq2seq_transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pytorch/more_advanced/seq2seq_transformer/seq2seq_transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pytorch/more_advanced/transformer_from_scratch/transformer_from_scratch.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pytorch/more_advanced/transformer_from_scratch/transformer_from_scratch.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1ddak0lw18J0pRqA2rNPazNqbJ9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RunManager" selected="Python.transformer_from_scratch">
+    <configuration name="seq2seq_attention" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\envs\dl\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pytorch/more_advanced/Seq2Seq_attention" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pytorch/more_advanced/Seq2Seq_attention/seq2seq_attention.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="seq2seq_transformer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\envs\dl\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pytorch/more_advanced/seq2seq_transformer" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pytorch/more_advanced/seq2seq_transformer/seq2seq_transformer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sort_w_attention" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/DeepSort" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/DeepSort/sort_w_attention.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="transformer_from_scratch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ML" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pytorch/more_advanced/transformer_from_scratch" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pytorch/more_advanced/transformer_from_scratch/transformer_from_scratch.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.seq2seq_attention" />
+      <item itemvalue="Python.seq2seq_transformer" />
+      <item itemvalue="Python.transformer_from_scratch" />
+      <item itemvalue="Python.sort_w_attention" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.transformer_from_scratch" />
+        <item itemvalue="Python.sort_w_attention" />
+        <item itemvalue="Python.seq2seq_transformer" />
+        <item itemvalue="Python.seq2seq_attention" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4a312c92-c6a9-433d-b765-3038b2013145" name="Default Changelist" comment="" />
+      <created>1592757562060</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592757562060</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="605" y="219" key="#Notifications.inPresentationMode" timestamp="1592762011623">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="605" y="219" key="#Notifications.inPresentationMode/1920.30.1344.800/0.0.1536.824@0.0.1536.824" timestamp="1592762011623" />
+    <state x="223" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog.inPresentationMode" timestamp="1592759126972">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog.inPresentationMode/1920.30.1344.800/0.0.1536.824@0.0.1536.824" timestamp="1592759126972" />
+    <state x="484" y="179" key="FileChooserDialogImpl.inPresentationMode" timestamp="1592758934980">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="484" y="179" key="FileChooserDialogImpl.inPresentationMode/1920.30.1344.800/0.0.1536.824@0.0.1536.824" timestamp="1592758934980" />
+    <state width="1344" height="277" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1592763512652">
+      <screen x="1920" y="30" width="1344" height="800" />
+    </state>
+    <state width="1536" height="286" key="GridCell.Tab.0.bottom.inPresentationMode/1920.30.1344.800/0.0.1536.824@0.0.1536.824" timestamp="1592762055839" />
+    <state width="1344" height="277" key="GridCell.Tab.0.bottom.inPresentationMode/1920.30.1344.800/0.0.1536.824@1920.30.1344.800" timestamp="1592763512652" />
+    <state width="1344" height="277" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1592763512652">
+      <screen x="1920" y="30" width="1344" height="800" />
+    </state>
+    <state width="1536" height="286" key="GridCell.Tab.0.center.inPresentationMode/1920.30.1344.800/0.0.1536.824@0.0.1536.824" timestamp="1592762055839" />
+    <state width="1344" height="277" key="GridCell.Tab.0.center.inPresentationMode/1920.30.1344.800/0.0.1536.824@1920.30.1344.800" timestamp="1592763512652" />
+    <state width="1344" height="277" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1592763512652">
+      <screen x="1920" y="30" width="1344" height="800" />
+    </state>
+    <state width="1536" height="286" key="GridCell.Tab.0.left.inPresentationMode/1920.30.1344.800/0.0.1536.824@0.0.1536.824" timestamp="1592762055839" />
+    <state width="1344" height="277" key="GridCell.Tab.0.left.inPresentationMode/1920.30.1344.800/0.0.1536.824@1920.30.1344.800" timestamp="1592763512652" />
+    <state width="1344" height="277" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1592763512652">
+      <screen x="1920" y="30" width="1344" height="800" />
+    </state>
+    <state width="1536" height="286" key="GridCell.Tab.0.right.inPresentationMode/1920.30.1344.800/0.0.1536.824@0.0.1536.824" timestamp="1592762055839" />
+    <state width="1344" height="277" key="GridCell.Tab.0.right.inPresentationMode/1920.30.1344.800/0.0.1536.824@1920.30.1344.800" timestamp="1592763512652" />
+    <state x="212" y="29" key="SettingsEditor.inPresentationMode" timestamp="1592759298895">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="212" y="29" key="SettingsEditor.inPresentationMode/1920.30.1344.800/0.0.1536.824@0.0.1536.824" timestamp="1592759298895" />
+  </component>
+</project>

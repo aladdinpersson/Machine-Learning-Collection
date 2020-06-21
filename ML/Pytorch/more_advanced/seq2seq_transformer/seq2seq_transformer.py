@@ -136,12 +136,9 @@ class Transformer(nn.Module):
 
 ### We're ready to define everything we need for training our Seq2Seq model ###
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-<<<<<<< HEAD
+
 load_model = False
 save_model = True
-=======
-load_model = True
->>>>>>> 0e4c739e64b161d9c3207ec3ba64b58362e03e3b
 
 # Training hyperparameters
 num_epochs = 10000
@@ -200,17 +197,16 @@ if load_model:
 
 for epoch in range(num_epochs):
     print(f"[Epoch {epoch} / {num_epochs}]")
-<<<<<<< HEAD
+
     if save_model:
         checkpoint = {
             "state_dict": model.state_dict(),
             "optimizer": optimizer.state_dict(),
         }
         save_checkpoint(checkpoint)
-=======
+
     checkpoint = {"state_dict": model.state_dict(), "optimizer": optimizer.state_dict()}
     save_checkpoint(checkpoint)
->>>>>>> 0e4c739e64b161d9c3207ec3ba64b58362e03e3b
 
     model.eval()
     translated_sentence = translate_sentence(
