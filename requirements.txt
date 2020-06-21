@@ -2,7 +2,7 @@ flake8==3.8.3
 spacy==2.3.0
 tb-nightly==2.3.0a20200621
 tensorboard-plugin-wit==1.6.0.post3
-torch==1.6.0.dev20200611
+torch==1.5.0
 torchtext==0.6.0
-torchvision==0.7.0.dev20200611
+torchvision==0.7.0
 tqdm==4.46.1
