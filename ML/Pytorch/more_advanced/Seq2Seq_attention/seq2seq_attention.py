@@ -73,7 +73,7 @@ class Encoder(nn.Module):
 
 class Decoder(nn.Module):
     def __init__(
-            self, input_size, embedding_size, hidden_size, output_size, num_layers, p
+        self, input_size, embedding_size, hidden_size, output_size, num_layers, p
     ):
         super(Decoder, self).__init__()
         self.hidden_size = hidden_size
@@ -108,7 +108,7 @@ class Decoder(nn.Module):
         # attention: (seq_length, N, 1), snk
         # encoder_states: (seq_length, N, hidden_size*2), snl
         # we want context_vector: (1, N, hidden_size*2), i.e knl
-        context_vector = torch.einsum('snk,snl->knl', attention, encoder_states)
+        context_vector = torch.einsum("snk,snl->knl", attention, encoder_states)
 
         rnn_input = torch.cat((context_vector, embedding), dim=2)
         # rnn_input: (1, N, hidden_size*2 + embedding_size)
@@ -224,7 +224,10 @@ for epoch in range(num_epochs):
     print(f"[Epoch {epoch} / {num_epochs}]")
 
     if save_model:
-        checkpoint = {"state_dict": model.state_dict(), "optimizer": optimizer.state_dict()}
+        checkpoint = {
+            "state_dict": model.state_dict(),
+            "optimizer": optimizer.state_dict(),
+        }
         save_checkpoint(checkpoint)
 
     model.eval()

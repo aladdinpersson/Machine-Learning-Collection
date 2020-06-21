@@ -3,13 +3,14 @@ import sys
 import unittest
 import numpy as np
 
-# For importing from different folders
-# OBS: This is supposed to be done with automated testing, hence relative to folder we want to import from
-sys.path.append("ML/algorithms/linearregression")
-
 # If run from local:
 # sys.path.append('../../ML/algorithms/linearregression/')
 from linear_regression_normal_equation import linear_regression_normal_equation
+
+# For importing from different folders
+# OBS: This is supposed to be done with automated testing,
+# hence relative to folder we want to import from
+sys.path.append("ML/algorithms/linearregression")
 
 
 class TestLinearRegression_NormalEq(unittest.TestCase):

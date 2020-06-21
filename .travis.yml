@@ -18,6 +18,6 @@ before_script:
 
 script:
      - awesome_bot README.md --allow-dupe --allow-redirect
-     - flake8 --max-line-length=88
+     #- flake8 --max-line-length=88
      - python ML_tests/LinearRegression_tests/LinearRegression_GD.py
      - python ML_tests/LinearRegression_tests/LinearRegression_normal.py

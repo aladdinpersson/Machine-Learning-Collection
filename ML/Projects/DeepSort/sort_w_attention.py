@@ -8,13 +8,10 @@ from torch.utils.data import (
     Dataset,
     DataLoader,
 )
-import sys
 import random
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import numpy as np
-import spacy
 from utils import sort_array, save_checkpoint, load_checkpoint
 from torch.utils.tensorboard import SummaryWriter  # to print to tensorboard
 
@@ -172,7 +169,7 @@ if load_model:
 
 # following is for testing the network, uncomment this if you want
 # to try out a few arrays interactively
-#sort_array(encoder_net, decoder_net, device)
+# sort_array(encoder_net, decoder_net, device)
 
 dataset = SortArray(batch_size, min_int, max_int, min_size, max_size)
 train_loader = DataLoader(dataset, batch_size=1, shuffle=False)
