@@ -5,24 +5,24 @@ import torch.nn as nn
 class SelfAttention(nn.Module):
     def __init__(self, embed_size, heads):
         super(SelfAttention, self).__init__()
-
         self.embed_size = embed_size
         self.heads = heads
         self.head_dim = embed_size // heads
 
         assert (
-            self.head_dim * heads == embed_size
+                self.head_dim * heads == embed_size
         ), "Embedding size needs to be divisible by heads"
+
+        self.values = nn.Linear(self.head_dim, self.head_dim, bias=False)
         self.keys = nn.Linear(self.head_dim, self.head_dim, bias=False)
         self.queries = nn.Linear(self.head_dim, self.head_dim, bias=False)
-        self.values = nn.Linear(self.head_dim, self.head_dim, bias=False)
         self.fc_out = nn.Linear(heads * self.head_dim, embed_size)
 
     def forward(self, query, keys, values, mask):
         # Get number of training examples
         N = query.shape[0]
 
-        # Split so we have number of heads
+        # Split the embedding into self.heads different pieces
         keys = keys.reshape(N, -1, self.heads, self.head_dim)
         query = query.reshape(N, -1, self.heads, self.head_dim)
         values = values.reshape(N, -1, self.heads, self.head_dim)
@@ -34,23 +34,37 @@ class SelfAttention(nn.Module):
         values = self.values(values)  # (N, value_len, heads, head_dim)
 
         # Einsum does matrix mult. for query*keys for each training example
-        # with every other training example, then lastly want to do .view to obtain
-        # (N*heads, query_len, key_len)
+        # with every other training example, don't be confused by einsum
+        # it's just how I like doing matrix multiplication & bmm
 
         energy = torch.einsum("nqhd,nkhd->nhqk", [queries, keys])
+        # queries shape: (N, query_len, heads, heads_dim),
+        # keys shape: (N, key_len, heads, heads_dim)
+        # energy: (N, heads, query_len, key_len)
 
+        # Mask padded indices so their weights become 0
         if mask is not None:
-            energy = energy.masked_fill(mask == 0, float("-1e10"))
+            energy = energy.masked_fill(mask == 0, float("-1e20"))
 
-        # each row will be normalized
+        # Normalize energy values similarly to seq2seq + attention
+        # so that they sum to 1. Also divide by scaling factor for
+        # better stability
         attention = torch.softmax(energy / (self.embed_size ** (1 / 2)), dim=3).reshape(
             N, self.heads, query_len, key_len
         )
+        # attention shape: (N, heads, query_len, key_len)
 
         out = torch.einsum("nhst,nthd->nshd", [attention, values]).reshape(
             N, query_len, self.heads * self.head_dim
         )
+        # attention shape: (N, heads, query_len, key_len)
+        # values shape: (N, value_len, heads, heads_dim)
+        # out after matrix multiply: (N, query_len, heads, head_dim), then
+        # we reshape and flatten the last two dimensions.
+
         out = self.fc_out(out)
+        # Linear layer doesn't modify the shape, final shape will be
+        # (N, query_len, embed_size)
 
         return out
 
@@ -189,7 +203,7 @@ class Transformer(nn.Module):
         src_pad_idx,
         trg_pad_idx,
         embed_size=512,
-        num_layers=3,
+        num_layers=6,
         forward_expansion=4,
         heads=8,
         dropout=0,
@@ -243,7 +257,6 @@ class Transformer(nn.Module):
         trg_mask = self.make_trg_mask(trg)
         enc_src = self.encoder(src, src_mask)
         out = self.decoder(trg, enc_src, src_mask, trg_mask)
-
         return out
 
 

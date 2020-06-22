@@ -119,8 +119,7 @@ for epoch in range(num_epochs):
 
             with torch.no_grad():
                 fake = netG(fixed_noise)
-
                 img_grid_real = torchvision.utils.make_grid(data[:32], normalize=True)
                 img_grid_fake = torchvision.utils.make_grid(fake[:32], normalize=True)
                 writer_real.add_image("Mnist Real Images", img_grid_real)
-                writer_real.add_image("Mnist Fake Images", img_grid_fake)
+                writer_fake.add_image("Mnist Fake Images", img_grid_fake)
