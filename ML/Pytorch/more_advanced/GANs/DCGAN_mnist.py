@@ -31,7 +31,7 @@ from model_utils import (
 )  # Import our models we've defined (from DCGAN paper)
 
 # Hyperparameters
-lr = 0.0002
+lr = 0.0005
 batch_size = 64
 image_size = 64
 channels_img = 1
@@ -76,6 +76,7 @@ fake_label = 0
 fixed_noise = torch.randn(64, channels_noise, 1, 1).to(device)
 writer_real = SummaryWriter(f"runs/GAN_MNIST/test_real")
 writer_fake = SummaryWriter(f"runs/GAN_MNIST/test_fake")
+step = 0
 
 print("Starting Training...")
 
@@ -112,6 +113,7 @@ for epoch in range(num_epochs):
 
         # Print losses ocassionally and print to tensorboard
         if batch_idx % 100 == 0:
+            step+=1
             print(
                 f"Epoch [{epoch}/{num_epochs}] Batch {batch_idx}/{len(dataloader)} \
                   Loss D: {lossD:.4f}, loss G: {lossG:.4f} D(x): {D_x:.4f}"
@@ -121,5 +123,5 @@ for epoch in range(num_epochs):
                 fake = netG(fixed_noise)
                 img_grid_real = torchvision.utils.make_grid(data[:32], normalize=True)
                 img_grid_fake = torchvision.utils.make_grid(fake[:32], normalize=True)
-                writer_real.add_image("Mnist Real Images", img_grid_real)
-                writer_fake.add_image("Mnist Fake Images", img_grid_fake)
+                writer_real.add_image("Mnist Real Images", img_grid_real, global_step=step)
+                writer_fake.add_image("Mnist Fake Images", img_grid_fake, global_step=step)
