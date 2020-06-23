@@ -1,12 +1,21 @@
-import random
+"""
+Seq2Seq using Transformers on the Multi30k
+dataset. In this video I utilize Pytorch
+inbuilt Transformer modules, and have a
+separate implementation for Transformers
+from scratch. Training this model for a
+while (not too long) gives a BLEU score
+of ~35, and I think training for longer
+would give even better results.
+
+"""
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import numpy as np
 import spacy
-import sys
 from utils import translate_sentence, bleu, save_checkpoint, load_checkpoint
-from torch.utils.tensorboard import SummaryWriter  # to print to tensorboard
+from torch.utils.tensorboard import SummaryWriter
 from torchtext.datasets import Multi30k
 from torchtext.data import Field, BucketIterator
 
@@ -15,8 +24,6 @@ To install spacy languages do:
 python -m spacy download en
 python -m spacy download de
 """
-
-
 spacy_ger = spacy.load("de")
 spacy_eng = spacy.load("en")
 
@@ -83,17 +90,6 @@ class Transformer(nn.Module):
         # (N, src_len)
         return src_mask.to(self.device)
 
-    def make_trg_mask(self, trg):
-        trg_len, N = trg.shape
-
-        trg_mask = torch.tril(torch.ones((trg_len, trg_len)))
-        trg_mask = (
-            trg_mask.float()
-            .masked_fill(trg_mask == 0, float("-inf"))
-            .masked_fill(trg_mask == 1, float(0.0))
-        )
-        return trg_mask.to(device)
-
     def forward(self, src, trg):
         src_seq_length, N = src.shape
         trg_seq_length, N = trg.shape
@@ -134,15 +130,15 @@ class Transformer(nn.Module):
         return out
 
 
-### We're ready to define everything we need for training our Seq2Seq model ###
+# We're ready to define everything we need for training our Seq2Seq model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-load_model = False
+load_model = True
 save_model = True
 
 # Training hyperparameters
 num_epochs = 10000
-learning_rate = 1e-5
+learning_rate = 3e-4
 batch_size = 32
 
 # Model hyperparameters
@@ -152,13 +148,13 @@ embedding_size = 512
 num_heads = 8
 num_encoder_layers = 3
 num_decoder_layers = 3
-dropout = 0.05
+dropout = 0.10
 max_len = 100
 forward_expansion = 4
 src_pad_idx = english.vocab.stoi["<pad>"]
 
 # Tensorboard to get nice loss plot
-writer = SummaryWriter(f"runs/loss_plot")
+writer = SummaryWriter("runs/loss_plot")
 step = 0
 
 train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
@@ -184,16 +180,18 @@ model = Transformer(
 ).to(device)
 
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
 scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
     optimizer, factor=0.1, patience=10, verbose=True
 )
 
 pad_idx = english.vocab.stoi["<pad>"]
 criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
-sentence = "ein pferd geht unter einer brücke neben einem boot."
 
 if load_model:
     load_checkpoint(torch.load("my_checkpoint.pth.tar"), model, optimizer)
+
+sentence = "ein pferd geht unter einer brücke neben einem boot."
 
 for epoch in range(num_epochs):
     print(f"[Epoch {epoch} / {num_epochs}]")
@@ -205,18 +203,13 @@ for epoch in range(num_epochs):
         }
         save_checkpoint(checkpoint)
 
-    checkpoint = {"state_dict": model.state_dict(), "optimizer": optimizer.state_dict()}
-    save_checkpoint(checkpoint)
-
     model.eval()
     translated_sentence = translate_sentence(
         model, sentence, german, english, device, max_length=50
     )
 
     print(f"Translated example sentence: \n {translated_sentence}")
-
     model.train()
-
     losses = []
 
     for batch_idx, batch in enumerate(train_iterator):
@@ -226,7 +219,7 @@ for epoch in range(num_epochs):
 
         # Forward prop
         output = model(inp_data, target[:-1, :])
-        # sys.exit()
+
         # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
         # doesn't take input in that form. For example if we have MNIST we want to have
         # output to be: (N, 10) and targets just (N). Here we can view it in a similar
@@ -237,6 +230,7 @@ for epoch in range(num_epochs):
         target = target[1:].reshape(-1)
 
         optimizer.zero_grad()
+
         loss = criterion(output, target)
         losses.append(loss.item())
 
