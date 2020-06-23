@@ -1,3 +1,13 @@
+'''
+A from scratch implementation of Transformer network,
+following the paper Attention is all you need with a
+few minor differences. I tried to make it as clear as
+possible to understand and also went through the code
+on my youtube channel!
+
+
+'''
+
 import torch
 import torch.nn as nn
 
