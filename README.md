@@ -38,7 +38,7 @@ Everything for now is implemented using the PyTorch-framework.
 * [![Youtube Link][logo]](https://youtu.be/EoGUlvhRYpk) &nbsp; [Seq2Seq](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/Seq2Seq/seq2seq.py) **- Sequence to Sequence (LSTM)**
 * [![Youtube Link][logo]](https://youtu.be/sQUqQddQtB4) &nbsp; [Seq2Seq + Attention](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/Seq2Seq_attention/seq2seq_attention.py) **- Sequence to Sequence with Attention (LSTM)**
 * [![Youtube Link][logo]](https://youtu.be/M6adRGJe5cQ) &nbsp; [Seq2Seq Transformers](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/seq2seq_transformer/seq2seq_transformer.py) **- Sequence to Sequence with Transformers**
-* [![Youtube Link][logo]](https://youtu.be/U0s0f995w14) &nbsp; [Transformers from scratch](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/transformer_from_scratch/transformer_from_scratch.py) **- Attention is all you need**
+* [![Youtube Link][logo]](https://youtu.be/U0s0f995w14) &nbsp; [Transformers from scratch](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/transformer_from_scratch/transformer_from_scratch.py) **- Attention Is All You Need**
 
 
 ### 3. Architectures
