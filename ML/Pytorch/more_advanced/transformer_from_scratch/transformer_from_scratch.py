@@ -1,4 +1,4 @@
-'''
+"""
 A from scratch implementation of Transformer network,
 following the paper Attention is all you need with a
 few minor differences. I tried to make it as clear as
@@ -6,7 +6,7 @@ possible to understand and also went through the code
 on my youtube channel!
 
 
-'''
+"""
 
 import torch
 import torch.nn as nn
@@ -20,7 +20,7 @@ class SelfAttention(nn.Module):
         self.head_dim = embed_size // heads
 
         assert (
-                self.head_dim * heads == embed_size
+            self.head_dim * heads == embed_size
         ), "Embedding size needs to be divisible by heads"
 
         self.values = nn.Linear(self.head_dim, self.head_dim, bias=False)
@@ -185,8 +185,10 @@ class Decoder(nn.Module):
         self.position_embedding = nn.Embedding(max_length, embed_size)
 
         self.layers = nn.ModuleList(
-            [DecoderBlock(embed_size, heads, forward_expansion, dropout, device)
-            for _ in range(num_layers)]
+            [
+                DecoderBlock(embed_size, heads, forward_expansion, dropout, device)
+                for _ in range(num_layers)
+            ]
         )
         self.fc_out = nn.Linear(embed_size, trg_vocab_size)
         self.dropout = nn.Dropout(dropout)

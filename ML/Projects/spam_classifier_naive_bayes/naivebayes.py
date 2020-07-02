@@ -58,8 +58,8 @@ class NaiveBayes:
 
 if __name__ == "__main__":
     # For spam emails (Make sure to run build_vocab etc. to have .npy files)
-    X = np.load('data/X.npy')
-    y = np.load('data/y.npy')
+    X = np.load("data/X.npy")
+    y = np.load("data/y.npy")
 
     NB = NaiveBayes(X, y)
     NB.fit(X)

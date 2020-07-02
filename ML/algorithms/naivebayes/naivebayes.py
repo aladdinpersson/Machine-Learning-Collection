@@ -16,6 +16,7 @@ Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 """
 import numpy as np
 
+
 class NaiveBayes:
     def __init__(self, X, y):
         self.num_examples, self.num_features = X.shape

@@ -113,7 +113,7 @@ for epoch in range(num_epochs):
 
         # Print losses ocassionally and print to tensorboard
         if batch_idx % 100 == 0:
-            step+=1
+            step += 1
             print(
                 f"Epoch [{epoch}/{num_epochs}] Batch {batch_idx}/{len(dataloader)} \
                   Loss D: {lossD:.4f}, loss G: {lossG:.4f} D(x): {D_x:.4f}"
@@ -123,5 +123,9 @@ for epoch in range(num_epochs):
                 fake = netG(fixed_noise)
                 img_grid_real = torchvision.utils.make_grid(data[:32], normalize=True)
                 img_grid_fake = torchvision.utils.make_grid(fake[:32], normalize=True)
-                writer_real.add_image("Mnist Real Images", img_grid_real, global_step=step)
-                writer_fake.add_image("Mnist Fake Images", img_grid_fake, global_step=step)
+                writer_real.add_image(
+                    "Mnist Real Images", img_grid_real, global_step=step
+                )
+                writer_fake.add_image(
+                    "Mnist Fake Images", img_grid_fake, global_step=step
+                )
