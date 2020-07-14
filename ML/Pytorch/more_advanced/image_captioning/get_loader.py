@@ -1,10 +1,10 @@
-import os # when loading file paths
-import pandas as pd # for lookup in annotation file
-import spacy # for tokenizer
+import os  # when loading file paths
+import pandas as pd  # for lookup in annotation file
+import spacy  # for tokenizer
 import torch
-from torch.nn.utils.rnn import pad_sequence # pad batch
+from torch.nn.utils.rnn import pad_sequence  # pad batch
 from torch.utils.data import DataLoader, Dataset
-from PIL import Image # Load img
+from PIL import Image  # Load img
 import torchvision.transforms as transforms
 
 
@@ -21,8 +21,8 @@ spacy_eng = spacy.load("en")
 
 class Vocabulary:
     def __init__(self, freq_threshold):
-        self.itos = {0:"<PAD>", 1:"<SOS>", 2:"<EOS>", 3:"<UNK>"}
-        self.stoi = {"<PAD>":0, "<SOS>":1, "<EOS>":2, "<UNK>":3}
+        self.itos = {0: "<PAD>", 1: "<SOS>", 2: "<EOS>", 3: "<UNK>"}
+        self.stoi = {"<PAD>": 0, "<SOS>": 1, "<EOS>": 2, "<UNK>": 3}
         self.freq_threshold = freq_threshold
 
     def __len__(self):
@@ -89,6 +89,7 @@ class FlickrDataset(Dataset):
 
         return img, torch.tensor(numericalized_caption)
 
+
 class MyCollate:
     def __init__(self, pad_idx):
         self.pad_idx = pad_idx
@@ -101,14 +102,15 @@ class MyCollate:
 
         return imgs, targets
 
+
 def get_loader(
-        root_folder,
-        annotation_file,
-        transform,
-        batch_size=32,
-        num_workers=8,
-        shuffle=True,
-        pin_memory=True,
+    root_folder,
+    annotation_file,
+    transform,
+    batch_size=32,
+    num_workers=8,
+    shuffle=True,
+    pin_memory=True,
 ):
     dataset = FlickrDataset(root_folder, annotation_file, transform=transform)
 
@@ -125,16 +127,16 @@ def get_loader(
 
     return loader, dataset
 
-if __name__ == "__main__":
-    transform = transforms.Compose([
-        transforms.Resize((224, 224)),
-        transforms.ToTensor(),
-    ])
 
-    loader, dataset = get_loader("flickr8k/images/", "flickr8k/captions.txt", transform=transform)
+if __name__ == "__main__":
+    transform = transforms.Compose(
+        [transforms.Resize((224, 224)), transforms.ToTensor(),]
+    )
+
+    loader, dataset = get_loader(
+        "flickr8k/images/", "flickr8k/captions.txt", transform=transform
+    )
 
     for idx, (imgs, captions) in enumerate(loader):
         print(imgs.shape)
         print(captions.shape)
-
-

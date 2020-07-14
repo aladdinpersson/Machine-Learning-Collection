@@ -3,6 +3,7 @@ import torch.nn as nn
 import statistics
 import torchvision.models as models
 
+
 class EncoderCNN(nn.Module):
     def __init__(self, embed_size, train_CNN=False):
         super(EncoderCNN, self).__init__()
@@ -33,6 +34,7 @@ class DecoderRNN(nn.Module):
         outputs = self.linear(hiddens)
         return outputs
 
+
 class CNNtoRNN(nn.Module):
     def __init__(self, embed_size, hidden_size, vocab_size, num_layers):
         super(CNNtoRNN, self).__init__()
@@ -62,11 +64,3 @@ class CNNtoRNN(nn.Module):
                     break
 
         return [vocabulary.itos[idx] for idx in result_caption]
-
-
-
-
-
-
-
-

@@ -8,6 +8,7 @@ from utils import save_checkpoint, load_checkpoint, print_examples
 from get_loader import get_loader
 from model import CNNtoRNN
 
+
 def train():
     transform = transforms.Compose(
         [
@@ -22,7 +23,7 @@ def train():
         root_folder="flickr8k/images",
         annotation_file="flickr8k/captions.txt",
         transform=transform,
-        num_workers = 2,
+        num_workers=2,
     )
 
     torch.backends.cudnn.benchmark = True
@@ -66,20 +67,22 @@ def train():
 
         if save_model:
             checkpoint = {
-                "state_dict" : model.state_dict(),
-                "optimizer" : optimizer.state_dict(),
-                "step":step,
+                "state_dict": model.state_dict(),
+                "optimizer": optimizer.state_dict(),
+                "step": step,
             }
             save_checkpoint(checkpoint)
 
-        for idx, (imgs, captions) in tqdm(enumerate(train_loader),
-                                          total=len(train_loader),
-                                          leave=False):
+        for idx, (imgs, captions) in tqdm(
+            enumerate(train_loader), total=len(train_loader), leave=False
+        ):
             imgs = imgs.to(device)
             captions = captions.to(device)
 
             outputs = model(imgs, captions[:-1])
-            loss = criterion(outputs.reshape(-1, outputs.shape[2]), captions.reshape(-1))
+            loss = criterion(
+                outputs.reshape(-1, outputs.shape[2]), captions.reshape(-1)
+            )
 
             writer.add_scalar("Training loss", loss.item(), global_step=step)
             step += 1
@@ -91,4 +94,3 @@ def train():
 
 if __name__ == "__main__":
     train()
-
