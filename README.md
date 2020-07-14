@@ -17,8 +17,8 @@ In this repository I will be uploading everything machine learning related. I tr
 * [![Youtube Link][logo]](https://youtu.be/gBTtR0bs-1k) &nbsp; [Support Vector Machine](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/svm/svm.py) **- Using CVXOPT**
 * [![Youtube Link][logo]](https://youtu.be/NJvojeoTnNM) &nbsp; [Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/neuralnetwork/NN.py)
 
-## Deeplearning Pytorch
-Everything for now is implemented using the PyTorch-framework.
+## Deep learning Pytorch
+Always looking to make this resource larger and if you have any suggestions leave them as a comment on YouTube (I pretty much read all comments).
 
 ### 1. Basics
 * [![Youtube Link][logo]](https://youtu.be/x9JiIFvlUwk) &nbsp; [Tensor Basics](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorbasics.py)
