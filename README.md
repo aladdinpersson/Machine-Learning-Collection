@@ -33,6 +33,7 @@ Always looking to make this resource larger and if you have any suggestions leav
 * [![Youtube Link][logo]](https://youtu.be/Zvd276j9sZ8) &nbsp; [Transforms & Data Augmentation](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_transforms.py#L56-L72)
 * [![Youtube Link][logo]](https://youtu.be/P31hB37g4Ak) &nbsp; [Learning Rate Scheduler](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_lr_ratescheduler.py#L45-L78) 
 * [![Youtube Link][logo]](https://youtu.be/xWQ-p_o0Uik) &nbsp; [Initialization of weights](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_init_weights.py#L35-L49)
+* [![Youtube Link][logo]](https://youtu.be/y6IEcEBRZks) &nbsp; [Calculate Mean and STD of Images](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/aba36b89b438ca8f608a186f4d61d1b60c7f24e0/ML/Pytorch/Basics/pytorch_std_mean.py#L41-L53)
 
 ### 2. More Advanced
 * [![Youtube Link][logo]](https://youtu.be/y2BaTt1fxJU) &nbsp; [Image Captioning](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Pytorch/more_advanced/image_captioning)
