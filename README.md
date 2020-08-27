@@ -3,7 +3,7 @@
 [logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo1.png
 
 # Machine Learning Collection
-In this repository I will be uploading everything machine learning related. I try to make the code as clear as possible, and the goal is be to used as a learning resource and a way to lookup problems to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for a few I've done the derivations on my [blog](https://aladdinperzon.github.io). If you got any questions add an issue or would like to add an algorithm do a PR! This repository is contribution friendly :smiley:
+In this repository you will find things related to Machine Learning. I try to make the code as clear as possible, and the goal is be to used as a learning resource and a way to lookup problems to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for a few I've done the derivations on my [blog](https://aladdinperzon.github.io). If you got any questions add an issue or would like to add an algorithm do a PR! This repository is contribution friendly :smiley:
 
 :white_check_mark: :small_red_triangle:: Algorithm is tested/untested
 
