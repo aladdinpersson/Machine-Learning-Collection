@@ -71,7 +71,7 @@ If you have any specific video suggestion please make a comment on YouTube :)
 If you have any specific video suggestion please make a comment on YouTube :)
 
 ### Beginner Course
-* [![Youtube Link][logo]](https://youtu.be/5Ym-dOS9ssA) &nbsp; [Tutorial 1 - Installation]
+* [![Youtube Link][logo]](https://youtu.be/5Ym-dOS9ssA) &nbsp; Tutorial 1 - Installation
 * [![Youtube Link][logo]](https://youtu.be/HPjBY1H-U4U) &nbsp; [Tutorial 2 - Tensor Basics](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/TensorFlow/Basics/tutorial2-tensorbasics.py)
 * [![Youtube Link][logo]](https://youtu.be/pAhPiF3yiXI) &nbsp; [Tutorial 3 - Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/TensorFlow/Basics/tutorial3-neuralnetwork.py) **- Sequential and Functional API**
 * [![Youtube Link][logo]](https://youtu.be/WAciKiDP2bo) &nbsp; [Tutorial 4 - CNN](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/TensorFlow/Basics/tutorial4-convnet.py) **- Sequential and Functional API**
