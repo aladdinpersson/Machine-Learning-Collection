@@ -31,7 +31,7 @@ In this repository you will find tutorials and projects related to Machine Learn
 * [Decision Tree](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/decisiontree/decision_tree.py) **- Decision Tree by Philip Andreadis**
 
 ## PyTorch Tutorials
-Always looking to make this resource larger and if you have any suggestions leave them as a comment on YouTube.
+If you have any specific video suggestion please make a comment on YouTube :)
 
 ### Basics
 * [![Youtube Link][logo]](https://youtu.be/x9JiIFvlUwk) &nbsp; [Tensor Basics](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorbasics.py)
@@ -68,7 +68,7 @@ Always looking to make this resource larger and if you have any suggestions leav
 * [![Youtube Link][logo]](https://youtu.be/DkNIBBBvcPs) &nbsp; [ResNet](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_resnet.py) **- CNN architecture**
  
 ## TensorFlow Tutorials
-Always looking to make this resource larger and if you have any suggestions leave them as a comment on YouTube.
+If you have any specific video suggestion please make a comment on YouTube :)
 
 ### Basics
 * [![Youtube Link][logo]](https://youtu.be/x9JiIFvlUwk) &nbsp; [Tensor Basics](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorbasics.py)
