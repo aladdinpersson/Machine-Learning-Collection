@@ -73,9 +73,21 @@ If you have any specific video suggestion please make a comment on YouTube :)
 ### Beginner Course
 * [![Youtube Link][logo]](https://youtu.be/5Ym-dOS9ssA) &nbsp; Tutorial 1 - Installation, Video Only
 * [![Youtube Link][logo]](https://youtu.be/HPjBY1H-U4U) &nbsp; [Tutorial 2 - Tensor Basics](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/TensorFlow/Basics/tutorial2-tensorbasics.py)
-* [![Youtube Link][logo]](https://youtu.be/pAhPiF3yiXI) &nbsp; [Tutorial 3 - Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/TensorFlow/Basics/tutorial3-neuralnetwork.py) **- Sequential and Functional API**
-* [![Youtube Link][logo]](https://youtu.be/WAciKiDP2bo) &nbsp; [Tutorial 4 - CNN](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/TensorFlow/Basics/tutorial4-convnet.py) **- Sequential and Functional API**
+* [![Youtube Link][logo]](https://youtu.be/pAhPiF3yiXI) &nbsp; [Tutorial 3 - Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/TensorFlow/Basics/tutorial3-neuralnetwork.py)
+* [![Youtube Link][logo]](https://youtu.be/WAciKiDP2bo) &nbsp; [Tutorial 4 - Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/TensorFlow/Basics/tutorial4-convnet.py)
 * [![Youtube Link][logo]](https://youtu.be/kJSUq1PLmWg) &nbsp; [Tutorial 5 - Regularization](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/TensorFlow/Basics/tutorial5-regularization.py)
 * [![Youtube Link][logo]](https://youtu.be/WAciKiDP2bo) &nbsp; [Tutorial 6 - RNN, GRU, LSTM](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/TensorFlow/Basics/tutorial6-rnn-gru-lstm.py)
 * [![Youtube Link][logo]](https://youtu.be/kJSUq1PLmWg) &nbsp; [Tutorial 7 - Functional API](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/TensorFlow/Basics/tutorial7-indepth-functional.py)
+* [![Youtube Link][logo]](https://youtu.be/cKMJDkWSDnY) &nbsp; [Tutorial 9 - Custom Layers]()
+* [![Youtube Link][logo]](https://youtu.be/idus3KO6Wic) &nbsp; [Tutorial 10 - Saving and Loading Models]()
+* [![Youtube Link][logo]](https://youtu.be/WJZoywOG1cs) &nbsp; [Tutorial 11 - Transfer Learning]()
+* [![Youtube Link][logo]](https://youtu.be/YrMy-BAqk8k) &nbsp; [Tutorial 12 - TensorFlow Datasets]()
+* [![Youtube Link][logo]](https://youtu.be/8wwfVV7ixyY) &nbsp; [Tutorial 13 - Data Augmentation]()
+* [![Youtube Link][logo]](https://youtu.be/WUzLJZCKNu4) &nbsp; [Tutorial 14 - Callbacks]()
+* [![Youtube Link][logo]](https://youtu.be/S6tLSI8bjGs) &nbsp; [Tutorial 15 - Custom model.fit]()
+* [![Youtube Link][logo]](https://youtu.be/_u7AVsxANes) &nbsp; [Tutorial 16 - Custom Loops]()
+* [![Youtube Link][logo]](https://youtu.be/k7KfYXXrOj0) &nbsp; [Tutorial 17 - TensorBoard]()
+* [![Youtube Link][logo]](https://youtu.be/q7ZuZ8ZOErE) &nbsp; [Tutorial 18 - Custom Dataset Images]()
+* [![Youtube Link][logo]](https://youtu.be/NoKvCREx36Q) &nbsp; [Tutorial 19 - Custom Dataset Text]()
+* [![Youtube Link][logo]](https://youtu.be/ea5Z1smiR3U) &nbsp; [Tutorial 20 - Classifying Skin Cancer]() **- Beginner Project Example**
  
