@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/AladdinPerzon/Machine-Learning-Collection.svg?branch=master)](https://travis-ci.com/AladdinPerzon/Machine-Learning-Collection) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<p align="center"><img width="40%" src="ML/others/logo/ml_logo.png/></p>
+<p align="center"><img width="40%" src="ML/others/logo/pytorch_logo_2080.svg/></p>
 
 [logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo1.png
 
