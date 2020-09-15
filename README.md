@@ -13,9 +13,9 @@ In this repository you will find tutorials and projects related to Machine Learn
 ## Table Of Contents
 - [Machine Learning Algorithms](#machine-learning)
 - [PyTorch Tutorials](#pytorch-tutorials)
-	- [Basics](#basics)
-	- [More Advanced](#more-advanced)
-	- [Architectures](#architectures)
+	- [Basics](#1.basics)
+	- [More Advanced](#2.more-advanced)
+	- [Architectures](#3.architectures)
 - [TensorFlow Tutorials](#tensorflow-tutorials)
 	- [Basics](#basics)
 
