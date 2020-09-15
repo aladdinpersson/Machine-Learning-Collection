@@ -8,21 +8,25 @@
 [logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/ylogo1.png
 
 # Machine Learning Collection
-In this repository you will find things related to Machine Learning. I try to make the code as clear as possible, and the goal is be to used as a learning resource and a way to lookup problems to solve specific problems. For most I have also done video explanations on youtube to make it easier to follow the code if you're a beginner, and for a few I've done the derivations on my [blog](https://aladdinperzon.github.io). If you got any questions add an issue or would like to add an algorithm do a PR! This repository is contribution friendly :smiley:
+In this repository you will find tutorials and projects related to Machine Learning. I try to make the code as clear as possible, and the goal is be to used as a learning resource and a way to lookup problems to solve specific problems. For most I have also done video explanations on YouTube to make it easier to follow the code. If you got any questions add an issue (or comment on YouTube, I read and answer to most), and if you would like to add an algorithm/improve something please do make a PR! This repository is contribution friendly :smiley:
 
-:white_check_mark: :small_red_triangle:: Algorithm is tested/untested
+## Table Of Contents
+- [Machine Learning Algorithms](#machine-learning)
+- [PyTorch Tutorials](#pytorch-tutorials)
+- [TensorFlow Tutorials](#tensorflow-tutorials)
 
 ## Machine Learning
 * [![Youtube Link][logo]](https://youtu.be/pCCUnoes1Po) &nbsp; [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/linearregression/linear_regression_gradient_descent.py) **- With Gradient Descent** :white_check_mark: 
 * [![Youtube Link][logo]](https://youtu.be/DQ6xfe75CDk) &nbsp; [Linear Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/linearregression/linear_regression_normal_equation.py) **- With Normal Equation** :white_check_mark:
 * [![Youtube Link][logo]](https://youtu.be/x1ez9vi611I) &nbsp; [Logistic Regression](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/logisticregression/logistic_regression.py)
 * [![Youtube Link][logo]](https://youtu.be/3trW5Lig7BU) &nbsp; [Naive Bayes](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/naivebayes/naivebayes.py) **- Gaussian Naive Bayes**
+* Decision Tree](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/naivebayes/naivebayes.py) **- Gaussian Naive Bayes**
 * [![Youtube Link][logo]](https://youtu.be/QzAaRuDskyc) &nbsp; [K-nearest neighbors](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/knn/knn.py)
 * [![Youtube Link][logo]](https://youtu.be/W4fSRHeafMo) &nbsp; [K-means clustering](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/kmeans/kmeansclustering.py) 
 * [![Youtube Link][logo]](https://youtu.be/gBTtR0bs-1k) &nbsp; [Support Vector Machine](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/svm/svm.py) **- Using CVXOPT**
 * [![Youtube Link][logo]](https://youtu.be/NJvojeoTnNM) &nbsp; [Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/algorithms/neuralnetwork/NN.py)
 
-## Deep learning Pytorch
+## PyTorch Tutorials
 Always looking to make this resource larger and if you have any suggestions leave them as a comment on YouTube.
 
 ### 1. Basics
@@ -38,9 +42,11 @@ Always looking to make this resource larger and if you have any suggestions leav
 * [![Youtube Link][logo]](https://youtu.be/Zvd276j9sZ8) &nbsp; [Transforms & Data Augmentation](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_transforms.py#L56-L72)
 * [![Youtube Link][logo]](https://youtu.be/P31hB37g4Ak) &nbsp; [Learning Rate Scheduler](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_lr_ratescheduler.py#L45-L78) 
 * [![Youtube Link][logo]](https://youtu.be/xWQ-p_o0Uik) &nbsp; [Initialization of weights](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_init_weights.py#L35-L49)
+* [![Youtube Link][logo]](https://youtu.be/RLqsxWaQdHE) &nbsp; [TensorBoard Example](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/79f2e1928906f3cccbae6c024f3f79fd05262cd1/ML/Pytorch/Basics/pytorch_tensorboard_.py#L72-L120)
 * [![Youtube Link][logo]](https://youtu.be/y6IEcEBRZks) &nbsp; [Calculate Mean and STD of Images](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/55637e6afbb8cc8be6a63e04bbc899704f862911/ML/Pytorch/Basics/pytorch_std_mean.py#L41-L53)
-	
+
 ### 2. More Advanced
+* [![Youtube Link][logo]](https://youtu.be/WujVlF_6h5A) &nbsp; [Text Generating LSTM](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Projects/text_generation_babynames/generating_names.py)
 * [![Youtube Link][logo]](https://youtu.be/y2BaTt1fxJU) &nbsp; [Image Captioning](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Pytorch/more_advanced/image_captioning)
 * [![Youtube Link][logo]](https://youtu.be/imX4kSKDY7s) &nbsp; [Neural Style Transfer](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/neuralstyle/nst.py)
 * [![Youtube Link][logo]](https://youtu.be/5RYETbFFQ7s) &nbsp; [Generative Adversarial Networks](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Pytorch/more_advanced/GANs)
@@ -57,11 +63,10 @@ Always looking to make this resource larger and if you have any suggestions leav
 * [![Youtube Link][logo]](https://youtu.be/uQc4Fs7yx5I) &nbsp; [Inception v1](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_inceptionet.py) **- CNN architecture**
 * [![Youtube Link][logo]](https://youtu.be/DkNIBBBvcPs) &nbsp; [ResNet](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_resnet.py) **- CNN architecture**
  
-### 4. Utilities
-* [![Youtube Link][logo]](https://youtu.be/RLqsxWaQdHE) &nbsp; [TensorBoard Example](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/79f2e1928906f3cccbae6c024f3f79fd05262cd1/ML/Pytorch/Basics/pytorch_tensorboard_.py#L72-L120)
+## TensorFlow Tutorials
+Always looking to make this resource larger and if you have any suggestions leave them as a comment on YouTube.
 
-### 5. Smaller Projects
-* [Exploring MNIST](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Projects/Exploring_MNIST) **- Needs updating**
-* [![Youtube Link][logo]](https://youtu.be/WujVlF_6h5A) &nbsp; [Text Generating LSTM](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Projects/text_generation_babynames/generating_names.py)
-
-
+### 1. Basics
+* [![Youtube Link][logo]](https://youtu.be/x9JiIFvlUwk) &nbsp; [Tensor Basics](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorbasics.py)
+* [![Youtube Link][logo]](https://youtu.be/Jy4wM2X21u0) &nbsp; [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_simple_fullynet.py#L26-L35)
+* [![Youtube Link][logo]](https://youtu.be/wnK3uWv_WkU) &nbsp; [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/157a5f458f272a513eb6b4a19d6613aec32dc21c/ML/Pytorch/Basics/pytorch_simple_CNN.py#L25-L41)
