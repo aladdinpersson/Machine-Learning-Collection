@@ -13,9 +13,9 @@ In this repository you will find tutorials and projects related to Machine Learn
 ## Table Of Contents
 - [Machine Learning Algorithms](#machine-learning)
 - [PyTorch Tutorials](#pytorch-tutorials)
-	- [Basics](#1.basics)
-	- [More Advanced](#2.more-advanced)
-	- [Architectures](#3.architectures)
+	- [Basics](#basics)
+	- [More Advanced](#more-advanced)
+	- [Architectures](#architectures)
 - [TensorFlow Tutorials](#tensorflow-tutorials)
 	- [Basics](#basics)
 
@@ -33,7 +33,7 @@ In this repository you will find tutorials and projects related to Machine Learn
 ## PyTorch Tutorials
 Always looking to make this resource larger and if you have any suggestions leave them as a comment on YouTube.
 
-### 1. Basics
+### Basics
 * [![Youtube Link][logo]](https://youtu.be/x9JiIFvlUwk) &nbsp; [Tensor Basics](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorbasics.py)
 * [![Youtube Link][logo]](https://youtu.be/Jy4wM2X21u0) &nbsp; [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_simple_fullynet.py#L26-L35)
 * [![Youtube Link][logo]](https://youtu.be/wnK3uWv_WkU) &nbsp; [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/157a5f458f272a513eb6b4a19d6613aec32dc21c/ML/Pytorch/Basics/pytorch_simple_CNN.py#L25-L41)
@@ -49,7 +49,7 @@ Always looking to make this resource larger and if you have any suggestions leav
 * [![Youtube Link][logo]](https://youtu.be/RLqsxWaQdHE) &nbsp; [TensorBoard Example](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/79f2e1928906f3cccbae6c024f3f79fd05262cd1/ML/Pytorch/Basics/pytorch_tensorboard_.py#L72-L120)
 * [![Youtube Link][logo]](https://youtu.be/y6IEcEBRZks) &nbsp; [Calculate Mean and STD of Images](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/55637e6afbb8cc8be6a63e04bbc899704f862911/ML/Pytorch/Basics/pytorch_std_mean.py#L41-L53)
 
-### 2. More Advanced
+### More Advanced
 * [![Youtube Link][logo]](https://youtu.be/WujVlF_6h5A) &nbsp; [Text Generating LSTM](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Projects/text_generation_babynames/generating_names.py)
 * [![Youtube Link][logo]](https://youtu.be/y2BaTt1fxJU) &nbsp; [Image Captioning](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Pytorch/more_advanced/image_captioning)
 * [![Youtube Link][logo]](https://youtu.be/imX4kSKDY7s) &nbsp; [Neural Style Transfer](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/neuralstyle/nst.py)
@@ -61,7 +61,7 @@ Always looking to make this resource larger and if you have any suggestions leav
 * [![Youtube Link][logo]](https://youtu.be/U0s0f995w14) &nbsp; [Transformers from scratch](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/transformer_from_scratch/transformer_from_scratch.py) **- Attention Is All You Need**
 
 
-### 3. Architectures
+### Architectures
 * [![Youtube Link][logo]](https://youtu.be/fcOW-Zyb5Bo) &nbsp; [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/79f2e1928906f3cccbae6c024f3f79fd05262cd1/ML/Pytorch/CNN_architectures/lenet5_pytorch.py#L15-L35) **- CNN architecture**
 * [![Youtube Link][logo]](https://youtu.be/ACmuBbuXn20) &nbsp; [VGG](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/79f2e1928906f3cccbae6c024f3f79fd05262cd1/ML/Pytorch/CNN_architectures/pytorch_vgg_implementation.py#L16-L62) **- CNN architecture**
 * [![Youtube Link][logo]](https://youtu.be/uQc4Fs7yx5I) &nbsp; [Inception v1](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_inceptionet.py) **- CNN architecture**
@@ -70,7 +70,7 @@ Always looking to make this resource larger and if you have any suggestions leav
 ## TensorFlow Tutorials
 Always looking to make this resource larger and if you have any suggestions leave them as a comment on YouTube.
 
-### 1. Basics
+### Basics
 * [![Youtube Link][logo]](https://youtu.be/x9JiIFvlUwk) &nbsp; [Tensor Basics](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/Basics/pytorch_tensorbasics.py)
 * [![Youtube Link][logo]](https://youtu.be/Jy4wM2X21u0) &nbsp; [Feedforward Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/804c45e83b27c59defb12f0ea5117de30fe25289/ML/Pytorch/Basics/pytorch_simple_fullynet.py#L26-L35)
 * [![Youtube Link][logo]](https://youtu.be/wnK3uWv_WkU) &nbsp; [Convolutional Neural Network](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/157a5f458f272a513eb6b4a19d6613aec32dc21c/ML/Pytorch/Basics/pytorch_simple_CNN.py#L25-L41)
