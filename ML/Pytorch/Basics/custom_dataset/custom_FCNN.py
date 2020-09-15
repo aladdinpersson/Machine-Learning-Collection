@@ -10,8 +10,12 @@ import torch.optim as optim  # For all Optimization algorithms, SGD, Adam, etc.
 import torchvision
 import torchvision.transforms as transforms  # Transformations we can perform on our dataset
 from pandas import io
+
 # from skimage import io
-from torch.utils.data import Dataset, DataLoader  # Gives easier dataset managment and creates mini batches
+from torch.utils.data import (
+    Dataset,
+    DataLoader,
+)  # Gives easier dataset managment and creates mini batches
 import torch.nn as nn  # All neural network modules, nn.Linear, nn.Conv2d, BatchNorm, Loss functions
 
 
@@ -26,6 +30,7 @@ class NN(nn.Module):
         x = F.relu(self.fc1(x))
         x = self.fc2(x)
         return x
+
 
 class SoloDataset(Dataset):
     def __init__(self, csv_file, root_dir, transform=None):
@@ -43,8 +48,9 @@ class SoloDataset(Dataset):
 
         return (x_data.float(), y_label)
 
+
 # Set device
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Hyperparameters
 num_classes = 26
@@ -54,7 +60,9 @@ num_epochs = 30
 input_size = 11
 
 # Load Data
-dataset = SoloDataset(csv_file='power.csv', root_dir='test123', transform=transforms.ToTensor())
+dataset = SoloDataset(
+    csv_file="power.csv", root_dir="test123", transform=transforms.ToTensor()
+)
 train_set, test_set = torch.utils.data.random_split(dataset, [2900, 57])
 train_loader = DataLoader(dataset=train_set, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(dataset=test_set, batch_size=batch_size, shuffle=True)
@@ -90,7 +98,7 @@ for epoch in range(num_epochs):
         # gradient descent or adam step
         optimizer.step()
 
-    print(f'Cost at epoch {epoch} is {sum(losses) / len(losses)}')
+    print(f"Cost at epoch {epoch} is {sum(losses) / len(losses)}")
 
 
 # Check accuracy on training to see how good our model is
@@ -109,7 +117,9 @@ def check_accuracy(loader, model):
             num_correct += (predictions == y).sum()
             num_samples += predictions.size(0)
 
-        print(f'Got {num_correct} / {num_samples} with accuracy {float(num_correct) / float(num_samples) * 100:.2f}')
+        print(
+            f"Got {num_correct} / {num_samples} with accuracy {float(num_correct) / float(num_samples) * 100:.2f}"
+        )
 
     model.train()
 

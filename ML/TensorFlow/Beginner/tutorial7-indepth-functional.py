@@ -1,9 +1,11 @@
 import os
+
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers, regularizers
 from tensorflow.keras.datasets import mnist
+
 # Use Pandas to load dataset from csv file
 import pandas as pd
 
@@ -40,9 +42,7 @@ def read_image(image_path, label):
 
 
 AUTOTUNE = tf.data.experimental.AUTOTUNE
-train_dataset = tf.data.Dataset.from_tensor_slices(
-    (train_images, train_labels)
-)
+train_dataset = tf.data.Dataset.from_tensor_slices((train_images, train_labels))
 train_dataset = (
     train_dataset.shuffle(buffer_size=len(train_labels))
     .map(read_image)
@@ -57,35 +57,30 @@ test_dataset = (
     .prefetch(buffer_size=AUTOTUNE)
 )
 
-inputs = keras.Input(shape = (64, 64, 1))
+inputs = keras.Input(shape=(64, 64, 1))
 x = layers.Conv2D(
     filters=32,
     kernel_size=3,
-    padding='same',
-    kernel_regularizer = regularizers.l2(WEIGHT_DECAY),
+    padding="same",
+    kernel_regularizer=regularizers.l2(WEIGHT_DECAY),
 )(inputs)
 x = layers.BatchNormalization()(x)
 x = keras.activations.relu(x)
-x = layers.Conv2D(
-    64, 3, kernel_regularizer=regularizers.l2(WEIGHT_DECAY),
-)(x)
+x = layers.Conv2D(64, 3, kernel_regularizer=regularizers.l2(WEIGHT_DECAY),)(x)
 x = layers.BatchNormalization()(x)
 x = keras.activations.relu(x)
 x = layers.MaxPooling2D()(x)
 x = layers.Conv2D(
-    64,
-    3,
-    activation='relu',
-    kernel_regularizer=regularizers.l2(WEIGHT_DECAY),
+    64, 3, activation="relu", kernel_regularizer=regularizers.l2(WEIGHT_DECAY),
 )(x)
-x = layers.Conv2D(128, 3, activation='relu')(x)
+x = layers.Conv2D(128, 3, activation="relu")(x)
 x = layers.MaxPooling2D()(x)
 x = layers.Flatten()(x)
 x = layers.Dense(128, activation="relu")(x)
 x = layers.Dropout(0.5)(x)
 x = layers.Dense(64, activation="relu")(x)
-output1 = layers.Dense(10, activation='softmax', name='first_num')(x)
-output2 = layers.Dense(10, activation='softmax', name='second_num')(x)
+output1 = layers.Dense(10, activation="softmax", name="first_num")(x)
+output2 = layers.Dense(10, activation="softmax", name="second_num")(x)
 model = keras.Model(inputs=inputs, outputs=[output1, output2])
 
 model.compile(
@@ -96,4 +91,3 @@ model.compile(
 
 model.fit(train_dataset, epochs=5, verbose=2)
 model.evaluate(test_dataset, verbose=2)
-
