@@ -2,7 +2,7 @@ import sys
 import unittest
 import torch
 
-sys.path.append("../../ML/Pytorch/object_detection/metrics")
+sys.path.append("ML/Pytorch/object_detection/metrics")
 from iou import intersection_over_union
 
 
