@@ -3,7 +3,7 @@ import unittest
 import torch
 
 sys.path.append("ML/Pytorch/object_detection/metrics/")
-from nms import non_max_suppression
+from nms import nms
 
 
 class TestNonMaxSuppression(unittest.TestCase):

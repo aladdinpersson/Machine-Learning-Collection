@@ -111,5 +111,5 @@ class TestMeanAveragePrecision(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    print("Running Intersection Over Union Tests:")
+    print("Running Mean Average Precisions Tests:")
     unittest.main()

@@ -1,6 +1,8 @@
 import torch
 from collections import Counter
 
+from iou import intersection_over_union
+
 def mean_average_precision(
     pred_boxes, true_boxes, iou_threshold=0.5, box_format="midpoint", num_classes=20
 ):
