@@ -60,6 +60,12 @@ If you have any specific video suggestion please make a comment on YouTube :)
 * [![Youtube Link][logo]](https://youtu.be/M6adRGJe5cQ) &nbsp; [Seq2Seq Transformers](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/seq2seq_transformer/seq2seq_transformer.py) **- Sequence to Sequence with Transformers**
 * [![Youtube Link][logo]](https://youtu.be/U0s0f995w14) &nbsp; [Transformers from scratch](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/transformer_from_scratch/transformer_from_scratch.py) **- Attention Is All You Need**
 
+### Object Detection
+* [![Youtube Link][logo]]() &nbsp; [Intersection over Union](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/object_detection/metrics/iou.py) 
+* [![Youtube Link][logo]]() &nbsp; [Non-Max Suppression](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/object_detection/metrics/nms.py)
+* [![Youtube Link][logo]]() &nbsp; [Mean Average Precision](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/object_detection/metrics/mean_avg_precision.py)
+* [![Youtube Link][logo]]() &nbsp; [YOLO from scratch](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/object_detection/YOLO)
+
 
 ### Architectures
 * [![Youtube Link][logo]](https://youtu.be/fcOW-Zyb5Bo) &nbsp; [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/79f2e1928906f3cccbae6c024f3f79fd05262cd1/ML/Pytorch/CNN_architectures/lenet5_pytorch.py#L15-L35) **- CNN architecture**
