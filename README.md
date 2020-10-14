@@ -16,6 +16,7 @@ In this repository you will find tutorials and projects related to Machine Learn
 	- [Basics](#basics)
 	- [More Advanced](#more-advanced)
 	- [Architectures](#architectures)
+    - [Object Detection](#Object-Detection)
 - [TensorFlow Tutorials](#tensorflow-tutorials)
 	- [Beginner Course](#beginner-course)
 
