@@ -24,9 +24,10 @@ before_script:
 script:
      - awesome_bot README.md --allow-dupe --allow-redirect
      #- flake8 --max-line-length=88
-     - pytest --cov-report term --cov=investpy ML_tests/
+     - pytest --cov=investpy ML_tests/
      #- python ML_tests/LinearRegression_tests/LinearRegression_GD.py
      #- python ML_tests/LinearRegression_tests/LinearRegression_normal.py
 
-after_success:
-    - codecov
+#after_success:
+#  pass
+#- codecov
