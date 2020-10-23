@@ -284,7 +284,7 @@ if __name__ == "__main__":
     trg_pad_idx = 0
     src_vocab_size = 10
     trg_vocab_size = 10
-    model = Transformer(src_vocab_size, trg_vocab_size, src_pad_idx, trg_pad_idx).to(
+    model = Transformer(src_vocab_size, trg_vocab_size, src_pad_idx, trg_pad_idx, device=device).to(
         device
     )
     out = model(x, trg[:, :-1])
