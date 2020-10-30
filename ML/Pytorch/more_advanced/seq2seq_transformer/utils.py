@@ -6,7 +6,7 @@ import sys
 
 def translate_sentence(model, sentence, german, english, device, max_length=50):
     # Load german tokenizer
-    spacy_ger = spacy.load("de")
+    spacy_ger = spacy.load("de_core_news_sm")
 
     # Create tokens using spacy and everything in lower case (which is what our vocab is)
     if type(sentence) == str:
@@ -23,13 +23,17 @@ def translate_sentence(model, sentence, german, english, device, max_length=50):
 
     # Convert to Tensor
     sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device)
+    sentence_tensor = torch.transpose(sentence_tensor, 0, 1)
 
     outputs = [english.vocab.stoi["<sos>"]]
     for i in range(max_length):
         trg_tensor = torch.LongTensor(outputs).unsqueeze(1).to(device)
-
+        trg_tensor = torch.transpose(trg_tensor, 0, 1)
+    
         with torch.no_grad():
             output = model(sentence_tensor, trg_tensor)
+            output = torch.transpose(output, 0, 1)
+            #print("output", output.shape)
 
         best_guess = output.argmax(2)[-1, :].item()
         outputs.append(best_guess)

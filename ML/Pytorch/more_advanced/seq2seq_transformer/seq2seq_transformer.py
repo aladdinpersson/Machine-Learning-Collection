@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# https://www.youtube.com/watch?v=M6adRGJe5cQ
+# https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/more_advanced/seq2seq_transformer
 """
 Seq2Seq using Transformers on the Multi30k
 dataset. In this video I utilize Pytorch
@@ -18,14 +21,15 @@ from utils import translate_sentence, bleu, save_checkpoint, load_checkpoint
 from torch.utils.tensorboard import SummaryWriter
 from torchtext.datasets import Multi30k
 from torchtext.data import Field, BucketIterator
+from Models import Transformer
 
 """
 To install spacy languages do:
 python -m spacy download en
 python -m spacy download de
 """
-spacy_ger = spacy.load("de")
-spacy_eng = spacy.load("en")
+spacy_ger = spacy.load("de_core_news_sm")
+spacy_eng = spacy.load("en_core_web_sm")
 
 
 def tokenize_ger(text):
@@ -49,97 +53,16 @@ train_data, valid_data, test_data = Multi30k.splits(
 german.build_vocab(train_data, max_size=10000, min_freq=2)
 english.build_vocab(train_data, max_size=10000, min_freq=2)
 
-
-class Transformer(nn.Module):
-    def __init__(
-        self,
-        embedding_size,
-        src_vocab_size,
-        trg_vocab_size,
-        src_pad_idx,
-        num_heads,
-        num_encoder_layers,
-        num_decoder_layers,
-        forward_expansion,
-        dropout,
-        max_len,
-        device,
-    ):
-        super(Transformer, self).__init__()
-        self.src_word_embedding = nn.Embedding(src_vocab_size, embedding_size)
-        self.src_position_embedding = nn.Embedding(max_len, embedding_size)
-        self.trg_word_embedding = nn.Embedding(trg_vocab_size, embedding_size)
-        self.trg_position_embedding = nn.Embedding(max_len, embedding_size)
-
-        self.device = device
-        self.transformer = nn.Transformer(
-            embedding_size,
-            num_heads,
-            num_encoder_layers,
-            num_decoder_layers,
-            forward_expansion,
-            dropout,
-        )
-        self.fc_out = nn.Linear(embedding_size, trg_vocab_size)
-        self.dropout = nn.Dropout(dropout)
-        self.src_pad_idx = src_pad_idx
-
-    def make_src_mask(self, src):
-        src_mask = src.transpose(0, 1) == self.src_pad_idx
-
-        # (N, src_len)
-        return src_mask.to(self.device)
-
-    def forward(self, src, trg):
-        src_seq_length, N = src.shape
-        trg_seq_length, N = trg.shape
-
-        src_positions = (
-            torch.arange(0, src_seq_length)
-            .unsqueeze(1)
-            .expand(src_seq_length, N)
-            .to(self.device)
-        )
-
-        trg_positions = (
-            torch.arange(0, trg_seq_length)
-            .unsqueeze(1)
-            .expand(trg_seq_length, N)
-            .to(self.device)
-        )
-
-        embed_src = self.dropout(
-            (self.src_word_embedding(src) + self.src_position_embedding(src_positions))
-        )
-        embed_trg = self.dropout(
-            (self.trg_word_embedding(trg) + self.trg_position_embedding(trg_positions))
-        )
-
-        src_padding_mask = self.make_src_mask(src)
-        trg_mask = self.transformer.generate_square_subsequent_mask(trg_seq_length).to(
-            self.device
-        )
-
-        out = self.transformer(
-            embed_src,
-            embed_trg,
-            src_key_padding_mask=src_padding_mask,
-            tgt_mask=trg_mask,
-        )
-        out = self.fc_out(out)
-        return out
-
-
 # We're ready to define everything we need for training our Seq2Seq model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-load_model = True
-save_model = True
+print("device", device)
+load_model = False
+save_model = False
 
 # Training hyperparameters
-num_epochs = 10000
+num_epochs = 3 #10000
 learning_rate = 3e-4
-batch_size = 32
+batch_size = 64
 
 # Model hyperparameters
 src_vocab_size = len(german.vocab)
@@ -177,7 +100,9 @@ model = Transformer(
     dropout,
     max_len,
     device,
-).to(device)
+)
+#model = nn.DataParallel(model) #, device_ids=[0, 1]
+model.to(device)
 
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
@@ -216,9 +141,17 @@ for epoch in range(num_epochs):
         # Get input and targets and get to cuda
         inp_data = batch.src.to(device)
         target = batch.trg.to(device)
-
+        target_data = target[:-1, :]
+        #print("inp_data, target", inp_data.shape, target.shape, target_data.shape)
+        
+        inp_data = torch.transpose(inp_data, 0, 1)
+        target_data = torch.transpose(target_data, 0, 1)
+        #print("inp_data, target_data transpose", inp_data.shape, target_data.shape)
+        
         # Forward prop
-        output = model(inp_data, target[:-1, :])
+        output = model(inp_data, target_data)
+        output = torch.transpose(output, 0, 1)
+        #print("output", output.shape)
 
         # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
         # doesn't take input in that form. For example if we have MNIST we want to have
