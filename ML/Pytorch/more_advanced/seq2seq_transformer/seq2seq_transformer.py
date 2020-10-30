@@ -101,7 +101,7 @@ model = Transformer(
     max_len,
     device,
 )
-#model = nn.DataParallel(model) #, device_ids=[0, 1]
+model = nn.DataParallel(model) #, device_ids=[0, 1]
 model.to(device)
 
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
