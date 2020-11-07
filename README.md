@@ -109,5 +109,5 @@ If you have any specific video suggestion please make a comment on YouTube :)
 * [AlexNet](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/TensorFlow/CNN_architectures/AlexNet)
 * [VGG](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/TensorFlow/CNN_architectures/VGGNet)
 * [GoogLeNet](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/TensorFlow/CNN_architectures/GoogLeNet)
-* [ResNet](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/TensorFlow/CNN_architectures/ResNet/resnet.py)
+* [ResNet](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/TensorFlow/CNN_architectures/ResNet)
  
