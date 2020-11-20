@@ -44,3 +44,4 @@ def plot_contour(X, y, svm):
 
     # plt the points
     plt.scatter(X[:, 0], X[:, 1], c=y, s=40, cmap=plt.cm.Spectral)
+    plt.show()
