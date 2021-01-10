@@ -204,7 +204,7 @@ print(x[indices])  # x[indices] = [2, 5, 8]
 x = torch.rand((3, 5))
 rows = torch.tensor([1, 0])
 cols = torch.tensor([4, 0])
-print(x[rows, cols])  # Gets second row fourth column and first row first column
+print(x[rows, cols])  # Gets second row fifth column and first row first column
 
 # More advanced indexing
 x = torch.arange(10)
