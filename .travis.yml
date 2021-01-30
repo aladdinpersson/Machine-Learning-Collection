@@ -1,0 +1,33 @@
+language: python
+
+# Default Python version
+python: 3.8
+
+# Install ruby to get gem command
+before_install:
+  - sudo apt-add-repository -y ppa:brightbox/ruby-ng
+  - sudo apt-get -y update
+  - sudo apt-get -y install ruby-full
+
+install:
+    - pip install torch
+    - pip install codecov==2.0.15
+    - pip install pytest-cov==2.7.1
+
+#before_install:
+#    - cd Algorithm_tests/sorting_tests
+# Install awesome_bot for README.md broken link checking
+
+before_script:
+  - gem install awesome_bot
+
+script:
+     - awesome_bot README.md --allow-dupe --allow-redirect
+     #- flake8 --max-line-length=88
+     - pytest --cov=investpy ML_tests/
+     #- python ML_tests/LinearRegression_tests/LinearRegression_GD.py
+     #- python ML_tests/LinearRegression_tests/LinearRegression_normal.py
+
+#after_success:
+#  pass
+#- codecov
