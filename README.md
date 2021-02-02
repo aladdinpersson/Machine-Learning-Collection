@@ -58,6 +58,7 @@ If you have any specific video suggestion please make a comment on YouTube :)
 
 ### More Advanced
 * [![Youtube Link][logo]](https://youtu.be/WujVlF_6h5A) &nbsp; [Text Generating LSTM](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Projects/text_generation_babynames/generating_names.py)
+* [![Youtube Link][logo]](https://youtu.be/IHq1t7NxS8k) &nbsp; [Semantic Segmentation w. U-NET](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/image_segmentation/semantic_segmentation_unet)
 * [![Youtube Link][logo]](https://youtu.be/y2BaTt1fxJU) &nbsp; [Image Captioning](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/Pytorch/more_advanced/image_captioning)
 * [![Youtube Link][logo]](https://youtu.be/imX4kSKDY7s) &nbsp; [Neural Style Transfer](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/neuralstyle/nst.py)
 * [![Youtube Link][logo]](https://www.youtube.com/playlist?list=PLhhyoLH6IjfzxdlsLrclcCTsS8kIcfWJb) &nbsp; [Torchtext [1]](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/torchtext/torchtext_tutorial1.py) [Torchtext [2]](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/torchtext/torchtext_tutorial2.py) [Torchtext [3]](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/more_advanced/torchtext/torchtext_tutorial3.py)
