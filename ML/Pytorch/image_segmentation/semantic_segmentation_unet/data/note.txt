@@ -1,0 +1,7 @@
+download the data from kaggle and put in folders similar to the video, specifically you should have 4
+folders:
+
+- train_images
+- train_masks
+- val_images
+- val_masks
