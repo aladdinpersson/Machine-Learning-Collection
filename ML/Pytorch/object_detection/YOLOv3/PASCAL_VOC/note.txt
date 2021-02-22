@@ -1,0 +1,2 @@
+Put images in images folder, text files for labels in labels folder.
+Then under PASCAL_VOC put train.csv, and test.csv
