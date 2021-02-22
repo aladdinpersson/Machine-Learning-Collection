@@ -1,26 +1,27 @@
 # YOLOv3 in PyTorch
-A quite minimal implementation of YOLOv3 in PyTorch spanning only around 600 lines of code with support for training and evaluation and complete with helper functions for inference. There is currently pretrained weights for Pascal-VOC with MS COCO coming up. With minimal changes in the model with regards to the output format the original weights can also be loaded seamlessly.  
+A quite minimal implementation of YOLOv3 in PyTorch spanning only around 800 lines of code related to YOLOv3 (not counting plot image helper functions etc). The repository has support for training and evaluation and complete with helper functions for inference. There is currently pretrained weights for Pascal-VOC with MS COCO coming up. 
 
 ## Installation
 
 ### Clone and install requirements
 ```bash
-$ git clone 
-$ cd YOLOv3-PyTorch
+$ git clone https://github.com/aladdinpersson/Machine-Learning-Collection
+$ cd ML/Pytorch/object_detection/YOLOv3/
 $ pip install requirements.txt
 ```
 ### Download pretrained weights on Pascal-VOC
-Available on Kaggle: https://www.kaggle.com
-
-### Dowload original weights
-Download YOLOv3 weights from https://pjreddie.com/media/files/yolov3.weights. Save the weights to PyTorch format by running the model_with_weights.py file.
-Change line in train.py to import model_with_weights.py instead of model.py since the original output format is slightly different. This works well for
+Available on Kaggle: coming soon
 
 ### Download Pascal-VOC dataset
-Download the processed dataset from the following link: coming soon 
+Download the preprocessed dataset from the following link: www.kaggle.com/aladdinpersson/pascalvoc-yolo-works-with-albumentations
+Just unzip this in the main directory.
+
+### Download MS-COCO dataset
+Download the preprocessed dataset from the following link: www.kaggle.com/aladdinpersson/mscoco-yolo-works-with-albumentations
+Just unzip this in the main directory.
 
 ### Training
-Edit the config file to match the setup you want to use. Then run train.py
+Edit the config.py file to match the setup you want to use. Then run train.py
 
 ### Results
 | Model                   | mAP @ 50 IoU |
@@ -29,7 +30,6 @@ Edit the config file to match the setup you want to use. Then run train.py
 | YOLOv3 (MS-COCO)        | Not done yet      |
 
 The model was evaluated with confidence 0.2 and IOU threshold 0.45 using NMS.
-
 
 ## YOLOv3 paper 
 The implementation is based on the following paper:
