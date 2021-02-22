@@ -9,14 +9,15 @@ $ git clone https://github.com/aladdinpersson/Machine-Learning-Collection
 $ cd ML/Pytorch/object_detection/YOLOv3/
 $ pip install requirements.txt
 ```
+
 ### Download pretrained weights on Pascal-VOC
 Available on Kaggle: coming soon
 
-### Download Pascal-VOC dataset
-Download the preprocessed dataset from [this](www.kaggle.com/aladdinpersson/pascalvoc-yolo-works-with-albumentations). Just unzip this in the main directory.
+### Download Pascal VOC dataset
+Download the preprocessed dataset from [link](www.kaggle.com/aladdinpersson/pascalvoc-yolo-works-with-albumentations). Just unzip this in the main directory.
 
-### Download MS-COCO dataset
-Download the preprocessed dataset from [this](www.kaggle.com/aladdinpersson/mscoco-yolo-works-with-albumentations). Just unzip this in the main directory.
+### Download MS COCO dataset
+Download the preprocessed dataset from [link](www.kaggle.com/aladdinpersson/mscoco-yolo-works-with-albumentations). Just unzip this in the main directory.
 
 ### Training
 Edit the config.py file to match the setup you want to use. Then run train.py
@@ -28,6 +29,14 @@ Edit the config.py file to match the setup you want to use. Then run train.py
 | YOLOv3 (MS-COCO)        | Not done yet      |
 
 The model was evaluated with confidence 0.2 and IOU threshold 0.45 using NMS.
+
+### Things I'm unsure of
+From my understanding YOLOv3 labeled targets to include an anchor on each of the three different scales. This leads to a problem where we will have multiple 
+predictions of the same object and I think the idea is that we rely more on NMS. The probability of an object in loss function should correspond to the IOU 
+with the ground truth box, this should also alleviate with multiple bounding boxes prediction for each ground truth (since obj score is lower). When loading the 
+original weights for YOLOv3 I good mAP results but the object score, no object score seems to be a bit different because the accuracy on those aren't great.
+This suggests there's something wrong with the two implementations, but not sure what it could be. Both seems to work at least. The original YOLOv3 paper also used 
+BCE loss for class labels since some datasets are multi-label, however I thought it was more natural to use CrossEntropy because both Pascal and COCO just have a single label. 
 
 ## YOLOv3 paper 
 The implementation is based on the following paper:
