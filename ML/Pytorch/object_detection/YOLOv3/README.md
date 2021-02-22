@@ -11,13 +11,13 @@ $ pip install requirements.txt
 ```
 
 ### Download pretrained weights on Pascal-VOC
-Available on Kaggle: coming soon
+Available on Kaggle: [coming soon]()
 
 ### Download Pascal VOC dataset
-Download the preprocessed dataset from [link](www.kaggle.com/aladdinpersson/pascalvoc-yolo-works-with-albumentations). Just unzip this in the main directory.
+Download the preprocessed dataset from [coming soon](). Just unzip this in the main directory.
 
 ### Download MS COCO dataset
-Download the preprocessed dataset from [link](www.kaggle.com/aladdinpersson/mscoco-yolo-works-with-albumentations). Just unzip this in the main directory.
+Download the preprocessed dataset from [coming soon](). Just unzip this in the main directory.
 
 ### Training
 Edit the config.py file to match the setup you want to use. Then run train.py
@@ -35,10 +35,10 @@ From my understanding YOLOv3 labeled targets to include an anchor on each of the
 predictions of the same object and I think the idea is that we rely more on NMS. The probability of an object in loss function should correspond to the IOU 
 with the ground truth box, this should also alleviate with multiple bounding boxes prediction for each ground truth (since obj score is lower). When loading the 
 original weights for YOLOv3 I good mAP results but the object score, no object score seems to be a bit different because the accuracy on those aren't great.
-This suggests there's something wrong with the two implementations, but not sure what it could be. Both seems to work at least. The original YOLOv3 paper also used 
-BCE loss for class labels since some datasets are multi-label, however I thought it was more natural to use CrossEntropy because both Pascal and COCO just have a single label. 
+This suggests there's something different with the original implementation, but not sure what it is exactly. The original YOLOv3 paper also used  BCE loss 
+for class labels since some datasets are multi-label, however I thought it was more natural to use CrossEntropy because both Pascal and COCO just have a single label. 
 
-## YOLOv3 paper 
+## YOLOv3 paper
 The implementation is based on the following paper:
 
 ### An Incremental Improvement 
