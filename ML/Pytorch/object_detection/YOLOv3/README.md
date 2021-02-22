@@ -13,12 +13,10 @@ $ pip install requirements.txt
 Available on Kaggle: coming soon
 
 ### Download Pascal-VOC dataset
-Download the preprocessed dataset from the following link: www.kaggle.com/aladdinpersson/pascalvoc-yolo-works-with-albumentations
-Just unzip this in the main directory.
+Download the preprocessed dataset from [this](www.kaggle.com/aladdinpersson/pascalvoc-yolo-works-with-albumentations). Just unzip this in the main directory.
 
 ### Download MS-COCO dataset
-Download the preprocessed dataset from the following link: www.kaggle.com/aladdinpersson/mscoco-yolo-works-with-albumentations
-Just unzip this in the main directory.
+Download the preprocessed dataset from [this](www.kaggle.com/aladdinpersson/mscoco-yolo-works-with-albumentations). Just unzip this in the main directory.
 
 ### Training
 Edit the config.py file to match the setup you want to use. Then run train.py
