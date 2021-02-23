@@ -11,10 +11,10 @@ $ pip install requirements.txt
 ```
 
 ### Download pretrained weights on Pascal-VOC
-Available on Kaggle: [coming soon]()
+Available on Kaggle: [link](www.kaggle.com/dataset/1cf520aba05e023f2f80099ef497a8f3668516c39e6f673531e3e47407c46694)
 
 ### Download Pascal VOC dataset
-Download the preprocessed dataset from [coming soon](). Just unzip this in the main directory.
+Download the preprocessed dataset from [link](https://www.kaggle.com/aladdinpersson/pascal-voc-yolo-works-with-albumentations). Just unzip this in the main directory.
 
 ### Download MS COCO dataset
 Download the preprocessed dataset from [coming soon](). Just unzip this in the main directory.
