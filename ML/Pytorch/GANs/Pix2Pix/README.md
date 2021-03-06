@@ -7,8 +7,11 @@ The model was first trained on the Maps dataset also used in the Pix2Pix paper w
 
 |1st row: Input / 2nd row: Generated / 3rd row: Target|
 |:---:|
-|![](results/results_anime.png){:height="50%" width="50%"}|
-|![](results/results_maps.png){:height="50%" width="50%"}|
+
+
+|![](<img src="results/results_anime" width="200">)|
+|![](results/results_anime.png)|
+|![](results/results_maps.png)|
 	
 
 ### Maps dataset
