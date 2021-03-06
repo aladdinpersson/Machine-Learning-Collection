@@ -2,8 +2,7 @@
 A clean, simple and readable implementation of Pix2Pix in PyTorch. I've tried to replicate the original paper as closely as possible, so if you read the paper the implementation should be pretty much identical. The results from this implementation I would say is on par with the paper, I'll include some examples results below.
 
 ## Results
-The model was first trained on the Maps dataset also used in the Pix2Pix paper with the task converting satellite images to Google Maps like visualizations. The model was also trained on a fun anime dataset found on Kaggle and examples of the results are shown below. 
-
+The model was trained on the Maps dataset and for fun I also tried using it to colorize anime.
 
 |1st row: Input / 2nd row: Generated / 3rd row: Target|
 |:---:|
@@ -12,24 +11,14 @@ The model was first trained on the Maps dataset also used in the Pix2Pix paper w
 
 
 ### Maps dataset
-
+The dataset can be downloaded from Kaggle: [link](https://www.kaggle.com/vikramtiwari/pix2pix-dataset).
 
 ### Anime dataset
-Input
+The dataset can be downloaded from Kaggle: [link](https://www.kaggle.com/ktaebum/anime-sketch-colorization-pair).
 
-## Installation
-
-### Clone and install requirements
-```bash
-$ git clone https://github.com/SannaPersson/Pix2Pix.git
-$ cd Pix2Pix
-$ pip install requirements.txt
-```
-
-### Download pretrained weights on Maps dataset
-Link to data:
-Pretrained weights downloaded from this page: links coming soon
-
+### Download pretrained weights
+Pretrained weights for Satellite image to Google Map [here](https://github.com/aladdinpersson/Machine-Learning-Collection/releases/download/1.0/Pix2Pix_Weights_Satellite_to_Map.zip)
+Pretrained weights for Colorizing Anime [here](https://github.com/aladdinpersson/Machine-Learning-Collection/releases/download/1.0/Pix2Pix_Weights_Colorize_Anime.zip)
 
 ### Training
 Edit the config.py file to match the setup you want to use. Then run train.py
