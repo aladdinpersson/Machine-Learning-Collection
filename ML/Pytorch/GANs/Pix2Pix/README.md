@@ -6,7 +6,7 @@ The model was first trained on the Maps dataset also used in the Pix2Pix paper w
 
 
 |1st row: Input / 2nd row: Generated / 3rd row: Target|
-|:---:|
+|:-:|
 |<img src="results/results_anime.png" width="400" height="400" />|
 |<img src="results/results_maps.png" width="450" height="320" />|
 
