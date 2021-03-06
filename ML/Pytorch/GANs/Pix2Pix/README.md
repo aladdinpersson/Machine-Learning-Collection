@@ -1,12 +1,12 @@
 # Pix2Pix
-Implementation of Pix2Pix paper in PyTorch. I've tried to replicate the original paper as closely as possible, so if you read the paper the implementation should be identical. The results from this implementation I would say is on par with the paper, I'll include some examples results below.
+A clean, simple and readable implementation of Pix2Pix in PyTorch. I've tried to replicate the original paper as closely as possible, so if you read the paper the implementation should be pretty much identical. The results from this implementation I would say is on par with the paper, I'll include some examples results below.
 
 ## Results
 The model was first trained on the Maps dataset also used in the Pix2Pix paper with the task converting satellite images to Google Maps like visualizations. The model was also trained on a fun anime dataset found on Kaggle and examples of the results are shown below. 
 
 
 |1st row: Input / 2nd row: Generated / 3rd row: Target|
-|:-:|
+| :----------: |
 |<img src="results/results_anime.png" width="400" height="400" />|
 |<img src="results/results_maps.png" width="450" height="320" />|
 
