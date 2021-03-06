@@ -4,9 +4,20 @@ Implementation of Pix2Pix paper in PyTorch. I've tried to replicate the original
 ## Results
 The model was first trained on the Maps dataset also used in the Pix2Pix paper with the task converting satellite images to Google Maps like visualizations. The model was also trained on a fun anime dataset found on Kaggle and examples of the results are shown below. 
 
+
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](https://...Dark.png)  |  ![](https://...Ocean.png)
+
 <img src='results/results_anime.png' width="400px"/>
 <img src='results/results_maps.png' width="400px"/>
 
+
+|1st row: Input / 2nd row: Generated / 3rd row: Target|
+|:---:|
+|![](results/results_anime.png)|
+|![](results/results_maps.png)|
+	
 
 ### Maps dataset
 
