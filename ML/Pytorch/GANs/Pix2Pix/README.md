@@ -17,12 +17,14 @@ The dataset can be downloaded from Kaggle: [link](https://www.kaggle.com/vikramt
 The dataset can be downloaded from Kaggle: [link](https://www.kaggle.com/ktaebum/anime-sketch-colorization-pair).
 
 ### Download pretrained weights
-Pretrained weights for Satellite image to Google Map [here](https://github.com/aladdinpersson/Machine-Learning-Collection/releases/download/1.0/Pix2Pix_Weights_Satellite_to_Map.zip)
-Pretrained weights for Colorizing Anime [here](https://github.com/aladdinpersson/Machine-Learning-Collection/releases/download/1.0/Pix2Pix_Weights_Colorize_Anime.zip)
+Pretrained weights for Satellite image to Google Map [here](https://github.com/aladdinpersson/Machine-Learning-Collection/releases/download/1.0/Pix2Pix_Weights_Satellite_to_Map.zip).
+
+Pretrained weights for Colorizing Anime [here](https://github.com/aladdinpersson/Machine-Learning-Collection/releases/download/1.0/Pix2Pix_Weights_Colorize_Anime.zip).
+
+Extract the zip file and put the pth.tar files in the directory with all the python files. Make sure you put LOAD_MODEL=True in the config.py file.
 
 ### Training
 Edit the config.py file to match the setup you want to use. Then run train.py
-
 
 ## Pix2Pix paper
 ### Image-to-Image Translation with Conditional Adversarial Networks by Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, Alexei A. Efros

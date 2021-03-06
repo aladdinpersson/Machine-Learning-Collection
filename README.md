@@ -71,14 +71,18 @@ If you have any specific video suggestion please make a comment on YouTube :)
 * [![Youtube Link][logo]](https://youtu.be/XXYG5ZWtjj0) &nbsp; [Intersection over Union](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/object_detection/metrics/iou.py) 
 * [![Youtube Link][logo]](https://youtu.be/YDkjWEN8jNA) &nbsp; [Non-Max Suppression](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/object_detection/metrics/nms.py)
 * [![Youtube Link][logo]](https://youtu.be/FppOzcDvaDI) &nbsp; [Mean Average Precision](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/object_detection/metrics/mean_avg_precision.py)
-* [![Youtube Link][logo]](https://youtu.be/n9_XyCGr-MI) &nbsp; [YOLO from scratch](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/object_detection/YOLO)
+* [![Youtube Link][logo]](https://youtu.be/n9_XyCGr-MI) &nbsp; [YOLOv1 from scratch](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/object_detection/YOLO)
+* [![Youtube Link][logo]](https://youtu.be/Grir6TZbc1M) &nbsp; [YOLOv3 from scratch](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/object_detection/YOLOv3)
 
 ### Generative Adversarial Networks
 * [![Youtube Link][logo]](https://youtu.be/OljTVUVzPpM) &nbsp; [Simple FC GAN](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/GANs/1.%20SimpleGAN/fc_gan.py)
 * [![Youtube Link][logo]](https://youtu.be/IZtv9s_Wx9I) &nbsp; [DCGAN](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/2.%20DCGAN)
 * [![Youtube Link][logo]](https://youtu.be/pG0QZ7OddX4) &nbsp; [WGAN](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/3.%20WGAN)
 * [![Youtube Link][logo]](https://youtu.be/pG0QZ7OddX4) &nbsp; [WGAN-GP](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/4.%20WGAN-GP)
-* [ProGAN (video coming soon)](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/5.%20ProGAN)
+* [![Youtube Link][logo]](https://youtu.be/SuddDSqGRzg) &nbsp; [Pix2Pix](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/4.%20WGAN-GP)
+* [![Youtube Link][logo]]() &nbsp; [CycleGAN (coming soon)]()
+* [![Youtube Link][logo]]() &nbsp; [SRGAN(coming soon)]()
+* [![Youtube Link][logo]]() &nbsp; [ProGAN (coming soon)]()
 
 ### Architectures
 * [![Youtube Link][logo]](https://youtu.be/fcOW-Zyb5Bo) &nbsp; [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/79f2e1928906f3cccbae6c024f3f79fd05262cd1/ML/Pytorch/CNN_architectures/lenet5_pytorch.py#L15-L35) **- CNN architecture**
