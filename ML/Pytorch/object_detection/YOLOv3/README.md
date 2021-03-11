@@ -14,7 +14,7 @@ $ pip install requirements.txt
 Available on Kaggle: [link](https://www.kaggle.com/dataset/1cf520aba05e023f2f80099ef497a8f3668516c39e6f673531e3e47407c46694)
 
 ### Download Pascal VOC dataset
-Download the preprocessed dataset from [link](https://www.kaggle.com/aladdinpersson/pascal-voc-yolo-works-with-albumentations). Just unzip this in the main directory.
+Download the preprocessed dataset from [link](https://www.kaggle.com/aladdinpersson/pascal-voc-dataset-used-in-yolov3-video). Just unzip this in the main directory.
 
 ### Download MS COCO dataset
 Download the preprocessed dataset from [coming soon](). Just unzip this in the main directory.
@@ -26,7 +26,7 @@ Edit the config.py file to match the setup you want to use. Then run train.py
 | Model                   | mAP @ 50 IoU |
 | ----------------------- |:-----------------:|
 | YOLOv3 (Pascal VOC) 	  | 78.2              |
-| YOLOv3 (MS-COCO)        | Not done yet      |
+| YOLOv3 (MS-COCO)        | Will probably train on this at some point      |
 
 The model was evaluated with confidence 0.2 and IOU threshold 0.45 using NMS.
 
