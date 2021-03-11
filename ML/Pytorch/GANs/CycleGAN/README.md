@@ -14,7 +14,7 @@ The model was trained on Zebra<->Horses dataset.
 The dataset can be downloaded from Kaggle: [link](https://www.kaggle.com/suyashdamle/cyclegan).
 
 ### Download pretrained weights
-Pretrained weights [will upload soon]().
+Pretrained weights [download](https://github.com/aladdinpersson/Machine-Learning-Collection/releases/download/1.0/CycleGAN_weights.zip).
 
 Extract the zip file and put the pth.tar files in the directory with all the python files. Make sure you put LOAD_MODEL=True in the config.py file.
 

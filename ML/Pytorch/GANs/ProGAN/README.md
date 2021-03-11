@@ -2,9 +2,9 @@
 A clean, simple and readable implementation of ProGAN in PyTorch. I've tried to replicate the original paper as closely as possible, so if you read the paper the implementation should be pretty much identical. The results from this implementation I would say is on par with the paper, I'll include some examples results below.
 
 ## Results
-The model was trained on the Maps dataset and for fun I also tried using it to colorize anime.
+The model was trained on the Celeb-HQ dataset up to 256x256 image size. After that point I felt it was enough as it would take quite a while to train to 1024^2.
 
-||
+|First is 64 random examples (not cherry picked) and second is more cherry picked examples. |
 |:---:|
 |![](results/64_examples.png)|
 |![](results/result1.png)|
