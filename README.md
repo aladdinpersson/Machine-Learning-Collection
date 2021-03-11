@@ -83,6 +83,8 @@ If you have any specific video suggestion please make a comment on YouTube :)
 * [![Youtube Link][logo]](https://youtu.be/pG0QZ7OddX4) &nbsp; [WGAN](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/3.%20WGAN)
 * [![Youtube Link][logo]](https://youtu.be/pG0QZ7OddX4) &nbsp; [WGAN-GP](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/4.%20WGAN-GP)
 * [![Youtube Link][logo]](https://youtu.be/SuddDSqGRzg) &nbsp; [Pix2Pix](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/Pix2Pix)
+* [![Youtube Link][logo]](https://youtu.be/4LktBHGCNfw) &nbsp; [CycleGAN](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/CycleGAN)
+* [![Youtube Link][logo]](https://youtu.be/nkQHASviYac) &nbsp; [ProGAN](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/GANs/ProGAN)
 
 ### Architectures
 * [![Youtube Link][logo]](https://youtu.be/fcOW-Zyb5Bo) &nbsp; [LeNet5](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/79f2e1928906f3cccbae6c024f3f79fd05262cd1/ML/Pytorch/CNN_architectures/lenet5_pytorch.py#L15-L35) **- CNN architecture**
