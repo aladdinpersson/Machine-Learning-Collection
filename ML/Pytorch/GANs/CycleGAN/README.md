@@ -4,17 +4,17 @@ A clean, simple and readable implementation of CycleGAN in PyTorch. I've tried t
 ## Results
 The model was trained on Zebra<->Horses dataset.
 
-|1st row: Input / 2nd row: Generated / 3rd row: Target|
+|1st column: Input / 2nd column: Generated / 3rd row: Re-converted|
 |:---:|
-|![](results/results_anime.png)|
-|![](results/results_maps.png)|
+|![](results/horse_results.png)|
+|![](results/zebra_results.png)|
 
 
 ### Horses and Zebras Dataset
 The dataset can be downloaded from Kaggle: [link](https://www.kaggle.com/suyashdamle/cyclegan).
 
 ### Download pretrained weights
-Pretrained weights for Satellite image to Google Map [will upload soon]().
+Pretrained weights [will upload soon]().
 
 Extract the zip file and put the pth.tar files in the directory with all the python files. Make sure you put LOAD_MODEL=True in the config.py file.
 

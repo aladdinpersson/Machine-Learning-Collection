@@ -19,6 +19,8 @@ from utils import (
     plot_couple_examples
 )
 from loss import YoloLoss
+import warnings
+warnings.filterwarnings("ignore")
 
 torch.backends.cudnn.benchmark = True
 
@@ -80,19 +82,16 @@ def main():
         #plot_couple_examples(model, test_loader, 0.6, 0.5, scaled_anchors)
         train_fn(train_loader, model, optimizer, loss_fn, scaler, scaled_anchors)
 
-        if config.SAVE_MODEL:
-            save_checkpoint(model, optimizer, filename=f"checkpoint.pth.tar")
+        #if config.SAVE_MODEL:
+        #    save_checkpoint(model, optimizer, filename=f"checkpoint.pth.tar")
 
         #print(f"Currently epoch {epoch}")
         #print("On Train Eval loader:")
-        #check_class_accuracy(model, train_eval_loader, threshold=config.CONF_THRESHOLD)
         #print("On Train loader:")
         #check_class_accuracy(model, train_loader, threshold=config.CONF_THRESHOLD)
 
-        if epoch % 10 == 0 and epoch > 0:
-            print("On Test loader:")
+        if epoch > 0 and epoch % 3 == 0:
             check_class_accuracy(model, test_loader, threshold=config.CONF_THRESHOLD)
-
             pred_boxes, true_boxes = get_evaluation_bboxes(
                 test_loader,
                 model,
@@ -108,7 +107,7 @@ def main():
                 num_classes=config.NUM_CLASSES,
             )
             print(f"MAP: {mapval.item()}")
-
+            model.train()
 
 
 if __name__ == "__main__":

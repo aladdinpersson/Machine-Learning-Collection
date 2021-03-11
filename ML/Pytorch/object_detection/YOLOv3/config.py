@@ -11,11 +11,11 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 NUM_WORKERS = 4
 BATCH_SIZE = 32
 IMAGE_SIZE = 416
-NUM_CLASSES = 80
-LEARNING_RATE = 3e-5
+NUM_CLASSES = 20
+LEARNING_RATE = 1e-5
 WEIGHT_DECAY = 1e-4
 NUM_EPOCHS = 100
-CONF_THRESHOLD = 0.6
+CONF_THRESHOLD = 0.05
 MAP_IOU_THRESH = 0.5
 NMS_IOU_THRESH = 0.45
 S = [IMAGE_SIZE // 32, IMAGE_SIZE // 16, IMAGE_SIZE // 8]
@@ -47,9 +47,9 @@ train_transforms = A.Compose(
         A.OneOf(
             [
                 A.ShiftScaleRotate(
-                    rotate_limit=10, p=0.4, border_mode=cv2.BORDER_CONSTANT
+                    rotate_limit=20, p=0.5, border_mode=cv2.BORDER_CONSTANT
                 ),
-                A.IAAAffine(shear=10, p=0.4, mode="constant"),
+                A.IAAAffine(shear=15, p=0.5, mode="constant"),
             ],
             p=1.0,
         ),
