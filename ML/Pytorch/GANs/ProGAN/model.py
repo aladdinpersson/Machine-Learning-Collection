@@ -134,7 +134,7 @@ class Generator(nn.Module):
 
 
 class Discriminator(nn.Module):
-    def __init__(self, z_dim, in_channels, img_channels=3):
+    def __init__(self, in_channels, img_channels=3):
         super(Discriminator, self).__init__()
         self.prog_blocks, self.rgb_layers = nn.ModuleList([]), nn.ModuleList([])
         self.leaky = nn.LeakyReLU(0.2)

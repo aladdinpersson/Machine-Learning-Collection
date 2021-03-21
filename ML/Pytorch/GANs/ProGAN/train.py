@@ -11,6 +11,7 @@ from utils import (
     plot_to_tensorboard,
     save_checkpoint,
     load_checkpoint,
+    generate_examples,
 )
 from model import Discriminator, Generator
 from math import log2
@@ -130,9 +131,8 @@ def train_fn(
 def main():
     # initialize gen and disc, note: discriminator should be called critic,
     # according to WGAN paper (since it no longer outputs between [0, 1])
-    # but really who cares..
     gen = Generator(
-        config.Z_DIM, config.W_DIM, config.IN_CHANNELS, img_channels=config.CHANNELS_IMG
+        config.Z_DIM, config.IN_CHANNELS, img_channels=config.CHANNELS_IMG
     ).to(config.DEVICE)
     critic = Discriminator(
         config.IN_CHANNELS, img_channels=config.CHANNELS_IMG
@@ -147,7 +147,7 @@ def main():
     scaler_gen = torch.cuda.amp.GradScaler()
 
     # for tensorboard plotting
-    writer = SummaryWriter(f"logs/gan1")
+    writer = SummaryWriter(f"logs/gan")
 
     if config.LOAD_MODEL:
         load_checkpoint(
@@ -163,6 +163,10 @@ def main():
     tensorboard_step = 0
     # start at step that corresponds to img size that we set in config
     step = int(log2(config.START_TRAIN_AT_IMG_SIZE / 4))
+
+    generate_examples(gen, step)
+    import sys
+    sys.exit()
     for num_epochs in config.PROGRESSIVE_EPOCHS[step:]:
         alpha = 1e-5  # start with very low alpha
         loader, dataset = get_loader(4 * 2 ** step)  # 4->0, 8->1, 16->2, 32->3, 64 -> 4

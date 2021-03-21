@@ -4,15 +4,14 @@ A clean, simple and readable implementation of ProGAN in PyTorch. I've tried to 
 ## Results
 The model was trained on the Celeb-HQ dataset up to 256x256 image size. After that point I felt it was enough as it would take quite a while to train to 1024^2.
 
-|First is 64 random examples (not cherry picked) and second is more cherry picked examples. |
+|First is some more cherrypicked examples and second is just sampled from random latent vectors|
 |:---:|
-|![](results/64_examples.png)|
 |![](results/result1.png)|
+|![](results/64_examples.png)|
 
 
 ### Celeb-HQ dataset
 The dataset can be downloaded from Kaggle: [link](https://www.kaggle.com/lamsimon/celebahq).
-
 
 ### Download pretrained weights
 Pretrained weights [here](https://github.com/aladdinpersson/Machine-Learning-Collection/releases/download/1.0/ProGAN_weights.zip).
