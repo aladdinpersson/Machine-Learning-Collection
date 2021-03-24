@@ -2,7 +2,7 @@ import cv2
 import torch
 from math import log2
 
-START_TRAIN_AT_IMG_SIZE = 4
+START_TRAIN_AT_IMG_SIZE = 128
 DATASET = 'celeb_dataset'
 CHECKPOINT_GEN = "generator.pth"
 CHECKPOINT_CRITIC = "critic.pth"

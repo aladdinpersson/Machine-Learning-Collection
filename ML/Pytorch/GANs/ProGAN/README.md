@@ -1,20 +1,21 @@
 # ProGAN
-A clean, simple and readable implementation of ProGAN in PyTorch. I've tried to replicate the original paper as closely as possible, so if you read the paper the implementation should be pretty much identical. The results from this implementation I would say is pretty close to the original paper (I'll include some examples results below) but because of time limitation I only trained to 256x256 and on lower model size than they did in the paper. Making the number of channels to 512 instead of 256 as I trained it would probably make the results even better :)
+A clean, simple and readable implementation of ProGAN in PyTorch. I've tried to replicate the original paper as closely as possible, so if you read the paper the implementation should be pretty much identical. The results from this implementation I would say is on par with the paper, I'll include some examples results below.
 
 ## Results
-The model was trained on the Celeb-HQ dataset up to 256x256 image size. After that point I felt it was enough as it would take quite a while to train to 1024^2.
+The model was trained on the Maps dataset and for fun I also tried using it to colorize anime.
 
-|First is some more cherrypicked examples and second is just sampled from random latent vectors|
+||
 |:---:|
-|![](results/result1.png)|
 |![](results/64_examples.png)|
+|![](results/result1.png)|
 
 
 ### Celeb-HQ dataset
 The dataset can be downloaded from Kaggle: [link](https://www.kaggle.com/lamsimon/celebahq).
 
+
 ### Download pretrained weights
-Pretrained weights [here](https://github.com/aladdinpersson/Machine-Learning-Collection/releases/download/1.0/ProGAN_weights.zip).
+Pretrained weights [here]().
 
 Extract the zip file and put the pth.tar files in the directory with all the python files. Make sure you put LOAD_MODEL=True in the config.py file.
 

@@ -88,5 +88,3 @@ def generate_examples(gen, steps, truncation=0.7, n=100):
             img = gen(noise, alpha, steps)
             save_image(img*0.5+0.5, f"saved_examples/img_{i}.png")
     gen.train()
-
-
