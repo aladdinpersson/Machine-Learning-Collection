@@ -15,11 +15,7 @@ The dataset can be downloaded from Kaggle: [link](https://www.kaggle.com/lamsimo
 
 
 ### Download pretrained weights
-<<<<<<< HEAD
 Download pretrained weights [here](https://github.com/aladdinpersson/Machine-Learning-Collection/releases/download/1.0/ProGAN_weights.zip).
-=======
-Pretrained weights [here]().
->>>>>>> 1b761f144345e2803d61a5369e70cbe21da046e2
 
 Extract the zip file and put the pth.tar files in the directory with all the python files. Make sure you put LOAD_MODEL=True in the config.py file.
 
