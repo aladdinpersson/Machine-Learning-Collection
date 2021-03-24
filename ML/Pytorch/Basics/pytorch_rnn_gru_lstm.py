@@ -8,15 +8,14 @@ Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 
 # Imports
 import torch
-import torchvision
-import torch.nn as nn  # All neural network modules, nn.Linear, nn.Conv2d, BatchNorm, Loss functions
-import torch.optim as optim  # For all Optimization algorithms, SGD, Adam, etc.
-import torch.nn.functional as F  # All functions that don't have any parameters
-from torch.utils.data import (
-    DataLoader,
-)  # Gives easier dataset managment and creates mini batches
-import torchvision.datasets as datasets  # Has standard datasets we can import in a nice way
-import torchvision.transforms as transforms  # Transformations we can perform on our dataset
+import torchvision  # torch package for vision related things
+import torch.nn.functional as F  # Parameterless functions, like (some) activation functions
+import torchvision.datasets as datasets  # Standard datasets
+import torchvision.transforms as transforms  # Transformations we can perform on our dataset for augmentation
+from torch import optim  # For optimizers like SGD, Adam, etc.
+from torch import nn  # All neural network modules
+from torch.utils.data import DataLoader  # Gives easier dataset managment by creating mini batches etc.
+from tqdm import tqdm  # For a nice progress bar!
 
 # Set device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -29,7 +28,7 @@ num_classes = 10
 sequence_length = 28
 learning_rate = 0.005
 batch_size = 64
-num_epochs = 2
+num_epochs = 3
 
 # Recurrent neural network (many-to-one)
 class RNN(nn.Module):
@@ -101,18 +100,12 @@ class RNN_LSTM(nn.Module):
 
 
 # Load Data
-train_dataset = datasets.MNIST(
-    root="dataset/", train=True, transform=transforms.ToTensor(), download=True
-)
-
-test_dataset = datasets.MNIST(
-    root="dataset/", train=False, transform=transforms.ToTensor(), download=True
-)
-
+train_dataset = datasets.MNIST(root="dataset/", train=True, transform=transforms.ToTensor(), download=True)
+test_dataset = datasets.MNIST(root="dataset/", train=False, transform=transforms.ToTensor(), download=True)
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=True)
 
-# Initialize network
+# Initialize network (try out just using simple RNN, or GRU, and then compare with LSTM)
 model = RNN_LSTM(input_size, hidden_size, num_layers, num_classes).to(device)
 
 # Loss and optimizer
@@ -121,7 +114,7 @@ optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 # Train Network
 for epoch in range(num_epochs):
-    for batch_idx, (data, targets) in enumerate(train_loader):
+    for batch_idx, (data, targets) in enumerate(tqdm(train_loader)):
         # Get data to cuda if possible
         data = data.to(device=device).squeeze(1)
         targets = targets.to(device=device)
@@ -134,16 +127,11 @@ for epoch in range(num_epochs):
         optimizer.zero_grad()
         loss.backward()
 
-        # gradient descent or adam step
+        # gradient descent update step/adam step
         optimizer.step()
 
 # Check accuracy on training & test to see how good our model
 def check_accuracy(loader, model):
-    if loader.dataset.train:
-        print("Checking accuracy on training data")
-    else:
-        print("Checking accuracy on test data")
-
     num_correct = 0
     num_samples = 0
 
@@ -160,13 +148,10 @@ def check_accuracy(loader, model):
             num_correct += (predictions == y).sum()
             num_samples += predictions.size(0)
 
-        print(
-            f"Got {num_correct} / {num_samples} with \
-              accuracy {float(num_correct)/float(num_samples)*100:.2f}"
-        )
-    # Set model back to train
+    # Toggle model back to train
     model.train()
+    return num_correct / num_samples
 
 
-check_accuracy(train_loader, model)
-check_accuracy(test_loader, model)
+print(f"Accuracy on training set: {check_accuracy(train_loader, model)*100:2f}")
+print(f"Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}")
