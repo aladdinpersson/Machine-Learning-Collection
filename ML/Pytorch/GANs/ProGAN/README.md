@@ -14,7 +14,7 @@ The model was trained on the Celeb-HQ dataset up to 256x256 image size. After th
 The dataset can be downloaded from Kaggle: [link](https://www.kaggle.com/lamsimon/celebahq).
 
 ### Download pretrained weights
-Pretrained weights [here](https://github.com/aladdinpersson/Machine-Learning-Collection/releases/download/1.0/ProGAN_weights.zip).
+Download pretrained weights [here](https://github.com/aladdinpersson/Machine-Learning-Collection/releases/download/1.0/ProGAN_weights.zip).
 
 Extract the zip file and put the pth.tar files in the directory with all the python files. Make sure you put LOAD_MODEL=True in the config.py file.
 
