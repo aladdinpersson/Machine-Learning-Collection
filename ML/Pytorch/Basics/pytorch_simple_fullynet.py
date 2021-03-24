@@ -95,7 +95,7 @@ for epoch in range(num_epochs):
         optimizer.step()
 
 
-# Check accuracy on training & test to see how good our model is
+# Check accuracy on training & test to see how good our model
 def check_accuracy(loader, model):
     num_correct = 0
     num_samples = 0
