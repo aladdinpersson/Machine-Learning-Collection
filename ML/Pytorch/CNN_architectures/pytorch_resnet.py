@@ -23,7 +23,7 @@ class block(nn.Module):
         super(block, self).__init__()
         self.expansion = 4
         self.conv1 = nn.Conv2d(
-            in_channels, intermediate_channels, kernel_size=1, stride=1, padding=0
+            in_channels, intermediate_channels, kernel_size=1, stride=1, padding=0, bias=False
         )
         self.bn1 = nn.BatchNorm2d(intermediate_channels)
         self.conv2 = nn.Conv2d(
@@ -32,6 +32,7 @@ class block(nn.Module):
             kernel_size=3,
             stride=stride,
             padding=1,
+            bias=False
         )
         self.bn2 = nn.BatchNorm2d(intermediate_channels)
         self.conv3 = nn.Conv2d(
@@ -40,6 +41,7 @@ class block(nn.Module):
             kernel_size=1,
             stride=1,
             padding=0,
+            bias=False
         )
         self.bn3 = nn.BatchNorm2d(intermediate_channels * self.expansion)
         self.relu = nn.ReLU()
@@ -70,7 +72,7 @@ class ResNet(nn.Module):
     def __init__(self, block, layers, image_channels, num_classes):
         super(ResNet, self).__init__()
         self.in_channels = 64
-        self.conv1 = nn.Conv2d(image_channels, 64, kernel_size=7, stride=2, padding=3)
+        self.conv1 = nn.Conv2d(image_channels, 64, kernel_size=7, stride=2, padding=3, bias=False)
         self.bn1 = nn.BatchNorm2d(64)
         self.relu = nn.ReLU()
         self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
@@ -122,6 +124,7 @@ class ResNet(nn.Module):
                     intermediate_channels * 4,
                     kernel_size=1,
                     stride=stride,
+                    bias=False
                 ),
                 nn.BatchNorm2d(intermediate_channels * 4),
             )
