@@ -17,7 +17,7 @@ Available on Kaggle: [link](https://www.kaggle.com/dataset/1cf520aba05e023f2f800
 Download the preprocessed dataset from [link](https://www.kaggle.com/aladdinpersson/pascal-voc-dataset-used-in-yolov3-video). Just unzip this in the main directory.
 
 ### Download MS COCO dataset
-Download the preprocessed dataset from [coming soon](). Just unzip this in the main directory.
+Download the preprocessed dataset from [link](https://www.kaggle.com/dataset/79abcc2659dc745fddfba1864438afb2fac3fabaa5f37daa8a51e36466db101e). Just unzip this in the main directory.
 
 ### Training
 Edit the config.py file to match the setup you want to use. Then run train.py
