@@ -11,7 +11,7 @@ Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 
 # Imports
 import torch
-import torch.nn as nn  # All neural network modules, nn.Linear, nn.Conv2d, BatchNorm, Loss functions
+from torch import nn
 
 
 class GoogLeNet(nn.Module):
