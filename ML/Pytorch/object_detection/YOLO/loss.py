@@ -82,7 +82,8 @@ class YoloLoss(nn.Module):
 
         object_loss = self.mse(
             torch.flatten(exists_box * pred_box),
-            torch.flatten(exists_box * target[..., 20:21]),
+            # To calculate confidenc score in paper, I think it should multiply iou value.
+            torch.flatten(exists_box * target[..., 20:21] * iou_maxes),
         )
 
         # ======================= #
