@@ -53,16 +53,16 @@ ds_test = ds_train.batch(BATCH_SIZE)
 ds_test = ds_train.prefetch(AUTOTUNE)
 
 class_names = [
-    "Airplane",
-    "Autmobile",
-    "Bird",
-    "Cat",
-    "Deer",
-    "Dog",
-    "Frog",
-    "Horse",
-    "Ship",
-    "Truck",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
 ]
 
 x_batch, y_batch = next(iter(ds_train))
