@@ -80,7 +80,7 @@ for epoch in range(num_epochs):
         data = data.to(device=device)
         targets = targets.to(device=device)
 
-        # Get to correct shape
+        # Get to correct shape   64*1*28*28 --- 64*784
         data = data.reshape(data.shape[0], -1)
 
         # forward
