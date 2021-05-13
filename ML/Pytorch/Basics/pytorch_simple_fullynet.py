@@ -75,24 +75,26 @@ optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 # Train Network
 for epoch in range(num_epochs):
-    for batch_idx, (data, targets) in enumerate(tqdm(train_loader)):
+    for batch_idx, (data, targets) in enumerate(tqdm(train_loader)): 
+    # enumerate就是枚举的意思，把元素一个个列举出来，第一个是什么，第二个是什么，所以他返回的是元素以及对应的索引。
+    # tqdm用在dataloader上其实是对每个batch和batch总数做的进度条，我也是在训练比较慢时写出来看看训练到哪了
         # Get data to cuda if possible
         data = data.to(device=device)
         targets = targets.to(device=device)
 
-        # Get to correct shape
+        # Get to correct shape    64*1*28*28 --- 64*784 !
         data = data.reshape(data.shape[0], -1)
 
         # forward
         scores = model(data)
         loss = criterion(scores, targets)
 
-        # backward
+        # backward  
         optimizer.zero_grad()
-        loss.backward()
+        loss.backward()  # 自动计算梯度
 
-        # gradient descent or adam step
-        optimizer.step()
+        # gradient descent or adam step  更新所有的参数
+        optimizer.step()  
 
 
 # Check accuracy on training & test to see how good our model
@@ -108,7 +110,7 @@ def check_accuracy(loader, model):
             x = x.reshape(x.shape[0], -1)
 
             scores = model(x)
-            _, predictions = scores.max(1)
+            _, predictions = scores.max(1)   # _ 概率值 我们不感兴趣  predictions 索引 就是 类别
             num_correct += (predictions == y).sum()
             num_samples += predictions.size(0)
 
