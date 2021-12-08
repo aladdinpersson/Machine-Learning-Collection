@@ -56,8 +56,8 @@ num_epochs = 10
 
 # Load Data
 dataset = CatsAndDogsDataset(
-    csv_file="cats_dogs.csv",
-    root_dir="cats_dogs_resized",
+    csv_file="custom_dataset/cats_dogs.csv",
+    root_dir="custom_dataset/cats_dogs_resized",
     transform=transforms.ToTensor(),
 )
 
