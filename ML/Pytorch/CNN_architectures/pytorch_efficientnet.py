@@ -80,7 +80,7 @@ class InvertedResidualBlock(nn.Module):
 
         if self.expand:
             self.expand_conv = CNNBlock(
-                in_channels, hidden_dim, kernel_size=3, stride=1, padding=1,
+                in_channels, hidden_dim, kernel_size=1, stride=1, padding=0,
             )
 
         self.conv = nn.Sequential(
