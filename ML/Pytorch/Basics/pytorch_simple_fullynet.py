@@ -9,7 +9,7 @@ Programmed by Aladdin Persson
 * 2020-04-08: Initial coding
 * 2021-03-24: Added more detailed comments also removed part of
               check_accuracy which would only work specifically on MNIST.
-
+* 2022-09-23: Updated with more detailed comments, docstrings to functions, and checked code still functions as intended.
 """
 
 # Imports
@@ -27,9 +27,19 @@ from tqdm import tqdm  # For nice progress bar!
 # inheriting from nn.Module, this is the most general way to create your networks and
 # allows for more flexibility. I encourage you to also check out nn.Sequential which
 # would be easier to use in this scenario but I wanted to show you something that
-# "always" works.
+# "always" works and is a general approach.
 class NN(nn.Module):
     def __init__(self, input_size, num_classes):
+        """
+        Here we define the layers of the network. We create two fully connected layers
+
+        Parameters:
+            input_size: the size of the input, in this case 784 (28x28)
+            num_classes: the number of classes we want to predict, in this case 10 (0-9)
+
+        Returns:
+            None
+        """
         super(NN, self).__init__()
         # Our first linear layer take input_size, in this case 784 nodes to 50
         # and our second linear layer takes 50 to the num_classes we have, in
@@ -42,6 +52,12 @@ class NN(nn.Module):
         x here is the mnist images and we run it through fc1, fc2 that we created above.
         we also add a ReLU activation function in between and for that (since it has no parameters)
         I recommend using nn.functional (F)
+
+        Parameters:
+            x: mnist images
+
+        Returns:
+            out: the output of the network
         """
 
         x = F.relu(self.fc1(x))
@@ -52,15 +68,14 @@ class NN(nn.Module):
 # Set device cuda for GPU if it's available otherwise run on the CPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Hyperparameters of our neural network which depends on the dataset, and
-# also just experimenting to see what works well (learning rate for example).
+# Hyperparameters
 input_size = 784
 num_classes = 10
 learning_rate = 0.001
 batch_size = 64
 num_epochs = 3
 
-# Load Training and Test data
+# Load Data
 train_dataset = datasets.MNIST(root="dataset/", train=True, transform=transforms.ToTensor(), download=True)
 test_dataset = datasets.MNIST(root="dataset/", train=False, transform=transforms.ToTensor(), download=True)
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
@@ -83,38 +98,63 @@ for epoch in range(num_epochs):
         # Get to correct shape
         data = data.reshape(data.shape[0], -1)
 
-        # forward
+        # Forward
         scores = model(data)
         loss = criterion(scores, targets)
 
-        # backward
+        # Backward
         optimizer.zero_grad()
         loss.backward()
 
-        # gradient descent or adam step
+        # Gradient descent or adam step
         optimizer.step()
 
 
 # Check accuracy on training & test to see how good our model
 def check_accuracy(loader, model):
+    """
+    Check accuracy of our trained model given a loader and a model
+
+    Parameters:
+        loader: torch.utils.data.DataLoader
+            A loader for the dataset you want to check accuracy on
+        model: nn.Module
+            The model you want to check accuracy on
+
+    Returns:
+        acc: float
+            The accuracy of the model on the dataset given by the loader
+    """
+
     num_correct = 0
     num_samples = 0
     model.eval()
 
+    # We don't need to keep track of gradients here so we wrap it in torch.no_grad()
     with torch.no_grad():
+        # Loop through the data
         for x, y in loader:
+
+            # Move data to device
             x = x.to(device=device)
             y = y.to(device=device)
+
+            # Get to correct shape
             x = x.reshape(x.shape[0], -1)
 
+            # Forward pass
             scores = model(x)
             _, predictions = scores.max(1)
+
+            # Check how many we got correct
             num_correct += (predictions == y).sum()
+
+            # Keep track of number of samples
             num_samples += predictions.size(0)
 
     model.train()
     return num_correct/num_samples
 
-
+# Check accuracy on training & test to see how good our model
 print(f"Accuracy on training set: {check_accuracy(train_loader, model)*100:.2f}")
 print(f"Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}")
