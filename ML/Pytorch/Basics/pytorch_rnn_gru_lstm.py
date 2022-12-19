@@ -3,22 +3,24 @@ Example code of a simple RNN, GRU, LSTM on the MNIST dataset.
 
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 *    2020-05-09 Initial coding
+*    2022-12-16 Updated with more detailed comments, docstrings to functions, and checked code still functions as intended.
 
 """
 
 # Imports
 import torch
-import torchvision  # torch package for vision related things
 import torch.nn.functional as F  # Parameterless functions, like (some) activation functions
 import torchvision.datasets as datasets  # Standard datasets
 import torchvision.transforms as transforms  # Transformations we can perform on our dataset for augmentation
 from torch import optim  # For optimizers like SGD, Adam, etc.
 from torch import nn  # All neural network modules
-from torch.utils.data import DataLoader  # Gives easier dataset managment by creating mini batches etc.
+from torch.utils.data import (
+    DataLoader,
+)  # Gives easier dataset managment by creating mini batches etc.
 from tqdm import tqdm  # For a nice progress bar!
 
 # Set device
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # Hyperparameters
 input_size = 28
@@ -100,8 +102,12 @@ class RNN_LSTM(nn.Module):
 
 
 # Load Data
-train_dataset = datasets.MNIST(root="dataset/", train=True, transform=transforms.ToTensor(), download=True)
-test_dataset = datasets.MNIST(root="dataset/", train=False, transform=transforms.ToTensor(), download=True)
+train_dataset = datasets.MNIST(
+    root="dataset/", train=True, transform=transforms.ToTensor(), download=True
+)
+test_dataset = datasets.MNIST(
+    root="dataset/", train=False, transform=transforms.ToTensor(), download=True
+)
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=True)
 

@@ -6,7 +6,7 @@ label (0 for cat, 1 for dog).
 
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 *    2020-04-03 Initial coding
-
+*    2022-12-19 Updated with better comments, improved code using PIL, and checked code still functions as intended.
 """
 
 # Imports
@@ -17,7 +17,7 @@ import torchvision.transforms as transforms  # Transformations we can perform on
 import torchvision
 import os
 import pandas as pd
-from skimage import io
+from PIL import Image
 from torch.utils.data import (
     Dataset,
     DataLoader,
@@ -35,7 +35,7 @@ class CatsAndDogsDataset(Dataset):
 
     def __getitem__(self, index):
         img_path = os.path.join(self.root_dir, self.annotations.iloc[index, 0])
-        image = io.imread(img_path)
+        image = Image.open(img_path)
         y_label = torch.tensor(int(self.annotations.iloc[index, 1]))
 
         if self.transform:
@@ -50,7 +50,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # Hyperparameters
 in_channel = 3
 num_classes = 2
-learning_rate = 1e-3
+learning_rate = 3e-4
 batch_size = 32
 num_epochs = 10
 
@@ -69,12 +69,19 @@ train_loader = DataLoader(dataset=train_set, batch_size=batch_size, shuffle=True
 test_loader = DataLoader(dataset=test_set, batch_size=batch_size, shuffle=True)
 
 # Model
-model = torchvision.models.googlenet(pretrained=True)
+model = torchvision.models.googlenet(weights="DEFAULT")
+
+# freeze all layers, change final linear layer with num_classes
+for param in model.parameters():
+    param.requires_grad = False
+
+# final layer is not frozen
+model.fc = nn.Linear(in_features=1024, out_features=num_classes)
 model.to(device)
 
 # Loss and optimizer
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+optimizer = optim.Adam(model.parameters(), lr=learning_rate, weight_decay=1e-5)
 
 # Train Network
 for epoch in range(num_epochs):

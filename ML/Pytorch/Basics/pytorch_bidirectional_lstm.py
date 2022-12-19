@@ -1,15 +1,17 @@
 """
 Example code of a simple bidirectional LSTM on the MNIST dataset.
+Note that using RNNs on image data is not the best idea, but it is a 
+good example to show how to use RNNs that still generalizes to other tasks.
 
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 *    2020-05-09 Initial coding
+*    2022-12-16 Updated with more detailed comments, docstrings to functions, and checked code still functions as intended.
 
 """
 
 
 # Imports
 import torch
-import torchvision
 import torch.nn as nn  # All neural network modules, nn.Linear, nn.Conv2d, BatchNorm, Loss functions
 import torch.optim as optim  # For all Optimization algorithms, SGD, Adam, etc.
 import torch.nn.functional as F  # All functions that don't have any parameters
@@ -18,9 +20,10 @@ from torch.utils.data import (
 )  # Gives easier dataset managment and creates mini batches
 import torchvision.datasets as datasets  # Has standard datasets we can import in a nice way
 import torchvision.transforms as transforms  # Transformations we can perform on our dataset
+from tqdm import tqdm  # progress bar
 
 # Set device
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # Hyperparameters
 input_size = 28
@@ -28,7 +31,7 @@ sequence_length = 28
 num_layers = 2
 hidden_size = 256
 num_classes = 10
-learning_rate = 0.001
+learning_rate = 3e-4
 batch_size = 64
 num_epochs = 2
 
@@ -47,7 +50,7 @@ class BRNN(nn.Module):
         h0 = torch.zeros(self.num_layers * 2, x.size(0), self.hidden_size).to(device)
         c0 = torch.zeros(self.num_layers * 2, x.size(0), self.hidden_size).to(device)
 
-        out, _ = self.lstm(x, (h0, c0))
+        out, _ = self.lstm(x)
         out = self.fc(out[:, -1, :])
 
         return out
@@ -74,7 +77,7 @@ optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 # Train Network
 for epoch in range(num_epochs):
-    for batch_idx, (data, targets) in enumerate(train_loader):
+    for batch_idx, (data, targets) in enumerate(tqdm(train_loader)):
         # Get data to cuda if possible
         data = data.to(device=device).squeeze(1)
         targets = targets.to(device=device)
@@ -90,9 +93,8 @@ for epoch in range(num_epochs):
         # gradient descent or adam step
         optimizer.step()
 
+
 # Check accuracy on training & test to see how good our model
-
-
 def check_accuracy(loader, model):
     if loader.dataset.train:
         print("Checking accuracy on training data")

@@ -173,10 +173,3 @@ def test():
     print(model(x).shape) # (num_examples, num_classes)
 
 test()
-
-
-
-
-
-
-
