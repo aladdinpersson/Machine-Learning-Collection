@@ -3,13 +3,12 @@ Example code of how to use a learning rate scheduler simple, in this
 case with a (very) small and simple Feedforward Network training on MNIST
 dataset with a learning rate scheduler. In this case ReduceLROnPlateau
 scheduler is used, but can easily be changed to any of the other schedulers
-available.
-
-Video explanation: https://youtu.be/P31hB37g4Ak
-Got any questions leave a comment on youtube :)
+available. I think simply reducing LR by 1/10 or so, when loss plateaus is 
+a good default. 
 
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 *    2020-04-10 Initial programming
+*    2022-12-19 Updated comments, made sure it works with latest PyTorch
 
 """
 
@@ -28,7 +27,9 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Hyperparameters
 num_classes = 10
-learning_rate = 0.1
+learning_rate = (
+    0.1  # way too high learning rate, but we want to see the scheduler in action
+)
 batch_size = 128
 num_epochs = 100
 
@@ -47,7 +48,7 @@ optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 # Define Scheduler
 scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-    optimizer, factor=0.1, patience=5, verbose=True
+    optimizer, factor=0.1, patience=10, verbose=True
 )
 
 # Train Network
@@ -67,19 +68,19 @@ for epoch in range(1, num_epochs):
         losses.append(loss.item())
 
         # backward
-        loss.backward()
-
-        # gradient descent or adam step
-        # scheduler.step(loss)
-        optimizer.step()
         optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
 
     mean_loss = sum(losses) / len(losses)
+    mean_loss = round(mean_loss, 2)  # we should see difference in loss at 2 decimals
 
     # After each epoch do scheduler.step, note in this scheduler we need to send
-    # in loss for that epoch!
+    # in loss for that epoch! This can also be set using validation loss, and also
+    # in the forward loop we can do on our batch but then we might need to modify
+    # the patience parameter
     scheduler.step(mean_loss)
-    print(f"Cost at epoch {epoch} is {mean_loss}")
+    print(f"Average loss for epoch {epoch} was {mean_loss}")
 
 # Check accuracy on training & test to see how good our model
 def check_accuracy(loader, model):
@@ -90,6 +91,7 @@ def check_accuracy(loader, model):
     with torch.no_grad():
         for x, y in loader:
             x = x.to(device=device)
+            x = x.reshape(x.shape[0], -1)
             y = y.to(device=device)
 
             scores = model(x)

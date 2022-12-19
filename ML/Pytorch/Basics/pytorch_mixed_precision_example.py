@@ -34,7 +34,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 # Hyperparameters
 in_channel = 1
 num_classes = 10
-learning_rate = 0.001
+learning_rate = 3e-4
 batch_size = 100
 num_epochs = 5
 
@@ -74,7 +74,6 @@ for epoch in range(num_epochs):
 
 
 # Check accuracy on training & test to see how good our model
-
 def check_accuracy(loader, model):
     num_correct = 0
     num_samples = 0
