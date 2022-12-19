@@ -1,13 +1,28 @@
 """
-This code is for dealing with imbalanced datasets in PyTorch. Imbalanced datasets are those where the number of samples in one or more classes is significantly lower than the number of samples in the other classes. This can be a problem because it can lead to a model that is biased towards the more common classes, which can result in poor performance on the less common classes.
+This code is for dealing with imbalanced datasets in PyTorch. Imbalanced datasets 
+are those where the number of samples in one or more classes is significantly lower 
+than the number of samples in the other classes. This can be a problem because it 
+can lead to a model that is biased towards the more common classes, which can result 
+in poor performance on the less common classes.
 
-To deal with imbalanced datasets, this code implements two methods: oversampling and class weighting.
+To deal with imbalanced datasets, this code implements two methods: oversampling and 
+class weighting.
 
-Oversampling involves generating additional samples for the underrepresented classes, while class weighting involves assigning higher weights to the loss of samples in the underrepresented classes, so that the model pays more attention to them.
+Oversampling involves generating additional samples for the underrepresented classes, 
+while class weighting involves assigning higher weights to the loss of samples in the 
+underrepresented classes, so that the model pays more attention to them.
 
-In this code, the get_loader function takes a root directory for a dataset and a batch size, and returns a PyTorch data loader. The data loader is used to iterate over the dataset in batches. The get_loader function first applies some transformations to the images in the dataset using the transforms module from torchvision. Then it calculates the class weights based on the number of samples in each class. It then creates a WeightedRandomSampler object, which is used to randomly select a batch of samples with a probability proportional to their weights. Finally, it creates the data loader using the dataset and the weighted random sampler.
+In this code, the get_loader function takes a root directory for a dataset and a batch 
+size, and returns a PyTorch data loader. The data loader is used to iterate over the 
+dataset in batches. The get_loader function first applies some transformations to the 
+images in the dataset using the transforms module from torchvision. Then it calculates 
+the class weights based on the number of samples in each class. It then creates a 
+WeightedRandomSampler object, which is used to randomly select a batch of samples with a 
+probability proportional to their weights. Finally, it creates the data loader using the 
+dataset and the weighted random sampler.
 
-The main function then uses the data loader to iterate over the dataset for 10 epochs, and counts the number of samples in each class. Finally, it prints the counts for each class.
+The main function then uses the data loader to iterate over the dataset for 10 epochs, 
+and counts the number of samples in each class. Finally, it prints the counts for each class.
 
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 * 2020-04-08: Initial coding
