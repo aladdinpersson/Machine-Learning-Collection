@@ -1,3 +1,12 @@
+"""
+Example code of how to set progress bar using tqdm that is very efficient and nicely looking.
+
+Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
+*    2020-05-09 Initial coding
+*    2022-12-19 Updated with more detailed comments, and checked code works with latest PyTorch.
+
+"""
+
 import torch
 import torch.nn as nn
 from tqdm import tqdm

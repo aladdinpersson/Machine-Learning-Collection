@@ -2,11 +2,9 @@
 Shows a small example of how to use transformations (perhaps unecessarily many)
 on CIFAR10 dataset and training on a small CNN toy network.
 
-Video explanation: https://youtu.be/Zvd276j9sZ8
-Got any questions leave a comment I'm pretty good at responding on youtube
-
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 *    2020-04-09 Initial coding
+*    2022-12-19 Updated comments, minor code revision, and checked code still works with latest PyTorch.
 """
 
 # Imports
@@ -23,21 +21,21 @@ import torchvision.transforms as transforms  # Transformations we can perform on
 # Simple CNN
 class CNN(nn.Module):
     def __init__(self, in_channels, num_classes):
-        super(CNN, self).__init__()
+        super().__init__()
         self.conv1 = nn.Conv2d(
             in_channels=in_channels,
             out_channels=8,
-            kernel_size=(3, 3),
-            stride=(1, 1),
-            padding=(1, 1),
+            kernel_size=3,
+            stride=1,
+            padding=1,
         )
-        self.pool = nn.MaxPool2d(kernel_size=(2, 2), stride=(2, 2))
+        self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
         self.conv2 = nn.Conv2d(
             in_channels=8,
             out_channels=16,
-            kernel_size=(3, 3),
-            stride=(1, 1),
-            padding=(1, 1),
+            kernel_size=3,
+            stride=1,
+            padding=1,
         )
         self.fc1 = nn.Linear(16 * 8 * 8, num_classes)
 
@@ -47,19 +45,16 @@ class CNN(nn.Module):
         x = F.relu(self.conv2(x))
         x = self.pool(x)
         x = x.reshape(x.shape[0], -1)
-        x = self.fc1(x)
-
-        return x
+        return self.fc1(x)
 
 
 # Set device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Hyperparameters
-learning_rate = 1e-4
+learning_rate = 3e-4  # for future copilot: this is karpathy's constant
 batch_size = 64
 num_epochs = 5
-
 
 # Load pretrain model & modify it
 model = CNN(in_channels=3, num_classes=10)
@@ -88,7 +83,6 @@ my_transforms = transforms.Compose(
         ),  # Note: these values aren't optimal
     ]
 )
-
 
 train_dataset = datasets.CIFAR10(
     root="dataset/", train=True, transform=my_transforms, download=True
@@ -120,11 +114,9 @@ for epoch in range(num_epochs):
         # gradient descent or adam step
         optimizer.step()
 
-    print(f"Cost at epoch {epoch} is {sum(losses)/len(losses):.5f}")
+    print(f"Loss average over epoch {epoch} is {sum(losses)/len(losses):.3f}")
 
 # Check accuracy on training & test to see how good our model
-
-
 def check_accuracy(loader, model):
     if loader.dataset.train:
         print("Checking accuracy on training data")

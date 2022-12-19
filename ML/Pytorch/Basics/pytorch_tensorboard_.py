@@ -5,11 +5,9 @@ and tries to have them all in a compact way, it might not be
 super clear exactly what calls does what, for that I recommend
 watching the YouTube video.
 
-Video explanation: https://youtu.be/RLqsxWaQdHE
-Got any questions leave a comment on youtube :)
-
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 *    2020-04-17 Initial coding
+*    2022-12-19 Small revision of code, checked that it works with latest PyTorch version
 """
 
 # Imports
@@ -54,7 +52,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # Hyperparameters
 in_channels = 1
 num_classes = 10
-num_epochs = 1
+num_epochs = 3
 
 # Load Data
 train_dataset = datasets.MNIST(
@@ -63,8 +61,8 @@ train_dataset = datasets.MNIST(
 
 # To do hyperparameter search, include more batch_sizes you want to try
 # and more learning rates!
-batch_sizes = [256]
-learning_rates = [0.001]
+batch_sizes = [32, 256]
+learning_rates = [1e-2, 1e-3, 1e-4, 1e-5]
 classes = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 for batch_size in batch_sizes:
