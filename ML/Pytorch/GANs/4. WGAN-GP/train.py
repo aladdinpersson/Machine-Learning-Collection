@@ -1,5 +1,9 @@
 """
 Training of WGAN-GP
+
+Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
+* 2020-11-01: Initial coding
+* 2022-12-20: Small revision of code, checked that it works with latest PyTorch version
 """
 
 import torch
@@ -10,6 +14,7 @@ import torchvision.datasets as datasets
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
+from tqdm import tqdm
 from utils import gradient_penalty, save_checkpoint, load_checkpoint
 from model import Discriminator, Generator, initialize_weights
 
@@ -31,13 +36,14 @@ transforms = transforms.Compose(
         transforms.Resize(IMAGE_SIZE),
         transforms.ToTensor(),
         transforms.Normalize(
-            [0.5 for _ in range(CHANNELS_IMG)], [0.5 for _ in range(CHANNELS_IMG)]),
+            [0.5 for _ in range(CHANNELS_IMG)], [0.5 for _ in range(CHANNELS_IMG)]
+        ),
     ]
 )
 
 dataset = datasets.MNIST(root="dataset/", transform=transforms, download=True)
 # comment mnist above and uncomment below for training on CelebA
-#dataset = datasets.ImageFolder(root="celeb_dataset", transform=transforms)
+# dataset = datasets.ImageFolder(root="celeb_dataset", transform=transforms)
 loader = DataLoader(
     dataset,
     batch_size=BATCH_SIZE,
@@ -66,7 +72,7 @@ critic.train()
 
 for epoch in range(NUM_EPOCHS):
     # Target labels not needed! <3 unsupervised
-    for batch_idx, (real, _) in enumerate(loader):
+    for batch_idx, (real, _) in enumerate(tqdm(loader)):
         real = real.to(device)
         cur_batch_size = real.shape[0]
 

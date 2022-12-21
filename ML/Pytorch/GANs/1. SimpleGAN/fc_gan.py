@@ -1,3 +1,12 @@
+""" 
+Simple GAN using fully connected layers
+
+Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
+* 2020-11-01: Initial coding
+* 2022-12-20: Small revision of code, checked that it works with latest PyTorch version
+"""
+
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -48,7 +57,10 @@ disc = Discriminator(image_dim).to(device)
 gen = Generator(z_dim, image_dim).to(device)
 fixed_noise = torch.randn((batch_size, z_dim)).to(device)
 transforms = transforms.Compose(
-    [transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,)),]
+    [
+        transforms.ToTensor(),
+        transforms.Normalize((0.5,), (0.5,)),
+    ]
 )
 
 dataset = datasets.MNIST(root="dataset/", transform=transforms, download=True)
