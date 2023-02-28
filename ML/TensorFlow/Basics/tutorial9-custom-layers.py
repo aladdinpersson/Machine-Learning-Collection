@@ -60,7 +60,7 @@ class MyReLU(layers.Layer):
         return tf.math.maximum(x, 0)
 
 
-class MyModel(Model):  # model.fit, model.evalute, model.predict
+class MyModel(keras.Model):  # model.fit, model.evalute, model.predict
     def __init__(self, num_classes=10):
         super(MyModel, self).__init__()
         self.dense1 = Dense(64)
