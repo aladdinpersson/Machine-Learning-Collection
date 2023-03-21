@@ -21,7 +21,7 @@ from torch import optim  # For optimizers like SGD, Adam, etc.
 from torch import nn  # All neural network modules
 from torch.utils.data import (
     DataLoader,
-)  # Gives easier dataset managment by creating mini batches etc.
+)  # Gives easier dataset management by creating mini batches etc.
 from tqdm import tqdm  # For nice progress bar!
 
 # Here we create our simple neural network. For more details here we are subclassing and
