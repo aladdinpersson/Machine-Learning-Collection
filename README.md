@@ -18,6 +18,7 @@ In this repository you will find tutorials and projects related to Machine Learn
     - [Object Detection](#Object-Detection)
 	- [Generative Adversarial Networks](#Generative-Adversarial-Networks)
 	- [Architectures](#architectures)
+	- [Lightning](#PyTorch-Lightning)
 - [TensorFlow Tutorials](#tensorflow-tutorials)
 	- [Beginner Tutorials](#beginner-tutorials)
 	- [Architectures](#CNN-Architectures)
@@ -99,6 +100,18 @@ If you have any specific video suggestion please make a comment on YouTube :)
 * [![Youtube Link][logo]](https://youtu.be/uQc4Fs7yx5I) &nbsp; [Inception v1](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_inceptionet.py) **- CNN architecture**
 * [![Youtube Link][logo]](https://youtu.be/DkNIBBBvcPs) &nbsp; [ResNet](https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_resnet.py) **- CNN architecture**
 * [![Youtube Link][logo]](https://youtu.be/fR_0o25kigM) &nbsp; [EfficientNet](https://github.com/aladdinpersson/Machine-Learning-Collection/blob/master/ML/Pytorch/CNN_architectures/pytorch_efficientnet.py) **- CNN architecture**
+
+### PyTorch Lightning
+* [![Youtube Link][logo]](https://www.youtube.com/playlist?list=PLhhyoLH6IjfyL740PTuXef4TstxAK6nGP) &nbsp; [Tutorial 1 - Introduction and starter code](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/pytorch_lightning/1.%20start%20code)
+* [![Youtube Link][logo]](https://www.youtube.com/playlist?list=PLhhyoLH6IjfyL740PTuXef4TstxAK6nGP) &nbsp; [Tutorial 2 - LightningModule](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/pytorch_lightning/2.%20LightningModule)
+* [![Youtube Link][logo]](https://www.youtube.com/playlist?list=PLhhyoLH6IjfyL740PTuXef4TstxAK6nGP) &nbsp; [Tutorial 3 - Trainer](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/pytorch_lightning/3.%20Lightning%20Trainer)
+* [![Youtube Link][logo]](https://www.youtube.com/playlist?list=PLhhyoLH6IjfyL740PTuXef4TstxAK6nGP) &nbsp; [Tutorial 4 - Metrics](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/pytorch_lightning/4.%20Metrics)
+* [![Youtube Link][logo]](https://www.youtube.com/playlist?list=PLhhyoLH6IjfyL740PTuXef4TstxAK6nGP) &nbsp; [Tutorial 5 - DataModule](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/pytorch_lightning/5.%20DataModule)
+* [![Youtube Link][logo]](https://www.youtube.com/playlist?list=PLhhyoLH6IjfyL740PTuXef4TstxAK6nGP) &nbsp; [Tutorial 6 - Code restructure](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/pytorch_lightning/6.%20Restructuring)
+* [![Youtube Link][logo]](https://www.youtube.com/playlist?list=PLhhyoLH6IjfyL740PTuXef4TstxAK6nGP) &nbsp; [Tutorial 7 - Callbacks](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/pytorch_lightning/7.%20Callbacks)
+* [![Youtube Link][logo]](https://www.youtube.com/playlist?list=PLhhyoLH6IjfyL740PTuXef4TstxAK6nGP) &nbsp; [Tutorial 8 - TensorBoard logging](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/pytorch_lightning/8.%20Logging%20Tensorboard)
+* [![Youtube Link][logo]](https://www.youtube.com/playlist?list=PLhhyoLH6IjfyL740PTuXef4TstxAK6nGP) &nbsp; [Tutorial 9 - Profiler](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/pytorch_lightning/9.%20Profiler)
+* [![Youtube Link][logo]](https://www.youtube.com/playlist?list=PLhhyoLH6IjfyL740PTuXef4TstxAK6nGP) &nbsp; [Tutorial 10 - Multi-GPU](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/Pytorch/pytorch_lightning/10.%20Multi-GPU)
  
 
 ## TensorFlow Tutorials
