@@ -4,3 +4,9 @@ ML/algorithms/svm/__pycache__/utils.cpython-38.pyc
 __pycache__/
 *.pth.tar
 *.DS_STORE
+ML/Pytorch/huggingface/train.csv
+ML/Pytorch/huggingface/validation.csv
+ML/Pytorch/huggingface/test.csv
+ML/Pytorch/huggingface/tb_logs/
+ML/Pytorch/huggingface/checkpoints/
+ML/Pytorch/huggingface/notebooks/
