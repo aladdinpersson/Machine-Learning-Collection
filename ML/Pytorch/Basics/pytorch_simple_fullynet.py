@@ -65,7 +65,7 @@ class NN(nn.Module):
 
 
 # Set device cuda for GPU if it's available otherwise run on the CPU
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = "mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu"
 
 # Hyperparameters
 input_size = 784
