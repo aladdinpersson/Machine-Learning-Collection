@@ -8,10 +8,11 @@ def nms(bboxes, iou_threshold, threshold, box_format="corners"):
     Parameters:
         bboxes (list): list of lists containing all bboxes with each bboxes
         specified as [class_pred, prob_score, x1, y1, x2, y2]
-        iou_threshold (float): threshold where predicted bboxes is correct
-        threshold (float): threshold to remove predicted bboxes (independent of IoU) 
+        iou_threshold (nms)(float): threshold where predicted bboxes is correct
+        threshold (objectness_threshold) (float): threshold to remove predicted bboxes (independent of IoU) 
         box_format (str): "midpoint" or "corners" used to specify bboxes
-
+        iou_threshold is nms threshold; <nms then box is considered, else ignored
+        
     Returns:
         list: bboxes after performing NMS given a specific IoU threshold
     """
