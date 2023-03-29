@@ -93,7 +93,7 @@ def check_accuracy(loader, model):
             x = x.to(device=device)
             x = x.reshape(x.shape[0], -1)
             y = y.to(device=device)
-
+            x=x.view(x.size(0),-1)
             scores = model(x)
             _, predictions = scores.max(1)
             num_correct += (predictions == y).sum()
