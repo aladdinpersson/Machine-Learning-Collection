@@ -43,7 +43,7 @@ class ResBlock(layers.Layer):
         self.cnn2 = CNNBlock(channels[1], 3)
         self.cnn3 = CNNBlock(channels[2], 3)
         self.pooling = layers.MaxPooling2D()
-        self.identity_mapping = layers.Conv2D(channels[1], 3, padding="same")
+        self.identity_mapping = layers.Conv2D(channels[1], 1, padding="same")
 
     def call(self, input_tensor, training=False):
         x = self.cnn1(input_tensor, training=training)
