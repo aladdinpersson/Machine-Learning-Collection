@@ -1,12 +1,9 @@
 """
 An implementation of LeNet CNN architecture.
 
-Video explanation: https://youtu.be/fcOW-Zyb5Bo
-Got any questions leave a comment on youtube :)
-
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 *    2020-04-05 Initial coding
-
+*    2022-12-20 Update comments, code revision, checked still works with latest PyTorch version
 """
 
 import torch
@@ -17,27 +14,27 @@ class LeNet(nn.Module):
     def __init__(self):
         super(LeNet, self).__init__()
         self.relu = nn.ReLU()
-        self.pool = nn.AvgPool2d(kernel_size=(2, 2), stride=(2, 2))
+        self.pool = nn.AvgPool2d(kernel_size=2, stride=2)
         self.conv1 = nn.Conv2d(
             in_channels=1,
             out_channels=6,
-            kernel_size=(5, 5),
-            stride=(1, 1),
-            padding=(0, 0),
+            kernel_size=5,
+            stride=1,
+            padding=0,
         )
         self.conv2 = nn.Conv2d(
             in_channels=6,
             out_channels=16,
-            kernel_size=(5, 5),
-            stride=(1, 1),
-            padding=(0, 0),
+            kernel_size=5,
+            stride=1,
+            padding=0,
         )
         self.conv3 = nn.Conv2d(
             in_channels=16,
             out_channels=120,
-            kernel_size=(5, 5),
-            stride=(1, 1),
-            padding=(0, 0),
+            kernel_size=5,
+            stride=1,
+            padding=0,
         )
         self.linear1 = nn.Linear(120, 84)
         self.linear2 = nn.Linear(84, 10)

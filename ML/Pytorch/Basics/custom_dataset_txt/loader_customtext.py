@@ -1,3 +1,15 @@
+"""
+Introductory tutorial on how to deal with custom text datasets in PyTorch.
+Note that there are better ways to do this when dealing with huge text datasets.
+But this is a good way of understanding how it works and can be used as a starting 
+point, particularly for smaller/medium datasets.
+
+Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
+*    2020-04-09 Initial coding
+*    2022-12-19 Updated comments, minor code revision, and checked code still works with latest PyTorch.
+"""
+
+
 import os  # when loading file paths
 import pandas as pd  # for lookup in annotation file
 import spacy  # for tokenizer
@@ -15,8 +27,8 @@ import torchvision.transforms as transforms
 #    of same seq_len and setup dataloader)
 # Note that loading the image is very easy compared to the text!
 
-# Download with: python -m spacy download en
-spacy_eng = spacy.load("en")
+# Download with: python -m spacy download en_core_web_sm
+spacy_eng = spacy.load("en_core_web_sm")
 
 
 class Vocabulary:
@@ -130,7 +142,10 @@ def get_loader(
 
 if __name__ == "__main__":
     transform = transforms.Compose(
-        [transforms.Resize((224, 224)), transforms.ToTensor(),]
+        [
+            transforms.Resize((224, 224)),
+            transforms.ToTensor(),
+        ]
     )
 
     loader, dataset = get_loader(

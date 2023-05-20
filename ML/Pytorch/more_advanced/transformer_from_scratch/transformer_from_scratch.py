@@ -23,10 +23,10 @@ class SelfAttention(nn.Module):
             self.head_dim * heads == embed_size
         ), "Embedding size needs to be divisible by heads"
 
-        self.values = nn.Linear(self.head_dim, self.head_dim, bias=False)
-        self.keys = nn.Linear(self.head_dim, self.head_dim, bias=False)
-        self.queries = nn.Linear(self.head_dim, self.head_dim, bias=False)
-        self.fc_out = nn.Linear(heads * self.head_dim, embed_size)
+        self.values = nn.Linear(embed_size, embed_size)
+        self.keys = nn.Linear(embed_size, embed_size)
+        self.queries = nn.Linear(embed_size, embed_size)
+        self.fc_out = nn.Linear(embed_size, embed_size)
 
     def forward(self, values, keys, query, mask):
         # Get number of training examples
@@ -34,14 +34,14 @@ class SelfAttention(nn.Module):
 
         value_len, key_len, query_len = values.shape[1], keys.shape[1], query.shape[1]
 
+        values = self.values(values)  # (N, value_len, embed_size)
+        keys = self.keys(keys)  # (N, key_len, embed_size)
+        queries = self.queries(query)  # (N, query_len, embed_size)
+
         # Split the embedding into self.heads different pieces
         values = values.reshape(N, value_len, self.heads, self.head_dim)
         keys = keys.reshape(N, key_len, self.heads, self.head_dim)
-        query = query.reshape(N, query_len, self.heads, self.head_dim)
-
-        values = self.values(values)  # (N, value_len, heads, head_dim)
-        keys = self.keys(keys)  # (N, key_len, heads, head_dim)
-        queries = self.queries(query)  # (N, query_len, heads, heads_dim)
+        queries = queries.reshape(N, query_len, self.heads, self.head_dim)
 
         # Einsum does matrix mult. for query*keys for each training example
         # with every other training example, don't be confused by einsum

@@ -9,7 +9,8 @@ Video explanation of code & how to save and load model: https://youtu.be/g6kQl_E
 Got any questions leave a comment on youtube :)
 
 Coded by Aladdin Persson <aladdin dot person at hotmail dot com>
--   2020-04-07 Initial programming
+*   2020-04-07 Initial programming
+*   2022-12-16 Updated with more detailed comments, and checked code still functions as intended.
 
 """
 
@@ -39,7 +40,9 @@ def load_checkpoint(checkpoint, model, optimizer):
 
 def main():
     # Initialize network
-    model = torchvision.models.vgg16(pretrained=False)
+    model = torchvision.models.vgg16(
+        weights=None
+    )  # pretrained=False deprecated, use weights instead
     optimizer = optim.Adam(model.parameters())
 
     checkpoint = {"state_dict": model.state_dict(), "optimizer": optimizer.state_dict()}

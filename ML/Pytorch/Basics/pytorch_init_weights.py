@@ -1,12 +1,16 @@
 """
 Example code of how to initialize weights for a simple CNN network.
+Usually this is not needed as default initialization is usually good,
+but sometimes it can be useful to initialize weights in a specific way.
+This way of doing it should generalize to other network types just make 
+sure to specify and change the modules you wish to modify.
 
 Video explanation: https://youtu.be/xWQ-p_o0Uik
 Got any questions leave a comment on youtube :)
 
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 *    2020-04-10 Initial coding
-
+*    2022-12-16 Updated with more detailed comments, and checked code still functions as intended.
 """
 
 # Imports
@@ -20,17 +24,17 @@ class CNN(nn.Module):
         self.conv1 = nn.Conv2d(
             in_channels=in_channels,
             out_channels=6,
-            kernel_size=(3, 3),
-            stride=(1, 1),
-            padding=(1, 1),
+            kernel_size=3,
+            stride=1,
+            padding=1,
         )
         self.pool = nn.MaxPool2d(kernel_size=(2, 2), stride=(2, 2))
         self.conv2 = nn.Conv2d(
             in_channels=6,
             out_channels=16,
-            kernel_size=(3, 3),
-            stride=(1, 1),
-            padding=(1, 1),
+            kernel_size=3,
+            stride=1,
+            padding=1,
         )
         self.fc1 = nn.Linear(16 * 7 * 7, num_classes)
         self.initialize_weights()

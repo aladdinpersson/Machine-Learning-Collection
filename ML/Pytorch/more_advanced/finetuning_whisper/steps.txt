@@ -1,0 +1,9 @@
+Goal: re-write the code of huggingface whisper finetuning to use pytorch lightning
+1. load the dataset using lightning datamodule
+* integrate huggingface loading data, or we can write it ourselves and use lightning datamodule
+2. load the model using lightning module
+3. train the model using lightning trainer
+(4. See if we can sharded training with lightning trainer to maybe finetune a large whisper model 
+that we couldn't on single GPU)
+
+End goal: Finetune the model on our own dataset for some cool application

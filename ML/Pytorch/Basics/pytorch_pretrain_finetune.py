@@ -3,11 +3,9 @@ Shows a small example of how to load a pretrain model (VGG16) from PyTorch,
 and modifies this to train on the CIFAR10 dataset. The same method generalizes
 well to other datasets, but the modifications to the network may need to be changed.
 
-Video explanation: https://youtu.be/U4bHxEhMGNk
-Got any questions leave a comment on youtube :)
-
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 *    2020-04-08 Initial coding
+*    2022-12-19 Updated comments, minor code changes, made sure it works with latest PyTorch
 
 """
 
@@ -22,8 +20,8 @@ from torch.utils.data import (
 )  # Gives easier dataset managment and creates mini batches
 import torchvision.datasets as datasets  # Has standard datasets we can import in a nice way
 import torchvision.transforms as transforms  # Transformations we can perform on our dataset
+from tqdm import tqdm
 
-# Set device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Hyperparameters
@@ -32,17 +30,8 @@ learning_rate = 1e-3
 batch_size = 1024
 num_epochs = 5
 
-# Simple Identity class that let's input pass without changes
-class Identity(nn.Module):
-    def __init__(self):
-        super(Identity, self).__init__()
-
-    def forward(self, x):
-        return x
-
-
 # Load pretrain model & modify it
-model = torchvision.models.vgg16(pretrained=True)
+model = torchvision.models.vgg16(weights="DEFAULT")
 
 # If you want to do finetuning then set requires_grad = False
 # Remove these two lines if you want to train entire model,
@@ -50,7 +39,7 @@ model = torchvision.models.vgg16(pretrained=True)
 for param in model.parameters():
     param.requires_grad = False
 
-model.avgpool = Identity()
+model.avgpool = nn.Identity()
 model.classifier = nn.Sequential(
     nn.Linear(512, 100), nn.ReLU(), nn.Linear(100, num_classes)
 )
@@ -71,7 +60,7 @@ optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 for epoch in range(num_epochs):
     losses = []
 
-    for batch_idx, (data, targets) in enumerate(train_loader):
+    for batch_idx, (data, targets) in enumerate(tqdm(train_loader)):
         # Get data to cuda if possible
         data = data.to(device=device)
         targets = targets.to(device=device)

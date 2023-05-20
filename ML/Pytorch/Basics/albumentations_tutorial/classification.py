@@ -3,6 +3,7 @@ import albumentations as A
 import numpy as np
 from utils import plot_examples
 from PIL import Image
+from tqdm import tqdm
 
 image = Image.open("images/elon.jpeg")
 
@@ -14,18 +15,20 @@ transform = A.Compose(
         A.HorizontalFlip(p=0.5),
         A.VerticalFlip(p=0.1),
         A.RGBShift(r_shift_limit=25, g_shift_limit=25, b_shift_limit=25, p=0.9),
-        A.OneOf([
-            A.Blur(blur_limit=3, p=0.5),
-            A.ColorJitter(p=0.5),
-        ], p=1.0),
+        A.OneOf(
+            [
+                A.Blur(blur_limit=3, p=0.5),
+                A.ColorJitter(p=0.5),
+            ],
+            p=1.0,
+        ),
     ]
 )
 
 images_list = [image]
 image = np.array(image)
-for i in range(15):
+for i in tqdm(range(15)):
     augmentations = transform(image=image)
     augmented_img = augmentations["image"]
     images_list.append(augmented_img)
 plot_examples(images_list)
-

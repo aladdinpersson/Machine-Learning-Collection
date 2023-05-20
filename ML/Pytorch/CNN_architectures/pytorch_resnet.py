@@ -5,11 +5,9 @@ The intuition for ResNet is simple and clear, but to code
 it didn't feel super clear at first, even when reading Pytorch own
 implementation. 
 
-Video explanation: 
-Got any questions leave a comment on youtube :)
-
 Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
 *    2020-04-12 Initial coding
+*    2022-12-20 Update comments, code revision, checked still works with latest PyTorch version
 """
 
 import torch
@@ -20,10 +18,15 @@ class block(nn.Module):
     def __init__(
         self, in_channels, intermediate_channels, identity_downsample=None, stride=1
     ):
-        super(block, self).__init__()
+        super().__init__()
         self.expansion = 4
         self.conv1 = nn.Conv2d(
-            in_channels, intermediate_channels, kernel_size=1, stride=1, padding=0, bias=False
+            in_channels,
+            intermediate_channels,
+            kernel_size=1,
+            stride=1,
+            padding=0,
+            bias=False,
         )
         self.bn1 = nn.BatchNorm2d(intermediate_channels)
         self.conv2 = nn.Conv2d(
@@ -32,7 +35,7 @@ class block(nn.Module):
             kernel_size=3,
             stride=stride,
             padding=1,
-            bias=False
+            bias=False,
         )
         self.bn2 = nn.BatchNorm2d(intermediate_channels)
         self.conv3 = nn.Conv2d(
@@ -41,7 +44,7 @@ class block(nn.Module):
             kernel_size=1,
             stride=1,
             padding=0,
-            bias=False
+            bias=False,
         )
         self.bn3 = nn.BatchNorm2d(intermediate_channels * self.expansion)
         self.relu = nn.ReLU()
@@ -72,7 +75,9 @@ class ResNet(nn.Module):
     def __init__(self, block, layers, image_channels, num_classes):
         super(ResNet, self).__init__()
         self.in_channels = 64
-        self.conv1 = nn.Conv2d(image_channels, 64, kernel_size=7, stride=2, padding=3, bias=False)
+        self.conv1 = nn.Conv2d(
+            image_channels, 64, kernel_size=7, stride=2, padding=3, bias=False
+        )
         self.bn1 = nn.BatchNorm2d(64)
         self.relu = nn.ReLU()
         self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
@@ -124,7 +129,7 @@ class ResNet(nn.Module):
                     intermediate_channels * 4,
                     kernel_size=1,
                     stride=stride,
-                    bias=False
+                    bias=False,
                 ),
                 nn.BatchNorm2d(intermediate_channels * 4),
             )
@@ -158,9 +163,13 @@ def ResNet152(img_channel=3, num_classes=1000):
 
 
 def test():
-    net = ResNet101(img_channel=3, num_classes=1000)
-    y = net(torch.randn(4, 3, 224, 224)).to("cuda")
+    BATCH_SIZE = 4
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    net = ResNet101(img_channel=3, num_classes=1000).to(device)
+    y = net(torch.randn(BATCH_SIZE, 3, 224, 224)).to(device)
+    assert y.size() == torch.Size([BATCH_SIZE, 1000])
     print(y.size())
 
 
-test()
+if __name__ == "__main__":
+    test()

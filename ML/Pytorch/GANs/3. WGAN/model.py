@@ -2,6 +2,10 @@
 Discriminator and Generator implementation from DCGAN paper,
 with removed Sigmoid() as output from Discriminator (and therefor
 it should be called critic)
+
+Programmed by Aladdin Persson <aladdin.persson at hotmail dot com>
+* 2020-11-01: Initial coding
+* 2022-12-20: Small revision of code, checked that it works with latest PyTorch version
 """
 
 import torch
@@ -93,6 +97,7 @@ def test():
     gen = Generator(noise_dim, in_channels, 8)
     z = torch.randn((N, noise_dim, 1, 1))
     assert gen(z).shape == (N, in_channels, H, W), "Generator test failed"
+    print("Success, tests passed!")
 
-
-# test()
+if __name__ == "__main__":
+    test()
