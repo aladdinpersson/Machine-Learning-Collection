@@ -77,7 +77,7 @@ for epoch in range(NUM_EPOCHS):
         loss_disc_fake = criterion(disc_fake, torch.zeros_like(disc_fake))
         loss_disc = (loss_disc_real + loss_disc_fake) / 2
         disc.zero_grad()
-        loss_disc.backward()
+        loss_disc.backward(retain_graph=True)
         opt_disc.step()
 
         ### Train Generator: min log(1 - D(G(z))) <-> max log(D(G(z))
