@@ -1,8 +1,9 @@
 """
 A simple walkthrough of how to code a fully connected neural network
-using the PyTorch library. For demonstration we train it on the very
-common MNIST dataset of handwritten digits. In this code we go through
-how to create the network as well as initialize a loss function, optimizer,
+using the PyTorch library. This code is designed to solve a classic problem in machine learning: recognizing handwritten digits. 
+We use the MNIST dataset, which contains images of handwritten digits from 0 to 9. 
+The goal is to train a neural network to recognize these digits with high accuracy.
+In this code we go through how to create the network as well as initialize a loss function, optimizer,
 check accuracy and more.
 
 Programmed by Aladdin Persson
@@ -22,7 +23,7 @@ from torch import nn  # All neural network modules
 from torch.utils.data import (
     DataLoader,
 )  # Gives easier dataset managment by creating mini batches etc.
-from tqdm import tqdm  # For nice progress bar!
+from tqdm import tqdm  # For nice progress bar! (Type "pip install tqdm" in your Terminal if u don't have the module to install it)
 
 # Here we create our simple neural network. For more details here we are subclassing and
 # inheriting from nn.Module, this is the most general way to create your networks and
