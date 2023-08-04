@@ -59,7 +59,12 @@ class SelfAttention(nn.Module):
         # Normalize energy values similarly to seq2seq + attention
         # so that they sum to 1. Also divide by scaling factor for
         # better stability
-        attention = torch.softmax(energy / (self.embed_size ** (1 / 2)), dim=3)
+        # attention = torch.softmax(energy / (self.embed_size ** (1 / 2)), dim=3)
+##########################################################################################
+        # the scaling factor is self.head_dim instead of self.embed_size
+        # By Yi Yang, Aug 4th 2023, yiy042@ucsd.edu
+        attention = torch.softmax(energy / (self.head_dim ** (1 / 2)), dim=3)
+##########################################################################################
         # attention shape: (N, heads, query_len, key_len)
 
         out = torch.einsum("nhql,nlhd->nqhd", [attention, values]).reshape(
