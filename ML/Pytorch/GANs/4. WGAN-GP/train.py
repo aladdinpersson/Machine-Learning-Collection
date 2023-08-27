@@ -33,7 +33,7 @@ LAMBDA_GP = 10
 
 transforms = transforms.Compose(
     [
-        transforms.Resize(IMAGE_SIZE),
+        transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
         transforms.ToTensor(),
         transforms.Normalize(
             [0.5 for _ in range(CHANNELS_IMG)], [0.5 for _ in range(CHANNELS_IMG)]
