@@ -1,0 +1,28 @@
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+scipy
+
+# Deep Learning
+torchvision
+torchaudio
+transformers
+tensorboard
+
+# For gradient boosting machines (GBMs)
+xgboost
+lightgbm
+
+# For working with text data
+nltk
+spacy
+
+# For image processing tasks
+opencv-python-headless
+Pillow
+
+# Jupyter Notebook (remove if you do not use it within the container)
+jupyter
+ipywidgets
