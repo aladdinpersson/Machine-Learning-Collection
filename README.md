@@ -21,7 +21,7 @@ In this repository you will find tutorials and projects related to Machine Learn
 - [TensorFlow Tutorials](#tensorflow-tutorials)
 	- [Beginner Tutorials](#beginner-tutorials)
 	- [Architectures](#CNN-Architectures)
-- [Docker setup](#docker-setup)
+- [Docker setup](#Docker-Setup)
 
 
 ## Machine Learning
