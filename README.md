@@ -4,7 +4,6 @@
 
 
 [![Build Status](https://travis-ci.com/aladdinpersson/Machine-Learning-Collection.svg?branch=master)](https://travis-ci.com/aladdinpersson/Machine-Learning-Collection) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 [logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/youtube_logo.png
 
 # Machine Learning Collection
@@ -22,6 +21,36 @@ In this repository you will find tutorials and projects related to Machine Learn
 - [TensorFlow Tutorials](#tensorflow-tutorials)
 	- [Beginner Tutorials](#beginner-tutorials)
 	- [Architectures](#CNN-Architectures)
+
+## Docker Setup
+Follow the steps below to use Docker for setting up a consistent development environment:
+
+1. **Install Docker**  
+   If you don't have Docker installed, use these links to install Docker for your system:
+   - [Install Docker Engine](https://docs.docker.com/engine/install/)
+
+2. **Nvidia Container Toolkit (For GPU support)**  
+   If you want to utilize GPU acceleration with CUDA, install the Nvidia Container Toolkit:
+   - [Nvidia Container Toolkit Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
+
+3. **Build the Docker Image**  
+   Navigate to the directory containing the Dockerfile and run:
+   ```bash
+   docker build -t aladdin-image .
+   ```
+
+4. **Run the Docker Container**  
+   Once the image is built, start the container using the following command:
+   ```bash
+   docker run -it \
+     --gpus all \
+     -v "${PWD}:/code" \
+     -p 8080:8080 \
+     --name "aladdin-container" \
+     --env AUTHENTICATE_VIA_JUPYTER="mytoken" \
+     aladdin-image
+   ```
+
 
 ## Machine Learning
 * [![Youtube Link][logo]](https://youtu.be/pCCUnoes1Po) &nbsp; [Linear Regression](https://github.com/AladdinPersson/Machine-Learning-Collection/blob/master/ML/algorithms/linearregression/linear_regression_gradient_descent.py) **- With Gradient Descent** :white_check_mark: 
