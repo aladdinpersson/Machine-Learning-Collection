@@ -142,32 +142,51 @@ If you have any specific video suggestion please make a comment on YouTube :)
 * [![Youtube Link][logo]](https://youtu.be/ea5Z1smiR3U) &nbsp; [Tutorial 20 - Classifying Skin Cancer](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/TensorFlow/Basics/tutorial20-classify-cancer-beginner-project-example) **- Beginner Project Example**
 
 ## Docker Setup
-Follow the steps below to use Docker for setting up a consistent development environment:
 
-1. **Install Docker**  
-   If you don't have Docker installed, use these links to install Docker for your system:
-   - [Install Docker Engine](https://docs.docker.com/engine/install/)
+### Step 1: Install Docker
 
-2. **Nvidia Container Toolkit (For GPU support)**  
-   If you want to utilize GPU acceleration with CUDA, install the Nvidia Container Toolkit:
-   - [Nvidia Container Toolkit Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
+If you don't have Docker installed, follow the links below to install Docker for your system:
+- [Install Docker Engine](https://docs.docker.com/engine/install/)
 
-3. **Build the Docker Image**  
-   Navigate to the directory containing the Dockerfile and run:
-   ```bash
-   docker build -t aladdin-image .
-   ```
+### Step 2: Install Nvidia Container Toolkit (Optional)
+If you plan to use GPU acceleration with CUDA, install Nvidia Container Toolkit:
 
-4. **Run the Docker Container**  
-   Once the image is built, start the container using the following command:
-   ```bash
-   docker run -it \
-     --gpus all \
-     -v "${PWD}:/code" \
-     -p 8080:8080 \
-     --name "aladdin-container" \
-     --env AUTHENTICATE_VIA_JUPYTER="mytoken" \
-     aladdin-image
-   ```
+- [Nvidia Container Toolkit Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
 
+### Step 3: Build the Docker Image
+Navigate to the directory containing the Dockerfile and build the Docker image with:
 
+```bash
+docker build -t aladdin-image .
+```
+
+### Step 4: Run the Docker Container in Detached Mode
+Run the following command to start the container in detached mode:
+
+```bash
+docker run -d \
+  --gpus all \
+  -v "${PWD}:/code" \
+  -p 8080:8080 \
+  --name "aladdin-container" \
+  --env AUTHENTICATE_VIA_JUPYTER="mytoken" \
+  aladdin-image \
+  tail -f /dev/null
+```
+
+This will start a new Docker container named `aladdin-container` that will not exit immediately. The `-d` flag runs the container in detached mode, letting it run in the background.
+
+### Step 5: Interact with the Docker Container
+To attach an interactive shell to the running container, use the command:
+
+```bash
+docker exec -it aladdin-container /bin/bash
+```
+
+You can now interact with your container using the bash shell.
+
+### Additional Notes
+- If you wish to stop the container, you can do so with `docker stop aladdin-container`.
+- To start the container again after stopping, use `docker start aladdin-container`.
+- In case you need to remove the container, make sure it's stopped and then run `docker rm aladdin-container`.
+- To see the output from the container (logs), use `docker logs aladdin-container`.

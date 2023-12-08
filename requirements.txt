@@ -1,3 +1,5 @@
+# requirements.txt file with basic libraries to install for a machine learning workflow
+
 numpy
 pandas
 scikit-learn
@@ -5,24 +7,35 @@ matplotlib
 seaborn
 scipy
 
-# Deep Learning
+# deep learning
 torchvision
 torchaudio
 transformers
-tensorboard
+lightning
 
-# For gradient boosting machines (GBMs)
+# all you need is xgboost
 xgboost
 lightgbm
 
-# For working with text data
+# nlp libraries
 nltk
 spacy
 
-# For image processing tasks
+# image processing
 opencv-python-headless
 Pillow
 
-# Jupyter Notebook (remove if you do not use it within the container)
+# data loading 
+pyarrow
+
+# model optimization/experiment tracking
+tensorboard
+wandb
+mlflow
+
+# utilities
+tqdm
+
+# notebooks
 jupyter
 ipywidgets
