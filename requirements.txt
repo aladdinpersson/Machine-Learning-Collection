@@ -1,5 +1,5 @@
 # requirements.txt file with basic libraries to install for a machine learning workflow
-
+# HELLO
 numpy
 pandas
 scikit-learn
@@ -12,6 +12,7 @@ torchvision
 torchaudio
 transformers
 lightning
+torchmetrics
 
 # all you need is xgboost
 xgboost
