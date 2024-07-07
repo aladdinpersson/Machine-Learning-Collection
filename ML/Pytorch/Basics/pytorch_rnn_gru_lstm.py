@@ -159,5 +159,5 @@ def check_accuracy(loader, model):
     return num_correct / num_samples
 
 
-print(f"Accuracy on training set: {check_accuracy(train_loader, model)*100:2f}")
+print(f"Accuracy on training set: {check_accuracy(train_loader, model)*100:.2f}")
 print(f"Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}")
