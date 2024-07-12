@@ -86,7 +86,7 @@ model = keras.Model(inputs=inputs, outputs=[output1, output2])
 model.compile(
     optimizer=keras.optimizers.Adam(LEARNING_RATE),
     loss=keras.losses.SparseCategoricalCrossentropy(),
-    metrics=["accuracy"],
+    metrics={"first_num": ["accuracy"], "second_num": ["accuracy"]},
 )
 
 model.fit(train_dataset, epochs=5, verbose=2)
