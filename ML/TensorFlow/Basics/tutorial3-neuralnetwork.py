@@ -17,7 +17,7 @@ x_test = x_test.reshape(-1, 28 * 28).astype("float32") / 255.0
 # Sequential API (Very convenient, not very flexible)
 model = keras.Sequential(
     [
-        keras.Input(shape=(28 * 28)),
+        keras.Input(shape=(28 * 28,)),
         layers.Dense(512, activation="relu"),
         layers.Dense(256, activation="relu"),
         layers.Dense(10),
@@ -39,7 +39,7 @@ model = keras.Model(inputs=inputs, outputs=outputs)
 
 model.compile(
     loss=keras.losses.SparseCategoricalCrossentropy(from_logits=False),
-    optimizer=keras.optimizers.Adam(lr=0.001),
+    optimizer=keras.optimizers.Adam(learning_rate=0.001),
     metrics=["accuracy"],
 )
 
