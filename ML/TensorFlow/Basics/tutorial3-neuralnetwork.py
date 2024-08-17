@@ -39,7 +39,7 @@ model = keras.Model(inputs=inputs, outputs=outputs)
 
 model.compile(
     loss=keras.losses.SparseCategoricalCrossentropy(from_logits=False),
-    optimizer=keras.optimizers.Adam(lr=0.001),
+    optimizer=keras.optimizers.Adam(learning_rate=0.001),
     metrics=["accuracy"],
 )
 
