@@ -8,8 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def create_dataset(N, K=2):
-    N = 100  # number of points per class
+def create_dataset(N=100, K=2):
     D = 2
     X = np.zeros((N * K, D))  # data matrix (each row = single example)
     y = np.zeros(N * K)  # class labels
