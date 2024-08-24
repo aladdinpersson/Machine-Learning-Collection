@@ -52,9 +52,9 @@ ds_train = ds_train.batch(BATCH_SIZE)
 ds_train = ds_train.prefetch(AUTOTUNE)
 
 # Setup for test Dataset
-ds_test = ds_train.map(normalize_img, num_parallel_calls=AUTOTUNE)
-ds_test = ds_train.batch(BATCH_SIZE)
-ds_test = ds_train.prefetch(AUTOTUNE)
+ds_test = ds_test.map(normalize_img, num_parallel_calls=AUTOTUNE)
+ds_test = ds_test.batch(BATCH_SIZE)
+ds_test = ds_test.prefetch(AUTOTUNE)
 
 class_names = [
     "Airplane",
