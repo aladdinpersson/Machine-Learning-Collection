@@ -1,0 +1,42 @@
+# requirements.txt file with basic libraries to install for a machine learning workflow
+# HELLO
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+scipy
+
+# deep learning
+torchvision
+torchaudio
+transformers
+lightning
+torchmetrics
+
+# all you need is xgboost
+xgboost
+lightgbm
+
+# nlp libraries
+nltk
+spacy
+
+# image processing
+opencv-python-headless
+Pillow
+
+# data loading 
+pyarrow
+
+# model optimization/experiment tracking
+tensorboard
+wandb
+mlflow
+
+# utilities
+tqdm
+
+# notebooks
+jupyter
+ipywidgets

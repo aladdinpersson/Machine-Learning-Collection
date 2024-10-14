@@ -5,9 +5,10 @@
 
 [![Build Status](https://travis-ci.com/aladdinpersson/Machine-Learning-Collection.svg?branch=master)](https://travis-ci.com/aladdinpersson/Machine-Learning-Collection) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/youtube_logo.png
+[logo]: https://github.com/AladdinPerzon/Machine-Learning-Collection/blob/master/ML/others/logo/youtube_logo.png# 
 
 # Machine Learning Collection
+
 In this repository you will find tutorials and projects related to Machine Learning. I try to make the code as clear as possible, and the goal is be to used as a learning resource and a way to lookup problems to solve specific problems. For most I have also done video explanations on YouTube if you want a walkthrough for the code. If you got any questions or suggestions for future videos I prefer if you ask it on [YouTube](https://www.youtube.com/c/AladdinPersson). This repository is contribution friendly, so if you feel you want to add something then I'd happily merge a PR :smiley:
 
 ## Table Of Contents
@@ -22,6 +23,8 @@ In this repository you will find tutorials and projects related to Machine Learn
 - [TensorFlow Tutorials](#tensorflow-tutorials)
 	- [Beginner Tutorials](#beginner-tutorials)
 	- [Architectures](#CNN-Architectures)
+- [Docker setup](#Docker-Setup)
+
 
 ## Machine Learning
 * [![Youtube Link][logo]](https://youtu.be/pCCUnoes1Po) &nbsp; [Linear Regression](https://github.com/AladdinPersson/Machine-Learning-Collection/blob/master/ML/algorithms/linearregression/linear_regression_gradient_descent.py) **- With Gradient Descent** :white_check_mark: 
@@ -32,7 +35,6 @@ In this repository you will find tutorials and projects related to Machine Learn
 * [![Youtube Link][logo]](https://youtu.be/W4fSRHeafMo) &nbsp; [K-means clustering](https://github.com/AladdinPersson/Machine-Learning-Collection/blob/master/ML/algorithms/kmeans/kmeansclustering.py) 
 * [![Youtube Link][logo]](https://youtu.be/gBTtR0bs-1k) &nbsp; [Support Vector Machine](https://github.com/AladdinPersson/Machine-Learning-Collection/blob/master/ML/algorithms/svm/svm.py) **- Using CVXOPT**
 * [![Youtube Link][logo]](https://youtu.be/NJvojeoTnNM) &nbsp; [Neural Network](https://github.com/AladdinPersson/Machine-Learning-Collection/blob/master/ML/algorithms/neuralnetwork/NN.py)
-* [Decision Tree](https://github.com/AladdinPersson/Machine-Learning-Collection/blob/master/ML/algorithms/decisiontree/decision_tree.py)
 
 ## PyTorch Tutorials
 If you have any specific video suggestion please make a comment on YouTube :)
@@ -139,10 +141,52 @@ If you have any specific video suggestion please make a comment on YouTube :)
 * [![Youtube Link][logo]](https://youtu.be/NoKvCREx36Q) &nbsp; [Tutorial 19 - Custom Dataset Text](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/TensorFlow/Basics/tutorial19-customdata-text)
 * [![Youtube Link][logo]](https://youtu.be/ea5Z1smiR3U) &nbsp; [Tutorial 20 - Classifying Skin Cancer](https://github.com/AladdinPerzon/Machine-Learning-Collection/tree/master/ML/TensorFlow/Basics/tutorial20-classify-cancer-beginner-project-example) **- Beginner Project Example**
 
-### CNN Architectures
-* [LeNet](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/TensorFlow/CNN_architectures/LeNet5)
-* [AlexNet](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/TensorFlow/CNN_architectures/AlexNet)
-* [VGG](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/TensorFlow/CNN_architectures/VGGNet)
-* [GoogLeNet](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/TensorFlow/CNN_architectures/GoogLeNet)
-* [ResNet](https://github.com/aladdinpersson/Machine-Learning-Collection/tree/master/ML/TensorFlow/CNN_architectures/ResNet)
- 
+## Docker Setup
+
+### Step 1: Install Docker
+
+If you don't have Docker installed, follow the links below to install Docker for your system:
+- [Install Docker Engine](https://docs.docker.com/engine/install/)
+
+### Step 2: Install Nvidia Container Toolkit (Optional)
+If you plan to use GPU acceleration with CUDA, install Nvidia Container Toolkit:
+
+- [Nvidia Container Toolkit Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
+
+### Step 3: Build the Docker Image
+Navigate to the directory containing the Dockerfile and build the Docker image with:
+
+```bash
+docker build -t aladdin-image .
+```
+
+### Step 4: Run the Docker Container in Detached Mode
+Run the following command to start the container in detached mode:
+
+```bash
+docker run -d \
+  --gpus all \
+  -v "${PWD}:/code" \
+  -p 8080:8080 \
+  --name "aladdin-container" \
+  --env AUTHENTICATE_VIA_JUPYTER="mytoken" \
+  aladdin-image \
+  tail -f /dev/null
+```
+
+This will start a new Docker container named `aladdin-container` that will not exit immediately. The `-d` flag runs the container in detached mode, letting it run in the background.
+
+### Step 5: Interact with the Docker Container
+To attach an interactive shell to the running container, use the command:
+
+```bash
+docker exec -it aladdin-container /bin/bash
+```
+
+You can now interact with your container using the bash shell.
+
+### Additional Notes
+- If you wish to stop the container, you can do so with `docker stop aladdin-container`.
+- To start the container again after stopping, use `docker start aladdin-container`.
+- In case you need to remove the container, make sure it's stopped and then run `docker rm aladdin-container`.
+- To see the output from the container (logs), use `docker logs aladdin-container`.
