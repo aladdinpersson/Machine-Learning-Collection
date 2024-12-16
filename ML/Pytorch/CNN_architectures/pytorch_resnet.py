@@ -14,7 +14,7 @@ import torch
 import torch.nn as nn
 
 
-class block(nn.Module):
+class Block(nn.Module):
     def __init__(
         self, in_channels, intermediate_channels, identity_downsample=None, stride=1
     ):
@@ -49,7 +49,6 @@ class block(nn.Module):
         self.bn3 = nn.BatchNorm2d(intermediate_channels * self.expansion)
         self.relu = nn.ReLU()
         self.identity_downsample = identity_downsample
-        self.stride = stride
 
     def forward(self, x):
         identity = x.clone()
@@ -72,7 +71,7 @@ class block(nn.Module):
 
 
 class ResNet(nn.Module):
-    def __init__(self, block, layers, image_channels, num_classes):
+    def __init__(self, layers, image_channels, num_classes):
         super(ResNet, self).__init__()
         self.in_channels = 64
         self.conv1 = nn.Conv2d(
@@ -84,16 +83,16 @@ class ResNet(nn.Module):
 
         # Essentially the entire ResNet architecture are in these 4 lines below
         self.layer1 = self._make_layer(
-            block, layers[0], intermediate_channels=64, stride=1
+            layers[0], intermediate_channels=64, stride=1
         )
         self.layer2 = self._make_layer(
-            block, layers[1], intermediate_channels=128, stride=2
+            layers[1], intermediate_channels=128, stride=2
         )
         self.layer3 = self._make_layer(
-            block, layers[2], intermediate_channels=256, stride=2
+            layers[2], intermediate_channels=256, stride=2
         )
         self.layer4 = self._make_layer(
-            block, layers[3], intermediate_channels=512, stride=2
+            layers[3], intermediate_channels=512, stride=2
         )
 
         self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
@@ -115,7 +114,7 @@ class ResNet(nn.Module):
 
         return x
 
-    def _make_layer(self, block, num_residual_blocks, intermediate_channels, stride):
+    def _make_layer(self, num_residual_blocks, intermediate_channels, stride):
         identity_downsample = None
         layers = []
 
@@ -135,7 +134,7 @@ class ResNet(nn.Module):
             )
 
         layers.append(
-            block(self.in_channels, intermediate_channels, identity_downsample, stride)
+            Block(self.in_channels, intermediate_channels, identity_downsample, stride)
         )
 
         # The expansion size is always 4 for ResNet 50,101,152
@@ -145,21 +144,21 @@ class ResNet(nn.Module):
         # then finally back to 256. Hence no identity downsample is needed, since stride = 1,
         # and also same amount of channels.
         for i in range(num_residual_blocks - 1):
-            layers.append(block(self.in_channels, intermediate_channels))
+            layers.append(Block(self.in_channels, intermediate_channels))
 
         return nn.Sequential(*layers)
 
 
 def ResNet50(img_channel=3, num_classes=1000):
-    return ResNet(block, [3, 4, 6, 3], img_channel, num_classes)
+    return ResNet([3, 4, 6, 3], img_channel, num_classes)
 
 
 def ResNet101(img_channel=3, num_classes=1000):
-    return ResNet(block, [3, 4, 23, 3], img_channel, num_classes)
+    return ResNet([3, 4, 23, 3], img_channel, num_classes)
 
 
 def ResNet152(img_channel=3, num_classes=1000):
-    return ResNet(block, [3, 8, 36, 3], img_channel, num_classes)
+    return ResNet([3, 8, 36, 3], img_channel, num_classes)
 
 
 def test():
