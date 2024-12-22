@@ -22,12 +22,8 @@ class KMeansClustering:
         self.num_features = X.shape[1]
 
     def initialize_random_centroids(self, X):
-        centroids = np.zeros((self.K, self.num_features))
-
-        for k in range(self.K):
-            centroid = X[np.random.choice(range(self.num_examples))]
-            centroids[k] = centroid
-
+        centroids = X[np.random.choice(range(self.num_examples), size=self.K, replace=False)]
+        
         return centroids
 
     def create_clusters(self, X, centroids):
