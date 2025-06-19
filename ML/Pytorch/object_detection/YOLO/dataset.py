@@ -10,7 +10,14 @@ from PIL import Image
 
 class VOCDataset(torch.utils.data.Dataset):
     def __init__(
-        self, csv_file, img_dir, label_dir, S=7, B=2, C=20, transform=None,
+        self,
+        csv_file,
+        img_dir,
+        label_dir,
+        S=7,
+        B=2,
+        C=20,
+        transform=None,
     ):
         self.annotations = pd.read_csv(csv_file)
         self.img_dir = img_dir
@@ -54,16 +61,20 @@ class VOCDataset(torch.utils.data.Dataset):
             x_cell, y_cell = self.S * x - j, self.S * y - i
 
             """
-            Calculating the width and height of cell of bounding box,
-            relative to the cell is done by the following, with
-            width as the example:
+            Converts bounding box dimensions from being relative to the entire image
+            to being relative to the grid cell size.
+
+            For example, with 'width':
+            - 'width' is the box's width as a fraction of the total image width.
+            - The image is divided into S cells (e.g., S=7).
+            - The width of a single cell is 1/S of the image width.
+            - To express the box's width in terms of "cell widths," we calculate:
+              (box_width_in_image_units) / (cell_width_in_image_units)
+              = width / (1/S)
+              = width * S
             
-            width_pixels = (width*self.image_width)
-            cell_pixels = (self.image_width)
-            
-            Then to find the width relative to the cell is simply:
-            width_pixels/cell_pixels, simplification leads to the
-            formulas below.
+            A value of 'width_cell' = 2.0 would mean the box is twice as wide as a single grid cell.
+            This re-scaling helps the network learn object sizes in a more localized context.
             """
             width_cell, height_cell = (
                 width * self.S,
