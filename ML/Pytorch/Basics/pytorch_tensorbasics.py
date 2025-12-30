@@ -163,11 +163,12 @@ values, indices = torch.max(x, dim=0)  # Can also do x.max(dim=0)
 values, indices = torch.min(x, dim=0)  # Can also do x.min(dim=0)
 abs_x = torch.abs(x)  # Returns x where abs function has been applied to every element
 z = torch.argmax(x, dim=0)  # Gets index of the maximum value
-z = torch.argmin(x, dim=0)  # Gets index of the minimum value
+z = torch.argmin(x, dim=0)
+print(z)# Gets index of the minimum value
 mean_x = torch.mean(x.float(), dim=0)  # mean requires x to be float
 z = torch.eq(x, y)  # Element wise comparison, in this case z = [False, False, False]
 sorted_y, indices = torch.sort(y, dim=0, descending=False)
-
+print(indices)
 z = torch.clamp(x, min=0)
 # All values < 0 set to 0 and values > 0 unchanged (this is exactly ReLU function)
 # If you want to values over max_val to be clamped, do torch.clamp(x, min=min_val, max=max_val)
@@ -207,7 +208,7 @@ x = torch.rand((3, 5))
 rows = torch.tensor([1, 0])
 cols = torch.tensor([4, 0])
 print(x[rows, cols])  # Gets second row fifth column and first row first column
-
+# which is same as doing: [x[1,4], x[0,0]] 高级索引
 # More advanced indexing
 x = torch.arange(10)
 print(x[(x < 2) | (x > 8)])  # will be [0, 1, 9]
@@ -216,7 +217,9 @@ print(x[x.remainder(2) == 0])  # will be [0, 2, 4, 6, 8]
 # Useful operations for indexing
 print(
     torch.where(x > 5, x, x * 2)
-)  # gives [0, 2, 4, 6, 8, 10, 6, 7, 8, 9], all values x > 5 yield x, else x*2
+) 
+#满足第一个条件执行第二个 反之执行第三个
+# gives [0, 2, 4, 6, 8, 10, 6, 7, 8, 9], all values x > 5 yield x, else x*2
 x = torch.tensor([0, 0, 1, 2, 2, 3, 4]).unique()  # x = [0, 1, 2, 3, 4]
 print(
     x.ndimension()
@@ -231,7 +234,7 @@ print(
 # ============================================================= #
 
 x = torch.arange(9)
-
+print(x.shape)  # Shape is [9]
 # Let's say we want to reshape it to be 3x3
 x_3x3 = x.view(3, 3)
 
@@ -256,7 +259,7 @@ print(
 # using pointers to construct these matrices). This is a bit complicated and I need to explore this more
 # as well, at least you know it's a problem to be cautious of! A solution is to do the following
 print(y.contiguous().view(9))  # Calling .contiguous() before view and it works
-
+#内存跳动
 # Moving on to another operation, let's say we want to add two tensors dimensions togethor
 x1 = torch.rand(2, 5)
 x2 = torch.rand(2, 5)
@@ -284,7 +287,7 @@ z = x.permute(0, 2, 1)
 z = torch.chunk(x, chunks=2, dim=1)
 print(z[0].shape)
 print(z[1].shape)
-
+#分成若干个子张量
 # Let's say we want to add an additional dimension
 x = torch.arange(
     10

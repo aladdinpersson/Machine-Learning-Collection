@@ -95,6 +95,8 @@ optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 for epoch in range(num_epochs):
     for batch_idx, (data, targets) in enumerate(tqdm(train_loader)):
         # Get data to cuda if possible
+        print( data.shape)
+        print( targets.shape)
         data = data.to(device=device)
         targets = targets.to(device=device)
 
@@ -102,9 +104,9 @@ for epoch in range(num_epochs):
         data = data.reshape(data.shape[0], -1)
 
         # Forward
-        scores = model(data)
+        scores = model.forward(data)
         loss = criterion(scores, targets)
-
+        print(f"Loss at epoch {epoch}, batch {batch_idx}: {loss.item()}")
         # Backward
         optimizer.zero_grad()
         loss.backward()
@@ -131,7 +133,7 @@ def check_accuracy(loader, model):
 
     num_correct = 0
     num_samples = 0
-    model.eval()
+    model.eval()#评估模式，这会关闭dropout等
 
     # We don't need to keep track of gradients here so we wrap it in torch.no_grad()
     with torch.no_grad():

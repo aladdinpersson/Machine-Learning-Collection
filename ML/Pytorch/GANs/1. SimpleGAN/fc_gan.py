@@ -81,7 +81,8 @@ for epoch in range(num_epochs):
         noise = torch.randn(batch_size, z_dim).to(device)
         fake = gen(noise)
         disc_real = disc(real).view(-1)
-        lossD_real = criterion(disc_real, torch.ones_like(disc_real))
+        lossD_real = criterion(disc_real, to                                                                                             
+                               rch.ones_like(disc_real))
         disc_fake = disc(fake).view(-1)
         lossD_fake = criterion(disc_fake, torch.zeros_like(disc_fake))
         lossD = (lossD_real + lossD_fake) / 2
